@@ -17,7 +17,12 @@ export const metadata: Metadata = {
   description:
     "Full Stack Engineer and AI-focused builder based in Taytay Rizal, Philippines.",
   icons: {
-    icon: "/picture.png"
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" }
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [{ url: "/icon.png", sizes: "512x512", type: "image/png" }]
   }
 };
 

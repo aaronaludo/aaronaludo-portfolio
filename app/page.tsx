@@ -370,7 +370,7 @@ export default function Home() {
               >
                 <div className="flex items-center gap-3">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/10 text-[11px] font-semibold text-white">
-                    {cert.issuer?.[0] ?? "C"}
+                    {getIssuerIcon(cert.issuer) ?? (cert.issuer?.[0] ?? "C")}
                   </span>
                   <div className="space-y-1">
                     <div className="text-sm font-semibold text-white sm:text-base">
@@ -453,6 +453,16 @@ const SocialIcon = ({ label }: { label: string }) => {
   }
 
   return <DefaultLinkIcon className="h-5 w-5 text-white/70" />;
+};
+
+const getIssuerIcon = (issuer?: string) => {
+  const normalized = issuer?.toLowerCase() ?? "";
+
+  if (normalized.includes("google")) {
+    return <SiGoogle className="h-5 w-5 text-emerald-200" />;
+  }
+
+  return null;
 };
 
 const LinkedInIcon = ({ className }: { className?: string }) => (

@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aaron Aluddo | Full Stack Engineer",
+  title: "Aaron Aludo | Full Stack Engineer",
   description:
     "Full Stack Engineer and AI-focused builder based in Taytay Rizal, Philippines.",
   icons: {

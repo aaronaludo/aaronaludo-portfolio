@@ -231,23 +231,51 @@ export default function Home() {
 
         <Card>
           <SectionHeading title="Recent Projects" actionLabel="View all" href="#" />
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2">
             {data.projects.map((project) => (
               <div
                 key={project.name}
-                className="rounded-xl border border-white/10 bg-white/5 p-4 hover:border-white/20"
+                className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-br from-white/8 via-white/5 to-white/5 p-5 hover:border-white/20"
               >
-                <p className="text-sm font-semibold text-white">{project.name}</p>
-                <p className="text-xs text-white/60">{project.description}</p>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-emerald-100"
-                >
-                  {project.link.replace("https://", "")}
-                  <ArrowIcon />
-                </a>
+                <div className="space-y-2">
+                  <p className="text-lg font-semibold text-white">{project.name}</p>
+                  <p className="text-sm text-white/70">{project.description}</p>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 rounded-full border border-emerald-200/30 bg-emerald-300/10 px-4 py-2 text-sm font-semibold text-emerald-100"
+                    >
+                      {project.link.replace("https://", "").replace("http://", "")}
+                      <ArrowIcon />
+                    </a>
+                  ) : null}
+                  {project.googlePlay ? (
+                    <a
+                      href={project.googlePlay}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
+                    >
+                      Google Play
+                      <ArrowIcon />
+                    </a>
+                  ) : null}
+                  {project.appStore ? (
+                    <a
+                      href={project.appStore}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
+                    >
+                      App Store
+                      <ArrowIcon />
+                    </a>
+                  ) : null}
+                </div>
               </div>
             ))}
           </div>
@@ -256,56 +284,39 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_1fr]">
           <Card>
             <SectionHeading title="Recent Certifications" actionLabel="View all" href="#" />
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2">
               {data.certifications.map((cert) => (
-                <div
+                <a
                   key={cert.name}
-                  className="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80"
+                  href={cert.link ?? "#"}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex h-full flex-col gap-1 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/20"
                 >
-                  <div className="font-semibold text-white">{cert.name}</div>
+                  <div className="text-base font-semibold text-white leading-snug">
+                    {cert.name}
+                  </div>
                   <div className="text-xs text-white/60">{cert.issuer}</div>
-                </div>
+                </a>
               ))}
             </div>
           </Card>
 
           <Card>
-            <SectionHeading title="Community & Social" />
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-              <div className="space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                  A member of
-                </p>
-                <div className="space-y-2">
-                  {data.memberships.map((membership) => (
-                    <div
-                      key={membership}
-                      className="rounded-lg border border-white/10 bg-white/5 p-3 text-xs text-white/70"
-                    >
-                      {membership}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                  Social links
-                </p>
-                <div className="space-y-2">
-                  {data.socialLinks.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white hover:border-white/20"
-                    >
-                      <span>{link.label}</span>
-                      <ArrowIcon />
-                    </a>
-                  ))}
-                </div>
-              </div>
+            <SectionHeading title="Social Links" />
+            <div className="space-y-2">
+              {data.socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white hover:border-white/20"
+                >
+                  <span>{link.label}</span>
+                  <ArrowIcon />
+                </a>
+              ))}
             </div>
           </Card>
         </div>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IconType } from "react-icons";
+import { HiOutlineMail } from "react-icons/hi";
 import {
   SiAmazonwebservices,
   SiAuth0,
@@ -53,6 +54,7 @@ type ButtonProps = {
   label: string;
   href: string;
   variant?: ButtonVariant;
+  icon?: React.ReactNode;
 };
 
 const Card = ({
@@ -107,13 +109,13 @@ const Pill = ({ label }: { label: string }) => {
   );
 };
 
-const Button = ({ label, href, variant = "solid" }: ButtonProps) => {
+const Button = ({ label, href, variant = "solid", icon }: ButtonProps) => {
   const base =
-    "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition duration-150 ease-out";
+    "inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-sm font-semibold transition duration-150 ease-out shadow-md shadow-black/15";
   const styles: Record<ButtonVariant, string> = {
     solid: "bg-white text-black hover:bg-white/90",
-    ghost: "bg-white/10 text-white hover:bg-white/15 border border-white/10",
-    outline: "border border-white/20 text-white hover:border-white/40"
+    ghost: "border border-white/15 bg-white/10 text-white hover:border-white/30 hover:bg-white/15",
+    outline: "border border-white/25 text-white hover:border-white/40"
   };
 
   const isAnchor = href.startsWith("http") || href.startsWith("mailto");
@@ -121,6 +123,7 @@ const Button = ({ label, href, variant = "solid" }: ButtonProps) => {
 
   return (
     <a href={href} className={`${base} ${styles[variant]}`} {...targetProps}>
+      {icon ? <span className="text-lg">{icon}</span> : null}
       {label}
     </a>
   );
@@ -137,46 +140,64 @@ export default function Home() {
     <div className="relative min-h-screen overflow-hidden text-white">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(156,140,255,0.14),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(255,120,160,0.18),transparent_26%),radial-gradient(circle_at_60%_70%,rgba(95,204,255,0.12),transparent_30%)]" />
 
-      <main className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-3 pb-14 pt-10 sm:px-6 lg:px-8">
-        <Card className="bg-gradient-to-r from-white/8 via-white/5 to-white/5">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center">
+      <main className="relative z-10 mx-auto flex max-w-5xl flex-col gap-5 px-4 pb-12 pt-8 sm:px-6 lg:px-8">
+        <Card className="relative overflow-hidden border-white/15 bg-gradient-to-r from-slate-900/80 via-slate-800/60 to-rose-900/40 p-5 sm:p-6 lg:p-7">
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute -left-12 -top-20 h-40 w-40 rounded-full bg-indigo-400/18 blur-3xl" />
+            <div className="absolute right-8 top-6 h-32 w-32 rounded-full bg-rose-400/16 blur-3xl" />
+            <div className="absolute -bottom-8 right-0 h-48 w-48 rounded-full bg-amber-300/10 blur-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5" />
+          </div>
+
+          <div className="relative grid grid-cols-1 items-center gap-5 lg:grid-cols-[auto_1fr_auto]">
             <div className="flex items-center gap-4">
-              <div className="relative h-28 w-28 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+              <div className="relative h-20 w-20 overflow-hidden rounded-3xl border border-white/15 bg-white/10 shadow-2xl ring-2 ring-white/10 sm:h-24 sm:w-24">
                 <Image
                   src={data.profile.image}
                   alt={data.profile.name}
                   fill
-                  sizes="112px"
+                  sizes="96px"
                   className="object-cover"
                   priority
                 />
               </div>
-              <div className="space-y-1">
+              <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <h1 className="text-3xl font-semibold">{data.profile.name}</h1>
+                  <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                    {data.profile.name}
+                  </h1>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-white/60">
+                <div className="flex items-center gap-2 text-sm text-white/70">
                   <LocationIcon />
                   <span>{data.profile.location}</span>
                 </div>
-                <p className="text-lg text-white/80">{data.profile.role}</p>
-                <div className="flex flex-wrap items-center gap-2 pt-1 text-xs text-amber-100">
-                  <span className="rounded-full border border-amber-200/30 bg-amber-400/15 px-2 py-1 font-semibold">
+                <p className="text-base text-white/90 sm:text-lg">{data.profile.role}</p>
+                <div className="flex flex-wrap items-center gap-2 pt-1 text-xs text-amber-50">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-amber-200/40 bg-amber-400/15 px-3 py-1 font-semibold shadow-inner shadow-amber-200/10">
+                    <span className="h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_0_2px_rgba(251,191,36,0.18)]" />
                     {data.profile.availability}
                   </span>
                 </div>
               </div>
             </div>
             <div className="flex flex-1 flex-col gap-3 lg:items-end">
-              <div className="flex flex-wrap gap-2 lg:justify-end">
-                {data.profile.ctas?.map((cta) => (
-                  <Button
-                    key={cta.label}
-                    label={cta.label}
-                    href={cta.href}
-                    variant={cta.variant as ButtonVariant}
-                  />
-                ))}
+              <div className="flex flex-wrap gap-3 lg:justify-end">
+                {data.profile.ctas?.map((cta) => {
+                  const icon =
+                    cta.label.toLowerCase().includes("email") || cta.href.startsWith("mailto")
+                      ? <HiOutlineMail className="h-4 w-4" />
+                      : undefined;
+
+                  return (
+                    <Button
+                      key={cta.label}
+                      label={cta.label}
+                      href={cta.href}
+                      variant={cta.variant as ButtonVariant}
+                      icon={icon}
+                    />
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -346,12 +367,12 @@ export default function Home() {
                   href={cert.link ?? "#"}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex h-full flex-col gap-1 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/20"
+                  className="flex h-full flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/20"
                 >
-                  <div className="text-base font-semibold text-white leading-snug">
+                  <div className="text-[11px] font-semibold leading-tight text-white sm:text-xs">
                     {cert.name}
                   </div>
-                  <div className="text-xs text-white/60">{cert.issuer}</div>
+                  <div className="pl-1 text-[9px] text-white/60 sm:text-[10px]">{cert.issuer}</div>
                 </a>
               ))}
             </div>
@@ -388,10 +409,15 @@ export default function Home() {
                 href={contact.href}
                 className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white hover:border-white/20"
               >
-                <div>
-                  <p className="font-semibold">{contact.label}</p>
-                  <p className="text-xs text-white/60">{contact.detail}</p>
-                </div>
+                <span className="flex items-center gap-3">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10">
+                    <ContactIcon label={contact.label} />
+                  </span>
+                  <span>
+                    <p className="font-semibold">{contact.label}</p>
+                    <p className="text-xs text-white/60">{contact.detail}</p>
+                  </span>
+                </span>
                 <ArrowIcon />
               </a>
             ))}
@@ -626,3 +652,14 @@ const LocationIcon = () => (
     <circle cx="12" cy="11" r="2.5" strokeWidth="1.8" />
   </svg>
 );
+
+const ContactIcon = ({ label }: { label: string }) => {
+  const normalized = label.toLowerCase();
+  const isEmail = normalized.includes("email");
+
+  if (isEmail) {
+    return <HiOutlineMail className="h-5 w-5 text-white" />;
+  }
+
+  return <DefaultLinkIcon className="h-5 w-5 text-white/80" />;
+};

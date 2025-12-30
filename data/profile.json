@@ -60,21 +60,6 @@
       "name": "Generative AI Leader",
       "issuer": "Google",
       "link": "https://grow.google/certificates/"
-    },
-    {
-      "name": "JavaScript Algorithms and Data Structures",
-      "issuer": "freeCodeCamp",
-      "link": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/"
-    },
-    {
-      "name": "PHP",
-      "issuer": "Sololearn",
-      "link": "https://www.sololearn.com/en/learn/courses/php-introduction"
-    },
-    {
-      "name": "Data Visualization",
-      "issuer": "freeCodeCamp",
-      "link": "https://www.freecodecamp.org/learn/data-visualization/"
     }
   ],
   "socialLinks": [

@@ -36,13 +36,13 @@ export default function TermsPage() {
           </Link>
           <div className="flex items-center gap-2">
             <Link
-              href="/privacy"
+              href="/projects/privacy"
               className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white"
             >
               Privacy
             </Link>
             <Link
-              href="/contact"
+              href="/projects/contact"
               className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white"
             >
               Contact
@@ -115,7 +115,7 @@ export default function TermsPage() {
               <p className="text-sm text-white/90">
                 For details, review our{" "}
                 <Link
-                  href="/privacy"
+                  href="/projects/privacy"
                   className="text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
                 >
                   Privacy Policy
@@ -211,7 +211,7 @@ export default function TermsPage() {
                 <p>
                   Contact Form:{" "}
                   <Link
-                    href="/contact"
+                    href="/projects/contact"
                     className="text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
                   >
                     Available on our website

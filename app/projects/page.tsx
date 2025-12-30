@@ -58,13 +58,13 @@ export default function ProjectsPage() {
               <h1 className="text-2xl font-semibold sm:text-3xl">All Projects</h1>
             </div>
             <div className="flex items-center gap-2 text-xs font-semibold text-white/90">
-              <Link href="/privacy" className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white">
+              <Link href="/projects/privacy" className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white">
                 Privacy
               </Link>
-              <Link href="/terms" className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white">
+              <Link href="/projects/terms" className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white">
                 Terms
               </Link>
-              <Link href="/contact" className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white">
+              <Link href="/projects/contact" className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white">
                 Contact
               </Link>
             </div>

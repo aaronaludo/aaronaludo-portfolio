@@ -36,13 +36,13 @@ export default function PrivacyPage() {
           </Link>
           <div className="flex items-center gap-2">
             <Link
-              href="/terms"
+              href="/projects/terms"
               className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white"
             >
               Terms
             </Link>
             <Link
-              href="/contact"
+              href="/projects/contact"
               className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white"
             >
               Contact
@@ -156,13 +156,13 @@ export default function PrivacyPage() {
               <div className="mt-2 space-y-1 text-sm text-white/90">
                 <p>Email: info@aaronaludo.com</p>
                 <p>
-                  Contact Form:{" "}
-                  <Link
-                    href="/contact"
-                    className="text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
-                  >
-                    Available on our website
-                  </Link>
+                Contact Form:{" "}
+                <Link
+                  href="/projects/contact"
+                  className="text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
+                >
+                  Available on our website
+                </Link>
                 </p>
               </div>
             </Section>

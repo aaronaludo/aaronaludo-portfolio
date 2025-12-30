@@ -36,13 +36,13 @@ export default function ContactPage() {
           </Link>
           <div className="flex items-center gap-2">
             <Link
-              href="/privacy"
+              href="/projects/privacy"
               className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white"
             >
               Privacy
             </Link>
             <Link
-              href="/terms"
+              href="/projects/terms"
               className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white"
             >
               Terms

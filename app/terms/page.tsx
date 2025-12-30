@@ -24,10 +24,10 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <div className="relative min-h-screen overflow-hidden text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(156,140,255,0.14),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(255,120,160,0.18),transparent_26%),radial-gradient(circle_at_60%_70%,rgba(95,204,255,0.12),transparent_30%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(255,255,255,0.1),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.08),transparent_26%),radial-gradient(circle_at_60%_70%,rgba(255,255,255,0.06),transparent_30%)]" />
 
       <main className="relative z-10 mx-auto flex max-w-4xl flex-col gap-6 px-3 pb-14 pt-10 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-center justify-between gap-3 text-sm font-semibold text-white/70">
+        <div className="flex flex-wrap items-center justify-between gap-3 text-sm font-semibold text-white/90">
           <Link
             href="/projects"
             className="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white"
@@ -52,12 +52,12 @@ export default function TermsPage() {
 
         <Card className="bg-gradient-to-r from-white/8 via-white/5 to-white/5">
           <div className="space-y-3">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/60">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/90">
               Terms
             </p>
             <h1 className="text-3xl font-semibold">Terms and Conditions</h1>
-            <p className="text-sm text-white/60">Effective Date: 25.12.2024</p>
-            <p className="text-sm text-white/70">
+            <p className="text-sm text-white/90">Effective Date: 25.12.2024</p>
+            <p className="text-sm text-white/90">
               I, Aaron Aludo (&quot;I,&quot; &quot;my,&quot; or &quot;we&quot; when referring to my team). By
               using my website and mobile apps, you agree to comply with these Terms and my Privacy Policy. Please read
               them carefully before accessing or using my services, including features that request device permissions
@@ -65,7 +65,7 @@ export default function TermsPage() {
             </p>
           </div>
 
-          <div className="mt-6 space-y-6 text-sm leading-relaxed text-white/80">
+          <div className="mt-6 space-y-6 text-sm leading-relaxed text-white/90">
             <Section
               title="Acceptance of Terms"
               body="By accessing our website or mobile apps, you agree to these Terms and our Privacy Policy. These apply to all users, including visitors to the website and users of the mobile apps."
@@ -100,10 +100,10 @@ export default function TermsPage() {
             />
 
             <Section title="Privacy and Data Collection">
-              <p className="text-sm text-white/75">
+              <p className="text-sm text-white/90">
                 We collect and process personal information in accordance with our Privacy Policy. Key points include:
               </p>
-              <ul className="ml-4 list-disc space-y-1 text-sm text-white/70">
+              <ul className="ml-4 list-disc space-y-1 text-sm text-white/90">
                 <li>Email Addresses: Collected during app onboarding.</li>
                 <li>Cookies and Analytics: Cookies on the website; Google Analytics on the website and mobile apps.</li>
                 <li>Advertisements: Mobile apps use Google AdMob; data may be shared with third-party providers.</li>
@@ -112,7 +112,7 @@ export default function TermsPage() {
                   camera). Access is limited to your action and can be revoked in device settings.
                 </li>
               </ul>
-              <p className="text-sm text-white/75">
+              <p className="text-sm text-white/90">
                 For details, review our{" "}
                 <Link
                   href="/privacy"
@@ -136,7 +136,7 @@ export default function TermsPage() {
             />
 
             <Section title="Account Management">
-              <ul className="ml-4 list-disc space-y-1 text-sm text-white/70">
+              <ul className="ml-4 list-disc space-y-1 text-sm text-white/90">
                 <li>Editing Your Information: Update your account information through the mobile apps.</li>
                 <li>
                   Deleting Your Account: Request deletion via the mobile apps or by submitting a request through the
@@ -148,7 +148,7 @@ export default function TermsPage() {
                   credential handling.
                 </li>
               </ul>
-              <p className="text-sm text-white/75">
+              <p className="text-sm text-white/90">
                 Some apps may not require account creation and do not collect personal data. For those apps, account
                 deletion or subscription cancellation requests are not applicable because no account or data is stored.
               </p>
@@ -203,10 +203,10 @@ export default function TermsPage() {
             />
 
             <Section title="Contact Us">
-              <p className="text-sm text-white/75">
+              <p className="text-sm text-white/90">
                 If you have any questions or concerns about these Terms, contact us:
               </p>
-              <div className="mt-2 space-y-1 text-sm text-white/75">
+              <div className="mt-2 space-y-1 text-sm text-white/90">
                 <p>Email: info@aaronaludo.com</p>
                 <p>
                   Contact Form:{" "}
@@ -239,9 +239,9 @@ const Section = ({
 }) => (
   <section className="space-y-2">
     <h2 className="text-base font-semibold text-white">{title}</h2>
-    {body ? <p className="text-sm text-white/75">{body}</p> : null}
+    {body ? <p className="text-sm text-white/90">{body}</p> : null}
     {bullets ? (
-      <ul className="ml-4 list-disc space-y-1 text-sm text-white/70">
+      <ul className="ml-4 list-disc space-y-1 text-sm text-white/90">
         {bullets.map((point) => (
           <li key={point}>{point}</li>
         ))}
@@ -254,7 +254,7 @@ const Section = ({
 const SubList = ({ heading, bullets }: { heading: string; bullets: string[] }) => (
   <div className="space-y-1">
     <p className="text-sm font-semibold text-white">{heading}</p>
-    <ul className="ml-4 list-disc space-y-1 text-sm text-white/70">
+    <ul className="ml-4 list-disc space-y-1 text-sm text-white/90">
       {bullets.map((point) => (
         <li key={point}>{point}</li>
       ))}

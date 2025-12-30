@@ -2,10 +2,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #05050a;
-  --foreground: #e9ecf2;
-  --muted: #8a8aa2;
-  --accent: #9c8cff;
+  --background: #0a0a0a;
+  --foreground: #f2f2f2;
+  --muted: #a0a0a0;
+  --accent: #d8d8d8;
 }
 
 @theme inline {
@@ -16,10 +16,10 @@
 }
 
 body {
-  background: radial-gradient(circle at 20% 20%, rgba(156, 140, 255, 0.1), transparent 30%),
-    radial-gradient(circle at 80% 0%, rgba(255, 111, 145, 0.08), transparent 25%),
-    radial-gradient(circle at 50% 70%, rgba(66, 211, 255, 0.08), transparent 30%),
-    #030308;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.06), transparent 25%),
+    radial-gradient(circle at 50% 70%, rgba(255, 255, 255, 0.05), transparent 30%),
+    #050505;
   color: var(--foreground);
   font-family: "Space Grotesk", "Manrope", system-ui, -apple-system, sans-serif;
   letter-spacing: 0.01em;
@@ -27,6 +27,6 @@ body {
 }
 
 ::selection {
-  background: rgba(156, 140, 255, 0.35);
-  color: #f5f6fb;
+  background: rgba(255, 255, 255, 0.2);
+  color: #0f0f0f;
 }

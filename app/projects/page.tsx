@@ -42,7 +42,7 @@ const formatLink = (link: string) => ({
 export default function ProjectsPage() {
   return (
     <div className="relative min-h-screen overflow-hidden text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(156,140,255,0.14),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(255,120,160,0.18),transparent_26%),radial-gradient(circle_at_60%_70%,rgba(95,204,255,0.12),transparent_30%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(255,255,255,0.1),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.08),transparent_26%),radial-gradient(circle_at_60%_70%,rgba(255,255,255,0.06),transparent_30%)]" />
 
       <main className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-3 pb-14 pt-10 sm:px-6 lg:px-8">
         <Card className="bg-gradient-to-r from-white/8 via-white/5 to-white/5">
@@ -50,14 +50,14 @@ export default function ProjectsPage() {
             <div className="flex items-center gap-3">
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition hover:text-white"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-white/90 transition hover:text-white"
               >
                 <ArrowLeftIcon />
                 Back to Home
               </Link>
               <h1 className="text-2xl font-semibold sm:text-3xl">All Projects</h1>
             </div>
-            <div className="flex items-center gap-2 text-xs font-semibold text-white/70">
+            <div className="flex items-center gap-2 text-xs font-semibold text-white/90">
               <Link href="/privacy" className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white">
                 Privacy
               </Link>
@@ -83,7 +83,7 @@ export default function ProjectsPage() {
                     <p className="text-lg font-semibold text-white">
                       {project.name}
                     </p>
-                    <p className="text-sm text-white/70">
+                    <p className="text-sm text-white/90">
                       {project.description}
                     </p>
                   </div>
@@ -93,12 +93,12 @@ export default function ProjectsPage() {
                         href={details.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 rounded-full border border-emerald-200/30 bg-emerald-300/10 px-4 py-2 text-sm font-semibold text-emerald-100"
-                      >
-                        {details.label}
-                        <ArrowIcon />
-                      </a>
-                    ) : null}
+                      className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
+                    >
+                      {details.label}
+                      <ArrowIcon />
+                    </a>
+                  ) : null}
                     {project.googlePlay ? (
                       <a
                         href={project.googlePlay}

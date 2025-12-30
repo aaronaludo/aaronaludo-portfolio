@@ -24,10 +24,10 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <div className="relative min-h-screen overflow-hidden text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(156,140,255,0.14),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(255,120,160,0.18),transparent_26%),radial-gradient(circle_at_60%_70%,rgba(95,204,255,0.12),transparent_30%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(255,255,255,0.1),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.08),transparent_26%),radial-gradient(circle_at_60%_70%,rgba(255,255,255,0.06),transparent_30%)]" />
 
       <main className="relative z-10 mx-auto flex max-w-4xl flex-col gap-6 px-3 pb-14 pt-10 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-center justify-between gap-3 text-sm font-semibold text-white/70">
+        <div className="flex flex-wrap items-center justify-between gap-3 text-sm font-semibold text-white/90">
           <Link
             href="/projects"
             className="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white"
@@ -52,12 +52,12 @@ export default function PrivacyPage() {
 
         <Card className="bg-gradient-to-r from-white/8 via-white/5 to-white/5">
           <div className="space-y-3">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/60">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/90">
               Privacy
             </p>
             <h1 className="text-3xl font-semibold">Privacy Policy</h1>
-            <p className="text-sm text-white/60">Effective Date: 25.12.2024</p>
-            <p className="text-sm text-white/70">
+            <p className="text-sm text-white/90">Effective Date: 25.12.2024</p>
+            <p className="text-sm text-white/90">
               I, Aaron Aludo (&quot;I,&quot; &quot;my,&quot; or &quot;we&quot; when referring to my team), prioritize your
               privacy and am committed to safeguarding your personal information. This policy explains how I collect,
               use, and share your information when you interact with my mobile apps and website, including how camera
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
             </p>
           </div>
 
-          <div className="mt-6 space-y-6 text-sm leading-relaxed text-white/80">
+          <div className="mt-6 space-y-6 text-sm leading-relaxed text-white/90">
             <Section
               title="Information We Collect"
               items={[
@@ -153,7 +153,7 @@ export default function PrivacyPage() {
               title="Contact Us"
               body="If you have questions or concerns about this policy, reach out any time."
             >
-              <div className="mt-2 space-y-1 text-sm text-white/75">
+              <div className="mt-2 space-y-1 text-sm text-white/90">
                 <p>Email: info@aaronaludo.com</p>
                 <p>
                   Contact Form:{" "}
@@ -188,19 +188,19 @@ const Section = ({
 }) => (
   <section className="space-y-2">
     <h2 className="text-base font-semibold text-white">{title}</h2>
-    {body ? <p className="text-sm text-white/75">{body}</p> : null}
+    {body ? <p className="text-sm text-white/90">{body}</p> : null}
     {items ? (
       <div className="space-y-3">
         {items.map((item) => (
           <div key={item.heading} className="space-y-1">
             <p className="text-sm font-semibold text-white">{item.heading}</p>
-            <p className="text-sm text-white/70">{item.body}</p>
+            <p className="text-sm text-white/90">{item.body}</p>
           </div>
         ))}
       </div>
     ) : null}
     {bullets ? (
-      <ul className="ml-4 list-disc space-y-1 text-sm text-white/70">
+      <ul className="ml-4 list-disc space-y-1 text-sm text-white/90">
         {bullets.map((point) => (
           <li key={point}>{point}</li>
         ))}

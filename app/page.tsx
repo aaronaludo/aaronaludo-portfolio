@@ -85,7 +85,7 @@ const SectionHeading = ({
     {href && actionLabel ? (
       <Link
         href={href}
-        className="text-xs font-semibold text-white/70 hover:text-white"
+        className="text-xs font-semibold text-white/90 hover:text-white"
       >
         {actionLabel}
       </Link>
@@ -98,7 +98,7 @@ const Pill = ({ label }: { label: string }) => {
   const Icon = techStyle.icon;
 
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
+    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/90">
       {Icon ? (
         <Icon className="h-4 w-4" style={{ color: techStyle.color }} />
       ) : (
@@ -138,14 +138,14 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen overflow-hidden text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(156,140,255,0.14),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(255,120,160,0.18),transparent_26%),radial-gradient(circle_at_60%_70%,rgba(95,204,255,0.12),transparent_30%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(255,255,255,0.1),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.08),transparent_26%),radial-gradient(circle_at_60%_70%,rgba(255,255,255,0.06),transparent_30%)]" />
 
       <main className="relative z-10 mx-auto flex max-w-5xl flex-col gap-5 px-4 pb-12 pt-8 sm:px-6 lg:px-8">
-        <Card className="relative overflow-hidden border-white/15 bg-gradient-to-r from-slate-900/80 via-slate-800/60 to-rose-900/40 p-5 sm:p-6 lg:p-7">
+        <Card className="relative overflow-hidden border-white/15 bg-gradient-to-r from-neutral-950/80 via-neutral-900/60 to-neutral-800/40 p-5 sm:p-6 lg:p-7">
           <div className="pointer-events-none absolute inset-0">
-            <div className="absolute -left-12 -top-20 h-40 w-40 rounded-full bg-indigo-400/18 blur-3xl" />
-            <div className="absolute right-8 top-6 h-32 w-32 rounded-full bg-rose-400/16 blur-3xl" />
-            <div className="absolute -bottom-8 right-0 h-48 w-48 rounded-full bg-amber-300/10 blur-3xl" />
+            <div className="absolute -left-12 -top-20 h-40 w-40 rounded-full bg-white/12 blur-3xl" />
+            <div className="absolute right-8 top-6 h-32 w-32 rounded-full bg-white/10 blur-3xl" />
+            <div className="absolute -bottom-8 right-0 h-48 w-48 rounded-full bg-white/8 blur-3xl" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5" />
           </div>
 
@@ -167,14 +167,14 @@ export default function Home() {
                     {data.profile.name}
                   </h1>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-white/70">
+                <div className="flex items-center gap-2 text-sm text-white/90">
                   <LocationIcon />
                   <span>{data.profile.location}</span>
                 </div>
                 <p className="text-base text-white/90 sm:text-lg">{data.profile.role}</p>
-                <div className="flex flex-wrap items-center gap-2 pt-1 text-xs text-amber-50">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-amber-200/40 bg-amber-400/15 px-3 py-1 font-semibold shadow-inner shadow-amber-200/10">
-                    <span className="h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_0_2px_rgba(251,191,36,0.18)]" />
+                <div className="flex flex-wrap items-center gap-2 pt-1 text-xs text-white/90">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 font-semibold text-white shadow-inner shadow-white/10">
+                    <span className="h-2 w-2 rounded-full bg-white/70 shadow-[0_0_0_2px_rgba(255,255,255,0.12)]" />
                     {data.profile.availability}
                   </span>
                 </div>
@@ -206,7 +206,7 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.6fr_1fr]">
           <Card>
             <SectionHeading title={data.about.title} />
-            <div className="space-y-3 text-sm text-white/70">
+            <div className="space-y-3 text-sm text-white/90">
               {data.about.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -222,9 +222,9 @@ export default function Home() {
                   <span className="absolute left-0 top-2 h-3 w-3 rounded-full border border-white/30 bg-white/20" />
                   <div className="flex-1">
                     <p className="text-sm font-semibold text-white">{item.role}</p>
-                    <p className="text-xs text-white/60">{item.company}</p>
+                    <p className="text-xs text-white/90">{item.company}</p>
                   </div>
-                  <span className="text-xs font-semibold text-white/50">{item.year}</span>
+                  <span className="text-xs font-semibold text-white/90">{item.year}</span>
                 </div>
               ))}
             </div>
@@ -235,7 +235,7 @@ export default function Home() {
           <SectionHeading title="Tech Stack" />
           <div className="space-y-4">
             <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/90">
                 Frontend
               </p>
               <div className="flex flex-wrap gap-2">
@@ -246,7 +246,7 @@ export default function Home() {
             </div>
             <Divider />
             <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/90">
                 Backend
               </p>
               <div className="flex flex-wrap gap-2">
@@ -257,7 +257,7 @@ export default function Home() {
             </div>
             <Divider />
             <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/90">
                 DevOps &amp; Cloud
               </p>
               <div className="flex flex-wrap gap-2">
@@ -268,7 +268,7 @@ export default function Home() {
             </div>
             <Divider />
             <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/90">
                 AI &amp; Machine Learning
               </p>
               <div className="flex flex-wrap gap-2">
@@ -279,7 +279,7 @@ export default function Home() {
             </div>
             <Divider />
             <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/90">
                 CMS &amp; No-code
               </p>
               <div className="flex flex-wrap gap-2">
@@ -290,7 +290,7 @@ export default function Home() {
             </div>
             <Divider />
             <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/90">
                 Developer Tools
               </p>
               <div className="flex flex-wrap gap-2">
@@ -312,7 +312,7 @@ export default function Home() {
               >
                 <div className="space-y-2">
                   <p className="text-lg font-semibold text-white">{project.name}</p>
-                  <p className="text-sm text-white/70">{project.description}</p>
+                  <p className="text-sm text-white/90">{project.description}</p>
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.link ? (
@@ -320,9 +320,9 @@ export default function Home() {
                       href={project.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-emerald-200/30 bg-emerald-300/10 px-4 py-2 text-sm font-semibold text-emerald-100"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
                     >
-                      <WebsiteIcon className="h-4 w-4 text-emerald-100" />
+                      <WebsiteIcon className="h-4 w-4 text-white" />
                       {project.link.replace("https://", "").replace("http://", "")}
                       <ArrowIcon />
                     </a>
@@ -334,7 +334,7 @@ export default function Home() {
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
                     >
-                      <GooglePlayIcon className="h-4 w-4 text-emerald-200" />
+                      <GooglePlayIcon className="h-4 w-4 text-white" />
                       Google Play
                       <ArrowIcon />
                     </a>
@@ -346,7 +346,7 @@ export default function Home() {
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
                     >
-                      <AppStoreIcon className="h-4 w-4 text-sky-200" />
+                      <AppStoreIcon className="h-4 w-4 text-white" />
                       App Store
                       <ArrowIcon />
                     </a>
@@ -366,7 +366,7 @@ export default function Home() {
                 href={cert.link ?? "#"}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-white/80 transition duration-150 hover:-translate-y-[1px] hover:border-white/25 hover:bg-white/10"
+                className="group flex items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-white/90 transition duration-150 hover:-translate-y-[1px] hover:border-white/25 hover:bg-white/10"
               >
                 <div className="flex items-center gap-3">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/10 text-[11px] font-semibold text-white">
@@ -376,10 +376,10 @@ export default function Home() {
                     <div className="text-sm font-semibold text-white sm:text-base">
                       {cert.name}
                     </div>
-                    <div className="text-xs text-white/60">{cert.issuer}</div>
+                    <div className="text-xs text-white/90">{cert.issuer}</div>
                   </div>
                 </div>
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-white/80 transition group-hover:border-white/25 group-hover:text-white">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-white/90 transition group-hover:border-white/25 group-hover:text-white">
                   View <ArrowIcon />
                 </span>
               </a>
@@ -423,7 +423,7 @@ export default function Home() {
                   </span>
                   <span>
                     <p className="font-semibold">{contact.label}</p>
-                    <p className="text-xs text-white/60">{contact.detail}</p>
+                    <p className="text-xs text-white/90">{contact.detail}</p>
                   </span>
                 </span>
                 <ArrowIcon />
@@ -441,7 +441,7 @@ const SocialIcon = ({ label }: { label: string }) => {
   const normalized = label.toLowerCase();
 
   if (normalized.includes("linkedin")) {
-    return <LinkedInIcon className="h-5 w-5 text-sky-200" />;
+    return <LinkedInIcon className="h-5 w-5 text-white" />;
   }
 
   if (normalized.includes("github")) {
@@ -449,17 +449,17 @@ const SocialIcon = ({ label }: { label: string }) => {
   }
 
   if (normalized.includes("instagram")) {
-    return <InstagramIcon className="h-5 w-5 text-pink-200" />;
+    return <InstagramIcon className="h-5 w-5 text-white" />;
   }
 
-  return <DefaultLinkIcon className="h-5 w-5 text-white/70" />;
+  return <DefaultLinkIcon className="h-5 w-5 text-white/90" />;
 };
 
 const getIssuerIcon = (issuer?: string) => {
   const normalized = issuer?.toLowerCase() ?? "";
 
   if (normalized.includes("google")) {
-    return <SiGoogle className="h-5 w-5 text-emerald-200" />;
+    return <SiGoogle className="h-5 w-5 text-white" />;
   }
 
   return null;
@@ -553,52 +553,54 @@ const WebsiteIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const techIconMap: Record<string, { icon?: IconType; color?: string }> = {
-  javascript: { icon: SiJavascript, color: "#fde68a" },
-  typescript: { icon: SiTypescript, color: "#bfdbfe" },
-  react: { icon: SiReact, color: "#bae6fd" },
-  "next.js": { icon: SiNextdotjs, color: "#e5e7eb" },
-  bootstrap: { icon: SiBootstrap, color: "#ddd6fe" },
-  "tailwind css": { icon: SiTailwindcss, color: "#a5f3fc" },
-  scss: { icon: SiSass, color: "#fce7f3" },
-  vite: { icon: SiVite, color: "#fef08a" },
-  webpack: { icon: SiWebpack, color: "#c7d2fe" },
-  eslint: { icon: SiEslint, color: "#ddd6fe" },
-  prettier: { icon: SiPrettier, color: "#fcd34d" },
-  python: { icon: SiPython, color: "#fef3c7" },
-  php: { icon: SiPhp, color: "#ddd6fe" },
-  laravel: { icon: SiLaravel, color: "#fecdd3" },
-  fastapi: { icon: SiFastapi, color: "#99f6e4" },
-  postgresql: { icon: SiPostgresql, color: "#bfdbfe" },
-  mysql: { icon: SiMysql, color: "#fed7aa" },
-  mariadb: { icon: SiMariadb, color: "#a5f3fc" },
-  oauth: { icon: SiAuth0, color: "#fdba74" },
-  jwt: { icon: SiJsonwebtokens, color: "#bae6fd" },
-  rest: { icon: TbApi, color: "#e5e7eb" },
-  aws: { icon: SiAmazonwebservices, color: "#fed7aa" },
-  docker: { icon: SiDocker, color: "#bae6fd" },
-  "github actions": { icon: SiGithubactions, color: "#c7d2fe" },
-  tensorflow: { icon: SiTensorflow, color: "#fcd34d" },
-  pytorch: { icon: SiPytorch, color: "#fdba74" },
-  langchain: { icon: SiLangchain, color: "#bbf7d0" },
-  ollama: { icon: SiOllama, color: "#d1d5db" },
-  openai: { icon: SiOpenai, color: "#a7f3d0" },
-  gemini: { icon: SiGoogle, color: "#c4b5fd" },
-  wordpress: { icon: SiWordpress, color: "#bfdbfe" },
-  n8n: { icon: TbTopologyStar3, color: "#fecdd3" },
-  make: { icon: SiMake, color: "#ddd6fe" },
-  zapier: { icon: SiZapier, color: "#fdba74" },
-  webflow: { icon: SiWebflow, color: "#a5b4fc" },
-  git: { icon: SiGit, color: "#fecdd3" },
-  github: { icon: SiGithub, color: "#e5e7eb" },
-  firebase: { icon: SiFirebase, color: "#fde68a" },
-  jira: { icon: SiJira, color: "#93c5fd" },
-  gitlab: { icon: SiGitlab, color: "#fdba74" },
-  "vs code": { icon: TbBrandVscode, color: "#bae6fd" },
-  cursor: { icon: PiCursorFill, color: "#ddd6fe" },
-  pycharm: { icon: SiPycharm, color: "#a5f3fc" },
-  discord: { icon: SiDiscord, color: "#c4b5fd" },
-  teams: { icon: TbBrandTeams, color: "#c7d2fe" }
+const techIconColor = "#d8d8d8";
+
+const techIconMap: Record<string, { icon?: IconType }> = {
+  javascript: { icon: SiJavascript },
+  typescript: { icon: SiTypescript },
+  react: { icon: SiReact },
+  "next.js": { icon: SiNextdotjs },
+  bootstrap: { icon: SiBootstrap },
+  "tailwind css": { icon: SiTailwindcss },
+  scss: { icon: SiSass },
+  vite: { icon: SiVite },
+  webpack: { icon: SiWebpack },
+  eslint: { icon: SiEslint },
+  prettier: { icon: SiPrettier },
+  python: { icon: SiPython },
+  php: { icon: SiPhp },
+  laravel: { icon: SiLaravel },
+  fastapi: { icon: SiFastapi },
+  postgresql: { icon: SiPostgresql },
+  mysql: { icon: SiMysql },
+  mariadb: { icon: SiMariadb },
+  oauth: { icon: SiAuth0 },
+  jwt: { icon: SiJsonwebtokens },
+  rest: { icon: TbApi },
+  aws: { icon: SiAmazonwebservices },
+  docker: { icon: SiDocker },
+  "github actions": { icon: SiGithubactions },
+  tensorflow: { icon: SiTensorflow },
+  pytorch: { icon: SiPytorch },
+  langchain: { icon: SiLangchain },
+  ollama: { icon: SiOllama },
+  openai: { icon: SiOpenai },
+  gemini: { icon: SiGoogle },
+  wordpress: { icon: SiWordpress },
+  n8n: { icon: TbTopologyStar3 },
+  make: { icon: SiMake },
+  zapier: { icon: SiZapier },
+  webflow: { icon: SiWebflow },
+  git: { icon: SiGit },
+  github: { icon: SiGithub },
+  firebase: { icon: SiFirebase },
+  jira: { icon: SiJira },
+  gitlab: { icon: SiGitlab },
+  "vs code": { icon: TbBrandVscode },
+  cursor: { icon: PiCursorFill },
+  pycharm: { icon: SiPycharm },
+  discord: { icon: SiDiscord },
+  teams: { icon: TbBrandTeams }
 };
 
 const getTechStyle = (
@@ -621,7 +623,7 @@ const getTechStyle = (
 
   return {
     icon: match?.icon,
-    color: match?.color ?? "#e5e7eb",
+    color: techIconColor,
     initials: initials || label.slice(0, 2).toUpperCase()
   };
 };
@@ -659,7 +661,7 @@ const LocationIcon = () => (
     aria-hidden
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    className="h-4 w-4 fill-none stroke-current text-white/60"
+    className="h-4 w-4 fill-none stroke-current text-white/90"
   >
     <path
       d="M12 21s7-4.5 7-10a7 7 0 1 0-14 0c0 5.5 7 10 7 10Z"
@@ -679,5 +681,5 @@ const ContactIcon = ({ label }: { label: string }) => {
     return <HiOutlineMail className="h-5 w-5 text-white" />;
   }
 
-  return <DefaultLinkIcon className="h-5 w-5 text-white/80" />;
+  return <DefaultLinkIcon className="h-5 w-5 text-white/90" />;
 };

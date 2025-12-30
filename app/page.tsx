@@ -158,101 +158,100 @@ export default function Home() {
           </Card>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.6fr_1fr]">
-          <Card>
-            <SectionHeading title="Tech Stack" actionLabel="View all" href="#" />
-            <div className="space-y-4">
-              <div>
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                  Frontend
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {data.techStack.frontend.map((item) => (
-                    <Pill key={item} label={item} />
-                  ))}
-                </div>
-              </div>
-              <Divider />
-              <div>
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                  Backend
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {data.techStack.backend.map((item) => (
-                    <Pill key={item} label={item} />
-                  ))}
-                </div>
-              </div>
-              <Divider />
-              <div>
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                  DevOps &amp; Cloud
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {data.techStack.devops.map((item) => (
-                    <Pill key={item} label={item} />
-                  ))}
-                </div>
+        <Card>
+          <SectionHeading title="Tech Stack" />
+          <div className="space-y-4">
+            <div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+                Frontend
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {data.techStack.frontend.map((item) => (
+                  <Pill key={item} label={item} />
+                ))}
               </div>
             </div>
-          </Card>
-
-          <Card>
-            <SectionHeading title="Beyond Coding" />
-            <div className="space-y-3 text-sm text-white/70">
-              {data.beyondCoding.map((item) => (
-                <p key={item}>{item}</p>
-              ))}
+            <Divider />
+            <div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+                Backend
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {data.techStack.backend.map((item) => (
+                  <Pill key={item} label={item} />
+                ))}
+              </div>
             </div>
-          </Card>
-        </div>
+            <Divider />
+            <div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+                DevOps &amp; Cloud
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {data.techStack.devops.map((item) => (
+                  <Pill key={item} label={item} />
+                ))}
+              </div>
+            </div>
+            <Divider />
+            <div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+                AI &amp; Machine Learning
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {data.techStack["ai-ml"]?.map((item) => (
+                  <Pill key={item} label={item} />
+                ))}
+              </div>
+            </div>
+            <Divider />
+            <div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+                CMS &amp; No-code
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {data.techStack["cms-nocode"]?.map((item) => (
+                  <Pill key={item} label={item} />
+                ))}
+              </div>
+            </div>
+            <Divider />
+            <div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+                Developer Tools
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {data.techStack["developer-tools"]?.map((item) => (
+                  <Pill key={item} label={item} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </Card>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <Card>
-            <SectionHeading title="Recent Projects" actionLabel="View all" href="#" />
-            <div className="grid gap-3 sm:grid-cols-2">
-              {data.projects.map((project) => (
-                <div
-                  key={project.name}
-                  className="rounded-xl border border-white/10 bg-white/5 p-4 hover:border-white/20"
+        <Card>
+          <SectionHeading title="Recent Projects" actionLabel="View all" href="#" />
+          <div className="grid gap-3 sm:grid-cols-2">
+            {data.projects.map((project) => (
+              <div
+                key={project.name}
+                className="rounded-xl border border-white/10 bg-white/5 p-4 hover:border-white/20"
+              >
+                <p className="text-sm font-semibold text-white">{project.name}</p>
+                <p className="text-xs text-white/60">{project.description}</p>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-emerald-100"
                 >
-                  <p className="text-sm font-semibold text-white">{project.name}</p>
-                  <p className="text-xs text-white/60">{project.description}</p>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-emerald-100"
-                  >
-                    {project.link.replace("https://", "")}
-                    <ArrowIcon />
-                  </a>
-                </div>
-              ))}
-            </div>
-          </Card>
-
-          <Card>
-            <SectionHeading title="Recommendations" />
-            {data.recommendations.map((rec) => (
-              <div key={rec.author} className="space-y-3">
-                <p className="text-sm leading-relaxed text-white/70">
-                  &ldquo;{rec.quote}&rdquo;
-                </p>
-                <div className="text-sm font-semibold text-white">{rec.author}</div>
-                <div className="text-xs text-white/60">{rec.role}</div>
-                <div className="flex gap-1 pt-2">
-                  {Array.from({ length: 6 }).map((_, index) => (
-                    <span
-                      key={index}
-                      className={`h-1.5 w-6 rounded-full ${index === 0 ? "bg-white" : "bg-white/15"}`}
-                    />
-                  ))}
-                </div>
+                  {project.link.replace("https://", "")}
+                  <ArrowIcon />
+                </a>
               </div>
             ))}
-          </Card>
-        </div>
+          </div>
+        </Card>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_1fr]">
           <Card>
@@ -311,67 +310,25 @@ export default function Home() {
           </Card>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_1fr]">
-          <Card>
-            <SectionHeading title="Speaking" />
-            {data.speaking.map((item) => (
-              <div key={item.title} className="flex flex-col gap-3 rounded-xl border border-white/10 bg-white/5 p-4">
-                <div>
-                  <p className="text-sm font-semibold text-white">{item.title}</p>
-                  <p className="text-sm text-white/70">{item.description}</p>
-                </div>
-                <Button
-                  label={item.cta.label}
-                  href={item.cta.href}
-                  variant="ghost"
-                />
-              </div>
-            ))}
-          </Card>
-
-          <Card>
-            <SectionHeading title="Get in touch" />
-            <div className="grid gap-2">
-              {data.contacts.map((contact) => (
-                <a
-                  key={contact.label}
-                  href={contact.href}
-                  className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white hover:border-white/20"
-                >
-                  <div>
-                    <p className="font-semibold">{contact.label}</p>
-                    <p className="text-xs text-white/60">{contact.detail}</p>
-                  </div>
-                  <ArrowIcon />
-                </a>
-              ))}
-            </div>
-          </Card>
-        </div>
-
         <Card>
-          <SectionHeading title="Gallery" />
-          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
-            {data.gallery.map((photo) => (
-              <div
-                key={photo.src}
-                className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-white/10 bg-white/5"
+          <SectionHeading title="Get in touch" />
+          <div className="grid gap-2">
+            {data.contacts.map((contact) => (
+              <a
+                key={contact.label}
+                href={contact.href}
+                className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white hover:border-white/20"
               >
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 200px"
-                  className="object-cover transition duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent opacity-0 transition group-hover:opacity-100" />
-                <div className="absolute inset-0 flex items-end p-3 opacity-0 transition group-hover:opacity-100">
-                  <p className="text-xs text-white/80">{photo.alt}</p>
+                <div>
+                  <p className="font-semibold">{contact.label}</p>
+                  <p className="text-xs text-white/60">{contact.detail}</p>
                 </div>
-              </div>
+                <ArrowIcon />
+              </a>
             ))}
           </div>
         </Card>
+
       </main>
     </div>
   );

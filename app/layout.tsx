@@ -13,9 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bryl Lim | Software Engineer & Content Creator",
+  title: "Aaron Aluddo | Full Stack Engineer",
   description:
-    "Software engineer, content creator, and AI-focused builder based in Metro Manila, Philippines.",
+    "Full Stack Engineer and AI-focused builder based in Taytay Rizal, Philippines.",
+  icons: {
+    icon: "/picture.png"
+  }
 };
 
 export default function RootLayout({

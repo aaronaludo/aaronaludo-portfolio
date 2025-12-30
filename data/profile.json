@@ -1,26 +1,19 @@
 {
   "profile": {
-    "name": "Bryl Lim",
-    "location": "Metro Manila, Philippines",
-    "role": "Software Engineer | Content Creator",
-    "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=520&q=80",
-    "availability": "Currently collaborating on AI-driven products and community builds",
-    "highlight": {
-      "label": "DICT OpenGov Hackathon 2025 Champion",
-      "href": "#"
-    },
+    "name": "Aaron Aludo",
+    "location": "Taytay Rizal, Philippines",
+    "role": "Full Stack Engineer",
+    "image": "/picture.png",
+    "availability": "Actively creating AI-powered tools that help individuals work smarter.",
     "ctas": [
-      { "label": "Schedule a Call", "href": "https://cal.com", "variant": "solid" },
-      { "label": "Send Email", "href": "mailto:hello@bryllim.com", "variant": "ghost" },
-      { "label": "Join Community", "href": "#community", "variant": "outline" }
+      { "label": "Send Email", "href": "mailto:aaronaludo@gmail.com", "variant": "ghost" }
     ]
   },
   "about": {
     "title": "About",
     "paragraphs": [
-      "I'm a full-stack software engineer specializing in developing solutions with JavaScript, Python, and PHP. I work on projects including building modern web applications, mobile apps, search engine optimization, digital marketing, and making code tutorials.",
-      "I've helped startups and MSMEs grow and streamline their processes through software solutions. I've also built a community of over 200,000 developers sharing knowledge and mentorship.",
-      "Lately, I've been diving deeper into the world of artificial intelligence, focusing on integrating AI tools and techniques into modern applications. My work now includes developing AI-powered solutions, creating intelligent applications, and leveraging generative AI to optimize development workflows and deliver cutting-edge technology."
+      "I’m a full-stack software engineer with experience building end-to-end applications using JavaScript, Python, and PHP. I focus on creating reliable, scalable solutions and enjoy working across both frontend and backend systems.",
+      "Recently, I have been building AI applications focused on creating simple, practical, and useful solutions using artificial intelligence. I work on these projects to better understand how AI can be applied to real-world problems, while continuously improving my technical skills and adapting to new technologies. Through hands-on development, I am learning how to design, build, and improve AI-driven systems that can provide real value to users."
     ]
   },
   "spotlight": {
@@ -29,19 +22,19 @@
     "sponsor": "Presented by StellarPH"
   },
   "experience": [
-    { "role": "Principal AI Engineer", "company": "Standard Chartered", "year": "2025" },
-    { "role": "AI Ops Engineer", "company": "Centre of Excellence for GenAI, Cambridge", "year": "2025" },
-    { "role": "Senior Full-Stack Developer", "company": "Core Technology, Cambridge", "year": "2024" },
-    { "role": "Software Engineering Lead", "company": "PocketDevs", "year": "2022" },
-    { "role": "Lead Application Developer", "company": "Bluewind Asia", "year": "2021" },
-    { "role": "Software Engineer", "company": "GCM", "year": "2020" },
-    { "role": "BS Information Technology", "company": "University of San Carlos", "year": "2019" },
-    { "role": "Hello World! Wrote my first line of code", "company": "", "year": "2015" }
+    { "role": "Backend Engineer", "company": "24x7 Direct", "year": "2025" },
+    { "role": "Backend Developer", "company": "Boss Deal", "year": "2024" },
+    { "role": "Web Developer", "company": "Interlink Manpower Development & General Services, INC", "year": "2023" },
+    { "role": "Associate Computer Technology", "company": "Graduated at ICCT Colleges", "year": "2023" },
+    { "role": "Programmer", "company": "Freelance", "year": "2022" }
   ],
   "techStack": {
-    "frontend": ["JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Tailwind CSS"],
-    "backend": ["Node.js", "Python", "PHP", "Laravel", "PostgreSQL", "MongoDB"],
-    "devops": ["AWS", "Docker", "Kubernetes", "GitHub Actions"]
+    "frontend": ["JavaScript", "TypeScript", "React", "Next.js", "Bootstrap", "Tailwind CSS", "SCSS", "Vite", "Webpack", "ESLint", "Prettier"],
+    "backend": ["Python", "PHP", "Laravel", "FastAPI", "PostgreSQL", "MySQL", "MariaDB", "OAuth", "JWT", "REST"],
+    "devops": ["AWS", "Docker", "GitHub Actions"],
+    "ai-ml": ["TensorFlow", "PyTorch", "LangChain", "Ollama","OpenAI", "Gemini"],
+    "cms-nocode": ["WordPress", "n8n", "Make", "Zapier", "Webflow"],
+    "developer-tools": ["Git", "Github", "Firebase", "Jira", "Gitlab", "VS Code", "Cursor", "PyCharm", "Discord", "Teams"]
   },
   "beyondCoding": [
     "When not writing code, I focus on learning about emerging technologies, minimalism, and startup culture.",

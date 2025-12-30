@@ -1,5 +1,50 @@
 import Image from "next/image";
 import Link from "next/link";
+import { IconType } from "react-icons";
+import {
+  SiAmazonwebservices,
+  SiAuth0,
+  SiBootstrap,
+  SiDiscord,
+  SiDocker,
+  SiEslint,
+  SiFastapi,
+  SiFirebase,
+  SiGit,
+  SiGithub,
+  SiGithubactions,
+  SiGitlab,
+  SiGoogle,
+  SiJavascript,
+  SiJira,
+  SiJsonwebtokens,
+  SiLangchain,
+  SiLaravel,
+  SiMake,
+  SiMariadb,
+  SiMysql,
+  SiNextdotjs,
+  SiOllama,
+  SiOpenai,
+  SiPhp,
+  SiPostgresql,
+  SiPrettier,
+  SiPycharm,
+  SiPytorch,
+  SiPython,
+  SiReact,
+  SiSass,
+  SiTailwindcss,
+  SiTensorflow,
+  SiTypescript,
+  SiVite,
+  SiWebflow,
+  SiWebpack,
+  SiWordpress,
+  SiZapier
+} from "react-icons/si";
+import { PiCursorFill } from "react-icons/pi";
+import { TbApi, TbBrandTeams, TbBrandVscode, TbTopologyStar3 } from "react-icons/tb";
 import profileData from "../data/profile.json";
 
 type ButtonVariant = "solid" | "ghost" | "outline";
@@ -46,11 +91,21 @@ const SectionHeading = ({
   </div>
 );
 
-const Pill = ({ label }: { label: string }) => (
-  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
-    {label}
-  </span>
-);
+const Pill = ({ label }: { label: string }) => {
+  const techStyle = getTechStyle(label);
+  const Icon = techStyle.icon;
+
+  return (
+    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
+      {Icon ? (
+        <Icon className="h-4 w-4" style={{ color: techStyle.color }} />
+      ) : (
+        <TechInitial initials={techStyle.initials} color={techStyle.color} />
+      )}
+      <span>{label}</span>
+    </span>
+  );
+};
 
 const Button = ({ label, href, variant = "solid" }: ButtonProps) => {
   const base =
@@ -452,6 +507,91 @@ const WebsiteIcon = ({ className }: { className?: string }) => (
   >
     <path d="M12 3.25A8.75 8.75 0 1 0 20.75 12 8.76 8.76 0 0 0 12 3.25Zm0 0v17.5m-7.25-8.75h14.5m-10 0a12.4 12.4 0 0 0 2.5 7.5m0-15a12.4 12.4 0 0 0-2.5 7.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
+);
+
+const techIconMap: Record<string, { icon?: IconType; color?: string }> = {
+  javascript: { icon: SiJavascript, color: "#fde68a" },
+  typescript: { icon: SiTypescript, color: "#bfdbfe" },
+  react: { icon: SiReact, color: "#bae6fd" },
+  "next.js": { icon: SiNextdotjs, color: "#e5e7eb" },
+  bootstrap: { icon: SiBootstrap, color: "#ddd6fe" },
+  "tailwind css": { icon: SiTailwindcss, color: "#a5f3fc" },
+  scss: { icon: SiSass, color: "#fce7f3" },
+  vite: { icon: SiVite, color: "#fef08a" },
+  webpack: { icon: SiWebpack, color: "#c7d2fe" },
+  eslint: { icon: SiEslint, color: "#ddd6fe" },
+  prettier: { icon: SiPrettier, color: "#fcd34d" },
+  python: { icon: SiPython, color: "#fef3c7" },
+  php: { icon: SiPhp, color: "#ddd6fe" },
+  laravel: { icon: SiLaravel, color: "#fecdd3" },
+  fastapi: { icon: SiFastapi, color: "#99f6e4" },
+  postgresql: { icon: SiPostgresql, color: "#bfdbfe" },
+  mysql: { icon: SiMysql, color: "#fed7aa" },
+  mariadb: { icon: SiMariadb, color: "#a5f3fc" },
+  oauth: { icon: SiAuth0, color: "#fdba74" },
+  jwt: { icon: SiJsonwebtokens, color: "#bae6fd" },
+  rest: { icon: TbApi, color: "#e5e7eb" },
+  aws: { icon: SiAmazonwebservices, color: "#fed7aa" },
+  docker: { icon: SiDocker, color: "#bae6fd" },
+  "github actions": { icon: SiGithubactions, color: "#c7d2fe" },
+  tensorflow: { icon: SiTensorflow, color: "#fcd34d" },
+  pytorch: { icon: SiPytorch, color: "#fdba74" },
+  langchain: { icon: SiLangchain, color: "#bbf7d0" },
+  ollama: { icon: SiOllama, color: "#d1d5db" },
+  openai: { icon: SiOpenai, color: "#a7f3d0" },
+  gemini: { icon: SiGoogle, color: "#c4b5fd" },
+  wordpress: { icon: SiWordpress, color: "#bfdbfe" },
+  n8n: { icon: TbTopologyStar3, color: "#fecdd3" },
+  make: { icon: SiMake, color: "#ddd6fe" },
+  zapier: { icon: SiZapier, color: "#fdba74" },
+  webflow: { icon: SiWebflow, color: "#a5b4fc" },
+  git: { icon: SiGit, color: "#fecdd3" },
+  github: { icon: SiGithub, color: "#e5e7eb" },
+  firebase: { icon: SiFirebase, color: "#fde68a" },
+  jira: { icon: SiJira, color: "#93c5fd" },
+  gitlab: { icon: SiGitlab, color: "#fdba74" },
+  "vs code": { icon: TbBrandVscode, color: "#bae6fd" },
+  cursor: { icon: PiCursorFill, color: "#ddd6fe" },
+  pycharm: { icon: SiPycharm, color: "#a5f3fc" },
+  discord: { icon: SiDiscord, color: "#c4b5fd" },
+  teams: { icon: TbBrandTeams, color: "#c7d2fe" }
+};
+
+const getTechStyle = (
+  label: string
+): {
+  icon?: IconType;
+  color: string;
+  initials: string;
+} => {
+  const key = label.toLowerCase();
+  const match = techIconMap[key];
+
+  const initials = label
+    .split(" ")
+    .filter(Boolean)
+    .map((word) => word[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
+  return {
+    icon: match?.icon,
+    color: match?.color ?? "#e5e7eb",
+    initials: initials || label.slice(0, 2).toUpperCase()
+  };
+};
+
+const TechInitial = ({ initials, color }: { initials: string; color: string }) => (
+  <span
+    className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/10 text-[10px] font-semibold"
+    style={{
+      color,
+      boxShadow: color ? `0 0 0 1px ${color}33` : undefined
+    }}
+  >
+    {initials}
+  </span>
 );
 
 const ArrowIcon = () => (

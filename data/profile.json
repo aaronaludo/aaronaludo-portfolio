@@ -17,7 +17,7 @@
     ]
   },
   "experience": [
-    { "role": "Backend Engineer", "company": "24x7 Direct", "year": "2025" },
+    { "role": "DevOps Engineer", "company": "24x7 Direct", "year": "2025" },
     { "role": "Backend Developer", "company": "Boss Deal", "year": "2024" },
     { "role": "Web Developer", "company": "Interlink Manpower Development & General Services, INC", "year": "2023" },
     { "role": "Associate Computer Technology", "company": "Graduated at ICCT Colleges", "year": "2023" },
@@ -37,7 +37,8 @@
       "name": "Plant Disease Diagnosis AI",
       "description": "AI-powered plant care companion that scans photos to diagnose diseases, delivers personalized treatment plans, and tracks your garden on iOS and Android.",
       "googlePlay": "https://play.google.com",
-      "appStore": "https://apps.apple.com"
+      "appStore": "https://apps.apple.com",
+      "link": "https://plant-disease-diagnosis-ai.aaronaludo.com"
     }
   ],
   "allProjects": [
@@ -50,7 +51,8 @@
       "name": "Plant Disease Diagnosis AI",
       "description": "AI-powered plant care companion that scans photos to diagnose diseases, delivers personalized treatment plans, and tracks your garden on iOS and Android.",
       "googlePlay": "https://play.google.com",
-      "appStore": "https://apps.apple.com"
+      "appStore": "https://apps.apple.com",
+      "link": "https://plant-disease-diagnosis-ai.aaronaludo.com"
     }
   ],
   "certifications": [

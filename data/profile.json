@@ -1,0 +1,116 @@
+{
+  "profile": {
+    "name": "Bryl Lim",
+    "location": "Metro Manila, Philippines",
+    "role": "Software Engineer | Content Creator",
+    "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=520&q=80",
+    "availability": "Currently collaborating on AI-driven products and community builds",
+    "highlight": {
+      "label": "DICT OpenGov Hackathon 2025 Champion",
+      "href": "#"
+    },
+    "ctas": [
+      { "label": "Schedule a Call", "href": "https://cal.com", "variant": "solid" },
+      { "label": "Send Email", "href": "mailto:hello@bryllim.com", "variant": "ghost" },
+      { "label": "Join Community", "href": "#community", "variant": "outline" }
+    ]
+  },
+  "about": {
+    "title": "About",
+    "paragraphs": [
+      "I'm a full-stack software engineer specializing in developing solutions with JavaScript, Python, and PHP. I work on projects including building modern web applications, mobile apps, search engine optimization, digital marketing, and making code tutorials.",
+      "I've helped startups and MSMEs grow and streamline their processes through software solutions. I've also built a community of over 200,000 developers sharing knowledge and mentorship.",
+      "Lately, I've been diving deeper into the world of artificial intelligence, focusing on integrating AI tools and techniques into modern applications. My work now includes developing AI-powered solutions, creating intelligent applications, and leveraging generative AI to optimize development workflows and deliver cutting-edge technology."
+    ]
+  },
+  "spotlight": {
+    "label": "I'm part of PH 100",
+    "description": "The PH100 is the annual selection of the brightest minds under 35 in the Philippines",
+    "sponsor": "Presented by StellarPH"
+  },
+  "experience": [
+    { "role": "Principal AI Engineer", "company": "Standard Chartered", "year": "2025" },
+    { "role": "AI Ops Engineer", "company": "Centre of Excellence for GenAI, Cambridge", "year": "2025" },
+    { "role": "Senior Full-Stack Developer", "company": "Core Technology, Cambridge", "year": "2024" },
+    { "role": "Software Engineering Lead", "company": "PocketDevs", "year": "2022" },
+    { "role": "Lead Application Developer", "company": "Bluewind Asia", "year": "2021" },
+    { "role": "Software Engineer", "company": "GCM", "year": "2020" },
+    { "role": "BS Information Technology", "company": "University of San Carlos", "year": "2019" },
+    { "role": "Hello World! Wrote my first line of code", "company": "", "year": "2015" }
+  ],
+  "techStack": {
+    "frontend": ["JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Tailwind CSS"],
+    "backend": ["Node.js", "Python", "PHP", "Laravel", "PostgreSQL", "MongoDB"],
+    "devops": ["AWS", "Docker", "Kubernetes", "GitHub Actions"]
+  },
+  "beyondCoding": [
+    "When not writing code, I focus on learning about emerging technologies, minimalism, and startup culture.",
+    "I share my knowledge through content creation and community building."
+  ],
+  "projects": [
+    { "name": "CodeCred", "description": "Online certifications for programmers", "link": "https://codecred.dev" },
+    { "name": "DIIN.PH", "description": "AI-powered wardrobe assistant", "link": "https://diin.ph" },
+    { "name": "BASE404", "description": "Online coding bootcamp", "link": "https://base-404.com" },
+    { "name": "DYNAMIS Workout Tracker", "description": "AI-powered workout tracker", "link": "https://dynamis-app.online" }
+  ],
+  "certifications": [
+    { "name": "Huawei Developer Expert", "issuer": "Huawei" },
+    { "name": "Generative AI Leader", "issuer": "Google" },
+    { "name": "Software Engineering", "issuer": "TestDome" },
+    { "name": "Generative AI Professional", "issuer": "Oracle" }
+  ],
+  "recommendations": [
+    {
+      "quote": "Was an intern at PocketDevs and sir Bryl was our main trainer for the different technologies we use in the company such as Laravel, Bootstrap, etc. With his guidance, I was equipped with some of the current trends and insights in the tech industry which enabled me to be a competitive engineer.",
+      "author": "Patrick Vince Velasco",
+      "role": "Software Engineer, YNS"
+    }
+  ],
+  "memberships": [
+    "Analytics & Artificial Intelligence Association of the Philippines (AAAP)",
+    "Philippine Software Industry Association"
+  ],
+  "socialLinks": [
+    { "label": "LinkedIn", "href": "https://www.linkedin.com" },
+    { "label": "GitHub", "href": "https://github.com" },
+    { "label": "Instagram", "href": "https://www.instagram.com" }
+  ],
+  "speaking": [
+    {
+      "title": "Speaking",
+      "description": "Available for speaking at events about software development and emerging technologies.",
+      "cta": { "label": "Get in touch", "href": "mailto:hello@bryllim.com" }
+    }
+  ],
+  "contacts": [
+    { "label": "Email", "detail": "bryllim@gmail.com", "href": "mailto:bryllim@gmail.com" },
+    { "label": "Let's Talk", "detail": "Schedule a Call", "href": "https://cal.com" },
+    { "label": "Community", "detail": "Join Discussion", "href": "#community" }
+  ],
+  "gallery": [
+    {
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
+      "alt": "Speaking at a conference"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80",
+      "alt": "Tech keynote stage"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
+      "alt": "Workshop presentation"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
+      "alt": "Team collaboration moment"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1521737604893-ff8c1e132f48?auto=format&fit=crop&w=900&q=80",
+      "alt": "Award ceremony on stage"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1526948531399-320e7e40f0ca?auto=format&fit=crop&w=900&q=80",
+      "alt": "Panel discussion"
+    }
+  ]
+}

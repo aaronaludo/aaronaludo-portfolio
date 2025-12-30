@@ -244,8 +244,9 @@ export default function Home() {
                       href={project.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1 rounded-full border border-emerald-200/30 bg-emerald-300/10 px-4 py-2 text-sm font-semibold text-emerald-100"
+                      className="inline-flex items-center gap-2 rounded-full border border-emerald-200/30 bg-emerald-300/10 px-4 py-2 text-sm font-semibold text-emerald-100"
                     >
+                      <WebsiteIcon className="h-4 w-4 text-emerald-100" />
                       {project.link.replace("https://", "").replace("http://", "")}
                       <ArrowIcon />
                     </a>
@@ -255,8 +256,9 @@ export default function Home() {
                       href={project.googlePlay}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
                     >
+                      <GooglePlayIcon className="h-4 w-4 text-emerald-200" />
                       Google Play
                       <ArrowIcon />
                     </a>
@@ -266,8 +268,9 @@ export default function Home() {
                       href={project.appStore}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
                     >
+                      <AppStoreIcon className="h-4 w-4 text-sky-200" />
                       App Store
                       <ArrowIcon />
                     </a>
@@ -310,7 +313,10 @@ export default function Home() {
                   rel="noreferrer"
                   className="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white hover:border-white/20"
                 >
-                  <span>{link.label}</span>
+                  <span className="flex items-center gap-3">
+                    <SocialIcon label={link.label} />
+                    <span>{link.label}</span>
+                  </span>
                   <ArrowIcon />
                 </a>
               ))}
@@ -341,6 +347,112 @@ export default function Home() {
     </div>
   );
 }
+
+const SocialIcon = ({ label }: { label: string }) => {
+  const normalized = label.toLowerCase();
+
+  if (normalized.includes("linkedin")) {
+    return <LinkedInIcon className="h-5 w-5 text-sky-200" />;
+  }
+
+  if (normalized.includes("github")) {
+    return <GitHubIcon className="h-5 w-5 text-white" />;
+  }
+
+  if (normalized.includes("instagram")) {
+    return <InstagramIcon className="h-5 w-5 text-pink-200" />;
+  }
+
+  return <DefaultLinkIcon className="h-5 w-5 text-white/70" />;
+};
+
+const LinkedInIcon = ({ className }: { className?: string }) => (
+  <svg
+    aria-hidden
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    className={className}
+    fill="currentColor"
+  >
+    <path d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0zM7.059 20.452H3.558V9h3.501v11.452zM5.308 7.433c-1.121 0-2.029-.916-2.029-2.044 0-1.129.909-2.044 2.029-2.044 1.123 0 2.03.915 2.03 2.044 0 1.128-.907 2.044-2.03 2.044zm15.144 13.019h-3.5v-5.569c0-1.329-.026-3.039-1.852-3.039-1.853 0-2.136 1.447-2.136 2.939v5.669h-3.5V9h3.36v1.561h.047c.468-.89 1.607-1.829 3.304-1.829 3.535 0 4.187 2.313 4.187 5.317v6.403z" />
+  </svg>
+);
+
+const GitHubIcon = ({ className }: { className?: string }) => (
+  <svg
+    aria-hidden
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    className={className}
+    fill="currentColor"
+  >
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.725-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.73.083-.73 1.205.086 1.84 1.237 1.84 1.237 1.07 1.834 2.809 1.304 3.495.997.107-.776.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404c1.018.005 2.045.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.654 1.653.243 2.874.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.804 5.624-5.476 5.921.43.372.823 1.102.823 2.222v3.293c0 .322.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+  </svg>
+);
+
+const InstagramIcon = ({ className }: { className?: string }) => (
+  <svg
+    aria-hidden
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    className={className}
+    fill="currentColor"
+  >
+    <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.75 2.25a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm-5.5 1.25a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" />
+  </svg>
+);
+
+const DefaultLinkIcon = ({ className }: { className?: string }) => (
+  <svg
+    aria-hidden
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+  >
+    <path d="M10.5 6.75H8A5.25 5.25 0 0 0 8 17.25h2.5m3-10.5H16a5.25 5.25 0 0 1 0 10.5h-2.5M9.75 12h4.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const GooglePlayIcon = ({ className }: { className?: string }) => (
+  <svg
+    aria-hidden
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    className={className}
+    fill="currentColor"
+  >
+    <path d="M3.525 2.726A1.35 1.35 0 0 0 3 3.857v16.286a1.35 1.35 0 0 0 .525 1.13l.08.05 9.155-9.155L3.605 2.676l-.08.05Zm10.174 8.293L5.16 2.48l10.782 6.226-2.243 2.313ZM3.926 21.52l9.773-7.554 2.302 2.376L3.926 21.52Zm12.722-6.47-2.45-2.53 2.45-2.52 3.074 1.775a1.05 1.05 0 0 1 0 1.87l-3.074 1.405Z" />
+  </svg>
+);
+
+const AppStoreIcon = ({ className }: { className?: string }) => (
+  <svg
+    aria-hidden
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    className={className}
+    fill="currentColor"
+  >
+    <path d="M16.84 12.367c-.026-2.337 1.91-3.459 1.992-3.513-1.09-1.59-2.78-1.807-3.378-1.83-1.435-.15-2.805.848-3.531.848-.723 0-1.854-.83-3.05-.807-1.57.024-3.03.94-3.84 2.39-1.64 2.842-.417 7.03 1.17 9.33.773 1.114 1.687 2.36 2.88 2.314 1.16-.047 1.596-.748 2.996-.748 1.4 0 1.79.748 3.02.724 1.245-.02 2.03-1.137 2.8-2.255.888-1.3 1.25-2.56 1.27-2.62-.027-.013-2.435-.936-2.45-3.233Zm-2.29-6.18c.63-.764 1.055-1.83.94-2.907-.91.037-2.01.604-2.664 1.366-.58.673-1.1 1.75-.97 2.785 1.02.077 2.06-.52 2.69-1.244Z" />
+  </svg>
+);
+
+const WebsiteIcon = ({ className }: { className?: string }) => (
+  <svg
+    aria-hidden
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+  >
+    <path d="M12 3.25A8.75 8.75 0 1 0 20.75 12 8.76 8.76 0 0 0 12 3.25Zm0 0v17.5m-7.25-8.75h14.5m-10 0a12.4 12.4 0 0 0 2.5 7.5m0-15a12.4 12.4 0 0 0-2.5 7.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
 
 const ArrowIcon = () => (
   <svg

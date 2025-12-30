@@ -99,9 +99,6 @@ export default function Home() {
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <h1 className="text-3xl font-semibold">{data.profile.name}</h1>
-                  <span className="rounded-full border border-emerald-300/30 bg-emerald-400/15 px-2 py-0.5 text-xs font-semibold text-emerald-100">
-                    Verified
-                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-white/60">
                   <LocationIcon />
@@ -230,7 +227,7 @@ export default function Home() {
         </Card>
 
         <Card>
-          <SectionHeading title="Recent Projects" actionLabel="View all" href="#" />
+          <SectionHeading title="Recent Projects" actionLabel="View all" href="/projects" />
           <div className="grid gap-4 sm:grid-cols-2">
             {data.projects.map((project) => (
               <div

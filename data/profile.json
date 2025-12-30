@@ -16,11 +16,6 @@
       "Recently, I have been building AI applications focused on creating simple, practical, and useful solutions using artificial intelligence. I work on these projects to better understand how AI can be applied to real-world problems, while continuously improving my technical skills and adapting to new technologies. Through hands-on development, I am learning how to design, build, and improve AI-driven systems that can provide real value to users."
     ]
   },
-  "spotlight": {
-    "label": "I'm part of PH 100",
-    "description": "The PH100 is the annual selection of the brightest minds under 35 in the Philippines",
-    "sponsor": "Presented by StellarPH"
-  },
   "experience": [
     { "role": "Backend Engineer", "company": "24x7 Direct", "year": "2025" },
     { "role": "Backend Developer", "company": "Boss Deal", "year": "2024" },
@@ -36,12 +31,21 @@
     "cms-nocode": ["WordPress", "n8n", "Make", "Zapier", "Webflow"],
     "developer-tools": ["Git", "Github", "Firebase", "Jira", "Gitlab", "VS Code", "Cursor", "PyCharm", "Discord", "Teams"]
   },
-  "beyondCoding": [
-    "When not writing code, I focus on learning about emerging technologies, minimalism, and startup culture.",
-    "I share my knowledge through content creation and community building."
-  ],
   "projects": [
-    { "name": "Vione Hernal", "description": "A blockchain-powered fashion platform delivering traceable ownership and digital-first design.", "link": "vionehernal.com" },
+    { "name": "Vione Hernal", "description": "A blockchain-powered fashion platform delivering traceable ownership and digital-first design.", "link": "https://vionehernal.com" },
+    {
+      "name": "Plant Disease Diagnosis AI",
+      "description": "AI-powered plant care companion that scans photos to diagnose diseases, delivers personalized treatment plans, and tracks your garden on iOS and Android.",
+      "googlePlay": "https://play.google.com",
+      "appStore": "https://apps.apple.com"
+    }
+  ],
+  "allProjects": [
+    {
+      "name": "Vione Hernal",
+      "description": "A blockchain-powered fashion platform delivering traceable ownership and digital-first design.",
+      "link": "https://vionehernal.com"
+    },
     {
       "name": "Plant Disease Diagnosis AI",
       "description": "AI-powered plant care companion that scans photos to diagnose diseases, delivers personalized treatment plans, and tracks your garden on iOS and Android.",
@@ -71,28 +75,10 @@
       "link": "https://www.freecodecamp.org/learn/data-visualization/"
     }
   ],
-  "recommendations": [
-    {
-      "quote": "Was an intern at PocketDevs and sir Bryl was our main trainer for the different technologies we use in the company such as Laravel, Bootstrap, etc. With his guidance, I was equipped with some of the current trends and insights in the tech industry which enabled me to be a competitive engineer.",
-      "author": "Patrick Vince Velasco",
-      "role": "Software Engineer, YNS"
-    }
-  ],
-  "memberships": [
-    "Analytics & Artificial Intelligence Association of the Philippines (AAAP)",
-    "Philippine Software Industry Association"
-  ],
   "socialLinks": [
     { "label": "LinkedIn", "href": "https://www.linkedin.com/in/aaronaludo" },
     { "label": "GitHub", "href": "https://github.com/aaronaludo" },
     { "label": "Instagram", "href": "https://www.instagram.com/aaron.aludo" }
-  ],
-  "speaking": [
-    {
-      "title": "Speaking",
-      "description": "Available for speaking at events about software development and emerging technologies.",
-      "cta": { "label": "Get in touch", "href": "mailto:hello@bryllim.com" }
-    }
   ],
   "contacts": [
     { "label": "Email", "detail": "aaronaludo@gmail.com", "href": "mailto:aaronaludo@gmail.com" }

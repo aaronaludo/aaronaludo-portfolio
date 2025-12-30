@@ -357,48 +357,56 @@ export default function Home() {
           </div>
         </Card>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_1fr]">
-          <Card>
-            <SectionHeading title="Recent Certifications" actionLabel="View all" href="#" />
-            <div className="grid gap-4 sm:grid-cols-2">
-              {data.certifications.map((cert) => (
-                <a
-                  key={cert.name}
-                  href={cert.link ?? "#"}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex h-full flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/20"
-                >
-                  <div className="text-[11px] font-semibold leading-tight text-white sm:text-xs">
-                    {cert.name}
-                  </div>
-                  <div className="pl-1 text-[9px] text-white/60 sm:text-[10px]">{cert.issuer}</div>
-                </a>
-              ))}
-            </div>
-          </Card>
-
-          <Card>
-            <SectionHeading title="Social Links" />
-            <div className="space-y-2">
-              {data.socialLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white hover:border-white/20"
-                >
-                  <span className="flex items-center gap-3">
-                    <SocialIcon label={link.label} />
-                    <span>{link.label}</span>
+        <Card className="overflow-hidden border-white/12 bg-white/5">
+          <SectionHeading title="Recent Certifications" actionLabel="View all" href="#" />
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-3 sm:gap-4">
+            {data.certifications.map((cert) => (
+              <a
+                key={cert.name}
+                href={cert.link ?? "#"}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-white/80 transition duration-150 hover:-translate-y-[1px] hover:border-white/25 hover:bg-white/10"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/10 text-[11px] font-semibold text-white">
+                    {cert.issuer?.[0] ?? "C"}
                   </span>
-                  <ArrowIcon />
-                </a>
-              ))}
-            </div>
-          </Card>
-        </div>
+                  <div className="space-y-1">
+                    <div className="text-sm font-semibold text-white sm:text-base">
+                      {cert.name}
+                    </div>
+                    <div className="text-xs text-white/60">{cert.issuer}</div>
+                  </div>
+                </div>
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-white/80 transition group-hover:border-white/25 group-hover:text-white">
+                  View <ArrowIcon />
+                </span>
+              </a>
+            ))}
+          </div>
+        </Card>
+
+        <Card>
+          <SectionHeading title="Social Links" />
+          <div className="space-y-2">
+            {data.socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white hover:border-white/20"
+              >
+                <span className="flex items-center gap-3">
+                  <SocialIcon label={link.label} />
+                  <span>{link.label}</span>
+                </span>
+                <ArrowIcon />
+              </a>
+            ))}
+          </div>
+        </Card>
 
         <Card>
           <SectionHeading title="Get in touch" />

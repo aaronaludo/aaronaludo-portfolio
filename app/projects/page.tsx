@@ -46,15 +46,28 @@ export default function ProjectsPage() {
 
       <main className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-3 pb-14 pt-10 sm:px-6 lg:px-8">
         <Card className="bg-gradient-to-r from-white/8 via-white/5 to-white/5">
-          <div className="mb-6 flex flex-wrap items-center gap-3">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition hover:text-white"
-            >
-              <ArrowLeftIcon />
-              Back to Home
-            </Link>
-            <h1 className="text-2xl font-semibold sm:text-3xl">All Projects</h1>
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition hover:text-white"
+              >
+                <ArrowLeftIcon />
+                Back to Home
+              </Link>
+              <h1 className="text-2xl font-semibold sm:text-3xl">All Projects</h1>
+            </div>
+            <div className="flex items-center gap-2 text-xs font-semibold text-white/70">
+              <Link href="/privacy" className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white">
+                Privacy
+              </Link>
+              <Link href="/terms" className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white">
+                Terms
+              </Link>
+              <Link href="/contact" className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white">
+                Contact
+              </Link>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

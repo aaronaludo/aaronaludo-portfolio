@@ -55,6 +55,8 @@ type ButtonProps = {
   href: string;
   variant?: ButtonVariant;
   icon?: React.ReactNode;
+  fullWidthOnMobile?: boolean;
+  className?: string;
 };
 
 const Card = ({
@@ -65,7 +67,7 @@ const Card = ({
   className?: string;
 }) => (
   <div
-    className={`rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl ${className ?? ""}`}
+    className={`rounded-2xl border border-white/10 bg-white/5 p-5 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:p-6 ${className ?? ""}`}
   >
     {children}
   </div>
@@ -109,7 +111,14 @@ const Pill = ({ label }: { label: string }) => {
   );
 };
 
-const Button = ({ label, href, variant = "solid", icon }: ButtonProps) => {
+const Button = ({
+  label,
+  href,
+  variant = "solid",
+  icon,
+  fullWidthOnMobile,
+  className
+}: ButtonProps) => {
   const base =
     "inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-sm font-semibold transition duration-150 ease-out shadow-md shadow-black/15";
   const styles: Record<ButtonVariant, string> = {
@@ -122,7 +131,11 @@ const Button = ({ label, href, variant = "solid", icon }: ButtonProps) => {
   const targetProps = isAnchor ? { target: "_blank", rel: "noreferrer" } : {};
 
   return (
-    <a href={href} className={`${base} ${styles[variant]}`} {...targetProps}>
+    <a
+      href={href}
+      className={`${base} ${styles[variant]} ${fullWidthOnMobile ? "w-full justify-center sm:w-auto" : ""} ${className ?? ""}`}
+      {...targetProps}
+    >
       {icon ? <span className="text-lg">{icon}</span> : null}
       {label}
     </a>
@@ -149,9 +162,9 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5" />
           </div>
 
-          <div className="relative grid grid-cols-1 items-center gap-5 lg:grid-cols-[auto_1fr_auto]">
-            <div className="flex items-center gap-4">
-              <div className="relative h-20 w-20 overflow-hidden rounded-3xl border border-white/15 bg-white/10 shadow-2xl ring-2 ring-white/10 sm:h-24 sm:w-24">
+          <div className="relative grid grid-cols-1 gap-6 text-center md:grid-cols-[auto_1fr] md:text-left lg:grid-cols-[auto_1fr_auto] lg:items-center">
+            <div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:gap-5">
+              <div className="relative h-20 w-20 overflow-hidden rounded-3xl border border-white/15 bg-white/10 shadow-2xl ring-2 ring-white/10 sm:h-24 sm:w-24 md:h-24 md:w-24">
                 <Image
                   src={data.profile.image}
                   alt={data.profile.name}
@@ -161,27 +174,27 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
+              <div className="space-y-2 text-center md:text-left">
+                <div className="flex items-center justify-center gap-2 md:justify-start">
                   <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                     {data.profile.name}
                   </h1>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-white/90">
+                <div className="flex items-center justify-center gap-2 text-sm text-white/90 md:justify-start">
                   <LocationIcon />
                   <span>{data.profile.location}</span>
                 </div>
                 <p className="text-base text-white/90 sm:text-lg">{data.profile.role}</p>
-                <div className="flex flex-wrap items-center gap-2 pt-1 text-xs text-white/90">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 font-semibold text-white shadow-inner shadow-white/10">
+                <div className="flex flex-col gap-3 pt-1 text-sm text-white/90 sm:flex-row sm:flex-wrap sm:items-center sm:gap-2 sm:text-xs">
+                  <span className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-white/25 bg-white/10 px-4 py-2.5 font-semibold text-white shadow-inner shadow-white/10 sm:w-auto sm:rounded-full sm:px-3 sm:py-2">
                     <span className="h-2 w-2 rounded-full bg-white/70 shadow-[0_0_0_2px_rgba(255,255,255,0.12)]" />
-                    {data.profile.availability}
+                    <span className="leading-snug">{data.profile.availability}</span>
                   </span>
                 </div>
               </div>
             </div>
-            <div className="flex flex-1 flex-col gap-3 lg:items-end">
-              <div className="flex flex-wrap gap-3 lg:justify-end">
+            <div className="flex flex-1 flex-col gap-3 md:items-end">
+              <div className="flex w-full flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-3 md:w-auto md:justify-end">
                 {data.profile.ctas?.map((cta) => {
                   const icon =
                     cta.label.toLowerCase().includes("email") || cta.href.startsWith("mailto")
@@ -195,6 +208,7 @@ export default function Home() {
                       href={cta.href}
                       variant={cta.variant as ButtonVariant}
                       icon={icon}
+                      fullWidthOnMobile
                     />
                   );
                 })}
@@ -215,16 +229,21 @@ export default function Home() {
 
           <Card>
             <SectionHeading title="Experience" />
-            <div className="relative space-y-5">
-              <div className="absolute left-2 top-1 bottom-1 w-px bg-white/10" />
+            <div className="relative space-y-4">
+              <div className="absolute left-3 top-1 bottom-1 hidden w-px bg-white/10 sm:block" />
               {data.experience.map((item) => (
-                <div key={`${item.role}-${item.year}`} className="relative flex items-start gap-3 pl-6">
-                  <span className="absolute left-0 top-2 h-3 w-3 rounded-full border border-white/30 bg-white/20" />
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-white">{item.role}</p>
-                    <p className="text-xs text-white/90">{item.company}</p>
+                <div
+                  key={`${item.role}-${item.year}`}
+                  className="relative grid gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-3 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:pl-7"
+                >
+                  <span className="absolute left-1.5 top-4 hidden h-3 w-3 rounded-full border border-white/30 bg-white/20 sm:block" />
+                  <div className="space-y-1">
+                    <p className="text-base font-semibold text-white sm:text-sm">{item.role}</p>
+                    <p className="text-sm text-white/80 sm:text-xs">{item.company}</p>
                   </div>
-                  <span className="text-xs font-semibold text-white/90">{item.year}</span>
+                  <span className="flex items-center justify-start text-sm font-semibold text-white/90 sm:justify-end sm:text-xs">
+                    {item.year}
+                  </span>
                 </div>
               ))}
             </div>

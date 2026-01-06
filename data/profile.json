@@ -34,8 +34,38 @@
   "projects": [
     { "name": "Vione Hernal", "description": "A blockchain-powered fashion platform delivering traceable ownership and digital-first design.", "link": "https://vionehernal.com" },
     {
-      "name": "Plant Disease Diagnosis AI",
+      "name": "Plant Disease Diagnosis",
       "description": "AI-powered plant care companion that scans photos to diagnose diseases, delivers personalized treatment plans, and tracks your garden on iOS and Android.",
+      "googlePlay": "https://play.google.com",
+      "appStore": "https://apps.apple.com"
+    },
+    {
+      "name": "Jewelry Identifier: Purity Check",
+      "description": "AI-powered jewelry identification tool that scans photos to identify precious metals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
+      "googlePlay": "https://play.google.com",
+      "appStore": "https://apps.apple.com"
+    },
+    {
+      "name": "Math AI: Problem Solver",
+      "description": "AI-powered math problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
+      "googlePlay": "https://play.google.com",
+      "appStore": "https://apps.apple.com"
+    },
+    {
+      "name": "Physics AI: Study Helper",
+      "description": "AI-powered physics problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
+      "googlePlay": "https://play.google.com",
+      "appStore": "https://apps.apple.com"
+    },
+    {
+      "name": "Chemistry AI: Homework Solver",
+      "description": "AI-powered chemistry problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
+      "googlePlay": "https://play.google.com",
+      "appStore": "https://apps.apple.com"
+    },
+    {
+      "name": "Rock Diagnosis: Crystal & Gem",
+      "description": "AI-powered rock identification tool that scans photos to identify minerals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
       "googlePlay": "https://play.google.com",
       "appStore": "https://apps.apple.com"
     }
@@ -47,8 +77,38 @@
       "link": "https://vionehernal.com"
     },
     {
-      "name": "Plant Disease Diagnosis AI",
+      "name": "Plant Disease Diagnosis",
       "description": "AI-powered plant care companion that scans photos to diagnose diseases, delivers personalized treatment plans, and tracks your garden on iOS and Android.",
+      "googlePlay": "https://play.google.com",
+      "appStore": "https://apps.apple.com"
+    },
+    {
+      "name": "Jewelry Identifier: Purity Check",
+      "description": "AI-powered jewelry identification tool that scans photos to identify precious metals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
+      "googlePlay": "https://play.google.com",
+      "appStore": "https://apps.apple.com"
+    },
+    {
+      "name": "Math AI: Problem Solver",
+      "description": "AI-powered math problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
+      "googlePlay": "https://play.google.com",
+      "appStore": "https://apps.apple.com"
+    },
+    {
+      "name": "Physics AI: Study Helper",
+      "description": "AI-powered physics problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
+      "googlePlay": "https://play.google.com",
+      "appStore": "https://apps.apple.com"
+    },
+    {
+      "name": "Chemistry AI: Homework Solver",
+      "description": "AI-powered chemistry problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
+      "googlePlay": "https://play.google.com",
+      "appStore": "https://apps.apple.com"
+    },
+    {
+      "name": "Rock Diagnosis: Crystal & Gem",
+      "description": "AI-powered rock identification tool that scans photos to identify minerals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
       "googlePlay": "https://play.google.com",
       "appStore": "https://apps.apple.com"
     }

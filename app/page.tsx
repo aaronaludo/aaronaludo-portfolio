@@ -327,11 +327,17 @@ export default function Home() {
             {data.projects.map((project) => (
               <div
                 key={project.name}
-                className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-br from-white/8 via-white/5 to-white/5 p-5 hover:border-white/20"
+                className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/8 via-white/5 to-white/5 p-5 transition duration-200 hover:-translate-y-0.5 hover:border-white/25"
               >
-                <div className="space-y-2">
-                  <p className="text-lg font-semibold text-white">{project.name}</p>
-                  <p className="text-sm text-white/90">{project.description}</p>
+                <div className="pointer-events-none absolute -right-10 -top-12 h-28 w-28 rounded-full bg-white/5 blur-3xl transition group-hover:bg-white/10" />
+                <div className="relative space-y-3">
+                  <div className="flex items-start gap-3">
+                    <ProjectLogo name={project.name} logo={project.logo} />
+                    <div className="space-y-1">
+                      <p className="text-lg font-semibold text-white">{project.name}</p>
+                      <p className="text-sm text-white/90">{project.description}</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.link ? (
@@ -346,27 +352,15 @@ export default function Home() {
                       <ArrowIcon />
                     </a>
                   ) : null}
-                  {project.googlePlay ? (
+                  {project.apk ? (
                     <a
-                      href={project.googlePlay}
+                      href={project.apk}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
                     >
-                      <GooglePlayIcon className="h-4 w-4 text-white" />
-                      Google Play
-                      <ArrowIcon />
-                    </a>
-                  ) : null}
-                  {project.appStore ? (
-                    <a
-                      href={project.appStore}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
-                    >
-                      <AppStoreIcon className="h-4 w-4 text-white" />
-                      App Store
+                      <DownloadIcon className="h-4 w-4 text-white" />
+                      Download APK
                       <ArrowIcon />
                     </a>
                   ) : null}
@@ -403,6 +397,43 @@ export default function Home() {
                 </span>
               </a>
             ))}
+          </div>
+        </Card>
+
+        <Card>
+          <SectionHeading title="Joined Hackathons" />
+          <div className="relative">
+            <div className="absolute left-6 top-4 bottom-4 hidden w-px bg-white/10 sm:block" />
+            <div className="space-y-4">
+              {data.hackathons.map((hackathon, index) => {
+                const isLast = index === data.hackathons.length - 1;
+
+                return (
+                  <div
+                    key={`${hackathon.title}-${hackathon.date}`}
+                    className={`grid grid-cols-[auto_1fr] gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 sm:gap-5 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 ${!isLast ? "sm:pb-4 sm:border-b sm:border-white/10 sm:border-dashed" : ""}`}
+                  >
+                    <div className="pt-1">
+                      <HackathonBadge
+                        title={hackathon.title}
+                        badge={hackathon.badge}
+                        logo={hackathon.logo}
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
+                        {hackathon.date}
+                      </p>
+                      <p className="text-sm font-semibold text-white sm:text-base">
+                        {hackathon.title}
+                      </p>
+                      <p className="text-sm text-white/80">{hackathon.location}</p>
+                      <p className="text-sm text-white/70">{hackathon.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </Card>
 
@@ -534,30 +565,6 @@ const DefaultLinkIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const GooglePlayIcon = ({ className }: { className?: string }) => (
-  <svg
-    aria-hidden
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    className={className}
-    fill="currentColor"
-  >
-    <path d="M3.525 2.726A1.35 1.35 0 0 0 3 3.857v16.286a1.35 1.35 0 0 0 .525 1.13l.08.05 9.155-9.155L3.605 2.676l-.08.05Zm10.174 8.293L5.16 2.48l10.782 6.226-2.243 2.313ZM3.926 21.52l9.773-7.554 2.302 2.376L3.926 21.52Zm12.722-6.47-2.45-2.53 2.45-2.52 3.074 1.775a1.05 1.05 0 0 1 0 1.87l-3.074 1.405Z" />
-  </svg>
-);
-
-const AppStoreIcon = ({ className }: { className?: string }) => (
-  <svg
-    aria-hidden
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    className={className}
-    fill="currentColor"
-  >
-    <path d="M16.84 12.367c-.026-2.337 1.91-3.459 1.992-3.513-1.09-1.59-2.78-1.807-3.378-1.83-1.435-.15-2.805.848-3.531.848-.723 0-1.854-.83-3.05-.807-1.57.024-3.03.94-3.84 2.39-1.64 2.842-.417 7.03 1.17 9.33.773 1.114 1.687 2.36 2.88 2.314 1.16-.047 1.596-.748 2.996-.748 1.4 0 1.79.748 3.02.724 1.245-.02 2.03-1.137 2.8-2.255.888-1.3 1.25-2.56 1.27-2.62-.027-.013-2.435-.936-2.45-3.233Zm-2.29-6.18c.63-.764 1.055-1.83.94-2.907-.91.037-2.01.604-2.664 1.366-.58.673-1.1 1.75-.97 2.785 1.02.077 2.06-.52 2.69-1.244Z" />
-  </svg>
-);
-
 const WebsiteIcon = ({ className }: { className?: string }) => (
   <svg
     aria-hidden
@@ -569,6 +576,20 @@ const WebsiteIcon = ({ className }: { className?: string }) => (
     strokeWidth="1.8"
   >
     <path d="M12 3.25A8.75 8.75 0 1 0 20.75 12 8.76 8.76 0 0 0 12 3.25Zm0 0v17.5m-7.25-8.75h14.5m-10 0a12.4 12.4 0 0 0 2.5 7.5m0-15a12.4 12.4 0 0 0-2.5 7.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const DownloadIcon = ({ className }: { className?: string }) => (
+  <svg
+    aria-hidden
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+  >
+    <path d="M12 4.5v9m0 0 3.75-3.75M12 13.5l-3.75-3.75M5 19.5h14" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -658,6 +679,71 @@ const TechInitial = ({ initials, color }: { initials: string; color: string }) =
     {initials}
   </span>
 );
+
+const HackathonBadge = ({
+  title,
+  badge,
+  logo
+}: {
+  title: string;
+  badge?: string;
+  logo?: string;
+}) => {
+  const fallback =
+    badge ??
+    title
+      .replace(/[^a-zA-Z0-9 ]/g, " ")
+      .split(" ")
+      .filter(Boolean)
+      .slice(0, 3)
+      .map((word) => word[0])
+      .join("")
+      .toUpperCase();
+
+  return (
+    <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 text-[10px] font-semibold text-white/90 shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
+      {logo ? (
+        <Image
+          src={logo}
+          alt={`${title} logo`}
+          width={36}
+          height={36}
+          className="h-9 w-9 object-contain"
+        />
+      ) : (
+        <span className="px-1 text-center leading-tight">{fallback}</span>
+      )}
+    </div>
+  );
+};
+
+const ProjectLogo = ({ name, logo }: { name: string; logo?: string }) => {
+  const initials =
+    name
+      .replace(/[^a-zA-Z0-9 ]/g, " ")
+      .split(" ")
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((word) => word[0])
+      .join("")
+      .toUpperCase() || "PR";
+
+  return (
+    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/10 shadow-inner shadow-white/5 transition group-hover:border-white/30 group-hover:bg-white/15">
+      {logo ? (
+        <Image
+          src={logo}
+          alt={`${name} logo`}
+          width={40}
+          height={40}
+          className="h-10 w-10 object-contain"
+        />
+      ) : (
+        <span className="text-xs font-semibold text-white/85">{initials}</span>
+      )}
+    </div>
+  );
+};
 
 const ArrowIcon = () => (
   <svg

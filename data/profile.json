@@ -21,7 +21,46 @@
     { "role": "Backend Developer", "company": "Boss Deal", "year": "2024" },
     { "role": "Web Developer", "company": "Interlink Manpower Development & General Services, INC", "year": "2023" },
     { "role": "Associate Computer Technology", "company": "Graduated at ICCT Colleges", "year": "2023" },
+    { "role": "Full Stack Developer Intern", "company": "Achieve Without Borders", "year": "2023" },
+    { "role": "Actively Join Hackathons", "company": "ICCT Colleges", "year": "2022" },
     { "role": "Programmer", "company": "Freelance", "year": "2022" }
+  ],
+  "hackathons": [
+    {
+      "date": "Nov 12th - Dec 2025",
+      "title": "National Development Company - \"Breaking Enigma 2025\" - National Hackathon Competition - Top 5 Creative Industry Track",
+      "location": "Marikina, Philippines",
+      "description": "Our project is a smart digital security and file management platform designed for both companies and creative individuals. It protects sensitive files, artworks, and project materials through advanced encryption and invisible watermarking.",
+      "badge": "NDC"
+    },
+    {
+      "date": "Dec 1st, 2023 - Jun 14th, 2024",
+      "title": "OTisPH - \"AppCon 2023\" - Top 20 Finalist",
+      "location": "Manila, Philippines",
+      "description": "Developed Care Ease, a mobile application that helps users and patients identify the potential causes of their pain using AI.",
+      "badge": "OTisPH"
+    },
+    {
+      "date": "Nov - Dec 15th, 2023",
+      "title": "Huawei ICT Academy \"Innovation Track\" - Top 5 Finalist",
+      "location": "Philippines",
+      "description": "Developed Care Ease, a mobile application that helps users and patients identify the potential causes of their pain using AI.",
+      "badge": "HUA"
+    },
+    {
+      "date": "June 29th - June 30th, 2023",
+      "title": "ICCT Colleges \"ITech 2023 Hackathon\" - 2nd place",
+      "location": "Cainta, Rizal, Philippines",
+      "description": "Developed an application for getting a million e-books for free.",
+      "badge": "ICCT"
+    },
+    {
+      "date": "April - May, 2023",
+      "title": "The BLOCK \"Unblock Hackathon\" - People Choice Award",
+      "location": "Manila, Philippines",
+      "description": "Developed an Electronic Health Record (ERD) System using Blockchain technology.",
+      "badge": "BLOCK"
+    }
   ],
   "techStack": {
     "frontend": ["JavaScript", "TypeScript", "React", "Next.js", "Bootstrap", "Tailwind CSS", "SCSS", "Vite", "Webpack", "ESLint", "Prettier"],
@@ -32,83 +71,101 @@
     "developer-tools": ["Git", "Github", "Firebase", "Jira", "Gitlab", "VS Code", "Cursor", "PyCharm", "Discord", "Teams"]
   },
   "projects": [
-    { "name": "Vione Hernal", "description": "A blockchain-powered fashion platform delivering traceable ownership and digital-first design.", "link": "https://vionehernal.com" },
     {
-      "name": "Plant Disease Diagnosis",
+      "name": "Plant Scanner AI:  Identify & Diagnose",
       "description": "AI-powered plant care companion that scans photos to diagnose diseases, delivers personalized treatment plans, and tracks your garden on iOS and Android.",
+      "logo": "/logos/plant-scanner-ai-logo.png",
+      "apk": "https://play.google.com",
       "googlePlay": "https://play.google.com",
       "appStore": "https://apps.apple.com"
     },
     {
-      "name": "Jewelry Identifier: Purity Check",
+      "name": "Jewelry Scanner AI: Authenticity Test",
       "description": "AI-powered jewelry identification tool that scans photos to identify precious metals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
+      "logo": "/logos/jewelry-scanner-ai-logo.png",
+      "apk": "https://play.google.com",
       "googlePlay": "https://play.google.com",
       "appStore": "https://apps.apple.com"
     },
     {
-      "name": "Math AI: Problem Solver",
+      "name": "Math Scanner AI: Homework Solver",
       "description": "AI-powered math problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
+      "logo": "/logos/math-scanner-ai-logo.png",
+      "apk": "https://play.google.com",
       "googlePlay": "https://play.google.com",
       "appStore": "https://apps.apple.com"
     },
     {
-      "name": "Physics AI: Study Helper",
+      "name": "Physics Scanner AI:  Homework Solver",
       "description": "AI-powered physics problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
+      "logo": "/logos/physics-scanner-ai-logo.png",
+      "apk": "https://play.google.com",
       "googlePlay": "https://play.google.com",
       "appStore": "https://apps.apple.com"
     },
     {
-      "name": "Chemistry AI: Homework Solver",
+      "name": "Chemisty Scanner AI: Homework Solver ",
       "description": "AI-powered chemistry problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
+      "logo": "/logos/chemistry-scanner-ai-logo.png",
+      "apk": "https://play.google.com",
       "googlePlay": "https://play.google.com",
       "appStore": "https://apps.apple.com"
     },
     {
-      "name": "Rock Diagnosis: Crystal & Gem",
+      "name": "Rock Scanner AI: Diagnose Crytals",
       "description": "AI-powered rock identification tool that scans photos to identify minerals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
+      "logo": "/logos/rock-scanner-ai-logo.png",
+      "apk": "https://play.google.com",
       "googlePlay": "https://play.google.com",
       "appStore": "https://apps.apple.com"
     }
   ],
   "allProjects": [
     {
-      "name": "Vione Hernal",
-      "description": "A blockchain-powered fashion platform delivering traceable ownership and digital-first design.",
-      "link": "https://vionehernal.com"
-    },
-    {
-      "name": "Plant Disease Diagnosis",
+      "name": "Plant Scanner AI:  Identify & Diagnose",
       "description": "AI-powered plant care companion that scans photos to diagnose diseases, delivers personalized treatment plans, and tracks your garden on iOS and Android.",
+      "logo": "/logos/plant-scanner-ai-logo.png",
+      "apk": "https://play.google.com",
       "googlePlay": "https://play.google.com",
       "appStore": "https://apps.apple.com"
     },
     {
-      "name": "Jewelry Identifier: Purity Check",
+      "name": "Jewelry Scanner AI: Authenticity Test",
       "description": "AI-powered jewelry identification tool that scans photos to identify precious metals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
+      "logo": "/logos/jewelry-scanner-ai-logo.png",
+      "apk": "https://play.google.com",
       "googlePlay": "https://play.google.com",
       "appStore": "https://apps.apple.com"
     },
     {
-      "name": "Math AI: Problem Solver",
+      "name": "Math Scanner AI: Homework Solver",
       "description": "AI-powered math problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
+      "logo": "/logos/math-scanner-ai-logo.png",
+      "apk": "https://play.google.com",
       "googlePlay": "https://play.google.com",
       "appStore": "https://apps.apple.com"
     },
     {
-      "name": "Physics AI: Study Helper",
+      "name": "Physics Scanner AI:  Homework Solver",
       "description": "AI-powered physics problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
+      "logo": "/logos/physics-scanner-ai-logo.png",
+      "apk": "https://play.google.com",
       "googlePlay": "https://play.google.com",
       "appStore": "https://apps.apple.com"
     },
     {
-      "name": "Chemistry AI: Homework Solver",
+      "name": "Chemisty Scanner AI: Homework Solver ",
       "description": "AI-powered chemistry problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
+      "logo": "/logos/chemistry-scanner-ai-logo.png",
+      "apk": "https://play.google.com",
       "googlePlay": "https://play.google.com",
       "appStore": "https://apps.apple.com"
     },
     {
-      "name": "Rock Diagnosis: Crystal & Gem",
+      "name": "Rock Scanner AI: Diagnose Crytals",
       "description": "AI-powered rock identification tool that scans photos to identify minerals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
+      "logo": "/logos/rock-scanner-ai-logo.png",
+      "apk": "https://play.google.com",
       "googlePlay": "https://play.google.com",
       "appStore": "https://apps.apple.com"
     }

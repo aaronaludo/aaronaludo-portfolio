@@ -6,6 +6,7 @@ type Project = {
   name: string;
   description: string;
   link?: string;
+  apk?: string;
   googlePlay?: string;
   appStore?: string;
 };
@@ -99,25 +100,14 @@ export default function ProjectsPage() {
                       <ArrowIcon />
                     </a>
                   ) : null}
-                    {project.googlePlay ? (
+                    {project.apk ? (
                       <a
-                        href={project.googlePlay}
+                        href={project.apk}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
                       >
-                        Google Play
-                        <ArrowIcon />
-                      </a>
-                    ) : null}
-                    {project.appStore ? (
-                      <a
-                        href={project.appStore}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
-                      >
-                        App Store
+                        Download APK
                         <ArrowIcon />
                       </a>
                     ) : null}

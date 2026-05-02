@@ -11,7 +11,12 @@ type ChatSource = {
 type ChatAgentResponse = {
   response: string;
   sources?: ChatSource[];
-  mode?: "casual" | "rag" | "blocked";
+  mode?: "casual" | "rag" | "blocked" | "direct" | "hybrid";
+};
+
+type ChatHistoryMessage = {
+  role: "assistant" | "user";
+  content: string;
 };
 
 const resolveChatMode = (data: ChatAgentResponse) =>
@@ -19,10 +24,36 @@ const resolveChatMode = (data: ChatAgentResponse) =>
 
 export async function POST(request: Request) {
   let message: string;
+  let history: ChatHistoryMessage[] = [];
 
   try {
-    const body = (await request.json()) as { message?: unknown };
+    const body = (await request.json()) as { message?: unknown; history?: unknown };
     message = typeof body.message === "string" ? body.message.trim() : "";
+    history = Array.isArray(body.history)
+      ? body.history
+          .map((item): ChatHistoryMessage | null => {
+            if (
+              typeof item === "object" &&
+              item !== null &&
+              "role" in item &&
+              "content" in item
+            ) {
+              const role = item.role;
+              const content = item.content;
+              if (
+                (role === "assistant" || role === "user") &&
+                typeof content === "string" &&
+                content.trim()
+              ) {
+                return { role, content: content.trim() };
+              }
+            }
+
+            return null;
+          })
+          .filter((item): item is ChatHistoryMessage => item !== null)
+          .slice(-12)
+      : [];
   } catch {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
@@ -37,7 +68,7 @@ export async function POST(request: Request) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ message, history }),
       cache: "no-store",
     });
 
@@ -62,8 +93,7 @@ export async function POST(request: Request) {
   } catch {
     return NextResponse.json(
       {
-        error:
-          "Unable to reach the chat agent. Make sure the FastAPI service is running.",
+        error: "Aaron AI Assistant is not available right now. Please try again shortly.",
       },
       { status: 503 }
     );

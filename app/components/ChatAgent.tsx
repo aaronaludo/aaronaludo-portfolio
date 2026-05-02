@@ -4,7 +4,7 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { HiOutlineChatBubbleLeftRight, HiOutlinePaperAirplane, HiOutlineXMark } from "react-icons/hi2";
 
 type ChatRole = "assistant" | "user";
-type ChatMode = "casual" | "rag" | "blocked";
+type ChatMode = "casual" | "rag" | "blocked" | "direct" | "hybrid";
 
 type ChatMessage = {
   id: string;
@@ -23,6 +23,71 @@ const initialMessages: ChatMessage[] = [
       "Hi, I'm here if you'd like to ask anything about Aaron.",
   },
 ];
+
+const offlineMessages = [
+  "Aaron AI Assistant is not available right now. Please try again shortly.",
+  "I'm not available at the moment, but I should be back soon.",
+  "Aaron AI Assistant is taking a quick pause. Please try again later.",
+  "I can't respond right now. Please check back in a bit.",
+  "Aaron AI Assistant is temporarily unavailable.",
+  "I'm having trouble replying right now. Please try again soon.",
+  "Aaron AI Assistant is away for a moment. Try again shortly.",
+  "I'm not ready to chat right now, but I'll be back soon.",
+  "Aaron AI Assistant is currently unavailable. Please try again later.",
+  "I can't answer at the moment. Please come back in a little while.",
+  "Aaron AI Assistant needs a moment before responding.",
+  "I'm temporarily unable to reply right now.",
+  "Aaron AI Assistant is offline for now. Please try again soon.",
+  "I'm unavailable right now, but this should only be temporary.",
+  "Aaron AI Assistant can't take messages at the moment.",
+  "I'm having a quiet moment. Please try again shortly.",
+  "Aaron AI Assistant is not responding right now.",
+  "I can't help just yet. Please try again in a moment.",
+  "Aaron AI Assistant is briefly unavailable.",
+  "I'm paused right now. Please check back soon.",
+  "Aaron AI Assistant is resting for a moment. Try again later.",
+  "I'm not able to reply right now, but I should be back soon.",
+  "Aaron AI Assistant is temporarily out of reach.",
+  "I can't connect with you right now. Please try again shortly.",
+  "Aaron AI Assistant is unavailable at the moment.",
+  "I'm taking a short break from chatting. Please try again soon.",
+  "Aaron AI Assistant is not available to answer just now.",
+  "I'm unable to respond at this moment.",
+  "Aaron AI Assistant is quiet right now. Please try again later.",
+  "I can't reply right now, but please check back soon.",
+  "Aaron AI Assistant is momentarily unavailable.",
+  "I'm not online right now. Please try again in a bit.",
+  "Aaron AI Assistant is taking a moment to come back online.",
+  "I'm currently unable to chat.",
+  "Aaron AI Assistant can't respond right now.",
+  "I'm unavailable for the moment. Please try again shortly.",
+  "Aaron AI Assistant is briefly offline.",
+  "I'm not able to answer right now. Please come back soon.",
+  "Aaron AI Assistant is away from the chat for a moment.",
+  "I'm having a temporary issue responding.",
+  "Aaron AI Assistant is not reachable right now.",
+  "I can't continue the chat at the moment.",
+  "Aaron AI Assistant is taking a short pause.",
+  "I'm temporarily unavailable. Please try again soon.",
+  "Aaron AI Assistant is not ready to respond yet.",
+  "I'm unable to chat right now, but I'll be back soon.",
+  "Aaron AI Assistant is currently taking a quick timeout.",
+  "I can't answer this just yet. Please try again later.",
+  "Aaron AI Assistant is unavailable right now, but only temporarily.",
+  "I'm not available to respond at the moment. Please check back soon.",
+];
+
+const getRandomOfflineMessage = () =>
+  offlineMessages[Math.floor(Math.random() * offlineMessages.length)];
+
+const buildChatHistory = (messages: ChatMessage[]) =>
+  messages
+    .filter((message) => message.id !== "welcome")
+    .slice(-10)
+    .map((message) => ({
+      role: message.role,
+      content: message.content,
+    }));
 
 export default function ChatAgent() {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,7 +159,10 @@ export default function ChatAgent() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: trimmedMessage }),
+        body: JSON.stringify({
+          message: trimmedMessage,
+          history: buildChatHistory(messages),
+        }),
       });
 
       const data = (await response.json()) as {
@@ -119,21 +187,15 @@ export default function ChatAgent() {
           mode: data.mode,
         },
       ]);
-    } catch (err) {
-      const message =
-        err instanceof Error
-          ? err.message
-          : "Something went wrong while contacting the chat agent.";
-
-      setError(message);
+    } catch {
+      setError("");
       setConnectionStatus("offline");
       setMessages((current) => [
         ...current,
         {
           id: crypto.randomUUID(),
           role: "assistant",
-          content:
-            "I could not connect to the portfolio assistant right now. Please check if the chat backend is running.",
+          content: getRandomOfflineMessage(),
         },
       ]);
     } finally {
@@ -278,6 +340,10 @@ const ChatModeBadge = ({ mode }: { mode: ChatMode }) => {
   const label =
     mode === "rag"
       ? "RAG mode"
+      : mode === "direct"
+        ? "Direct mode"
+      : mode === "hybrid"
+        ? "Hybrid mode"
       : mode === "blocked"
         ? "Blocked"
         : "Casual mode";
@@ -285,6 +351,10 @@ const ChatModeBadge = ({ mode }: { mode: ChatMode }) => {
   const dotClass =
     mode === "rag"
       ? "bg-sky-400"
+      : mode === "direct"
+        ? "bg-violet-400"
+      : mode === "hybrid"
+        ? "bg-amber-400"
       : mode === "blocked"
         ? "bg-red-400"
         : "bg-emerald-400";

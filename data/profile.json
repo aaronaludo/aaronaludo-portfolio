@@ -16,6 +16,14 @@
       "Recently, I have been exploring AI by building small, useful applications and learning from each project. I’m interested in how AI can help solve real problems in simple ways, and I’m continuing to improve how I design, build, and maintain systems that are helpful to users."
     ]
   },
+  "personal": {
+    "hobbies": ["playing Dota", "jogging", "playing Clash Royale", "playing Mobile Legends"],
+    "favoriteFood": "spicy food",
+    "lifeGoal": "to be happy",
+    "personality": "nonchalant",
+    "routine": ["jogging", "coding", "sleeping", "playing games"],
+    "travelGoal": "Europe"
+  },
   "experience": [
     { "role": "AI & DevOps Engineer", "company": "24x7 Direct", "year": "2025" },
     { "role": "Backend Developer", "company": "Boss Deal", "year": "2024" },
@@ -30,36 +38,41 @@
       "date": "Nov 12th - Dec 2025",
       "title": "National Development Company - \"Breaking Enigma 2025\" - National Hackathon Competition - Top 5 Creative Industry Track",
       "location": "Marikina, Philippines",
-      "description": "Our project is a smart digital security and file management platform designed for both companies and creative individuals. It protects sensitive files, artworks, and project materials through advanced encryption and invisible watermarking.",
-      "badge": "NDC"
+      "description": "Built a secure workspace for organizations and creators to store, organize, and protect confidential files, creative assets, and project documents using strong encryption and hidden ownership marks.",
+      "badge": "NDC",
+      "logo": "/logos/hackathon-generic.svg"
     },
     {
       "date": "Dec 1st, 2023 - Jun 14th, 2024",
       "title": "OTisPH - \"AppCon 2023\" - Top 20 Finalist",
       "location": "Manila, Philippines",
-      "description": "Developed Care Ease, a mobile application that helps users and patients identify the potential causes of their pain using AI.",
-      "badge": "OTisPH"
+      "description": "Created Care Ease, an AI-assisted mobile app that guides people through pain-related symptoms and suggests possible reasons behind what they are experiencing.",
+      "badge": "OTisPH",
+      "logo": "/logos/hackathon-generic.svg"
     },
     {
       "date": "Nov - Dec 15th, 2023",
       "title": "Huawei ICT Academy \"Innovation Track\" - Top 5 Finalist",
       "location": "Philippines",
-      "description": "Developed Care Ease, a mobile application that helps users and patients identify the potential causes of their pain using AI.",
-      "badge": "HUA"
+      "description": "Presented Care Ease as a health-focused mobile solution that uses AI to help users describe pain symptoms and narrow down likely contributing conditions.",
+      "badge": "HUA",
+      "logo": "/logos/hackathon-generic.svg"
     },
     {
       "date": "June 29th - June 30th, 2023",
       "title": "ICCT Colleges \"ITech 2023 Hackathon\" - 2nd place",
       "location": "Cainta, Rizal, Philippines",
-      "description": "Developed an application for getting a million e-books for free.",
-      "badge": "ICCT"
+      "description": "Built a reading platform concept that gives users an easy way to search, access, and explore a large library of free digital books.",
+      "badge": "ICCT",
+      "logo": "/logos/hackathon-generic.svg"
     },
     {
       "date": "April - May, 2023",
       "title": "The BLOCK \"Unblock Hackathon\" - People Choice Award",
       "location": "Manila, Philippines",
-      "description": "Developed an Electronic Health Record (ERD) System using Blockchain technology.",
-      "badge": "BLOCK"
+      "description": "Designed a blockchain-based electronic health records system focused on keeping patient data traceable, tamper-resistant, and easier to verify.",
+      "badge": "BLOCK",
+      "logo": "/logos/hackathon-generic.svg"
     }
   ],
   "techStack": {

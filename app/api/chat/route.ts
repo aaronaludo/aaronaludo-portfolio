@@ -11,7 +11,11 @@ type ChatSource = {
 type ChatAgentResponse = {
   response: string;
   sources?: ChatSource[];
+  mode?: "casual" | "rag" | "blocked";
 };
+
+const resolveChatMode = (data: ChatAgentResponse) =>
+  data.mode ?? ((data.sources?.length ?? 0) > 0 ? "rag" : "casual");
 
 export async function POST(request: Request) {
   let message: string;
@@ -53,6 +57,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       response: data.response,
       sources: data.sources ?? [],
+      mode: resolveChatMode(data),
     });
   } catch {
     return NextResponse.json(

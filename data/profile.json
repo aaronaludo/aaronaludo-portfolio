@@ -17,7 +17,7 @@
     ]
   },
   "experience": [
-    { "role": "DevOps Engineer", "company": "24x7 Direct", "year": "2025" },
+    { "role": "AI & DevOps Engineer", "company": "24x7 Direct", "year": "2025" },
     { "role": "Backend Developer", "company": "Boss Deal", "year": "2024" },
     { "role": "Web Developer", "company": "Interlink Manpower Development & General Services, INC", "year": "2023" },
     { "role": "Associate Computer Technology", "company": "Graduated at ICCT Colleges", "year": "2023" },
@@ -73,18 +73,21 @@
   "projects": [
     {
       "name": "Ma, Ano Ulam?",
+      "year": "2026",
       "description": "Filipino ulam finder for random dish ideas, ingredient matching, budget-friendly recipes, cooking time, and tutorial videos.",
       "logo": "/logos/mama-ano-ulam-logo.png",
       "link": "https://maanoulam.aaronaludo.com"
     },
     {
       "name": "VibeMovie",
+      "year": "2026",
       "description": "Movie recommendation web app that suggests top-rated films based on your current mood, from cozy comfort picks to thrilling watch-night choices.",
       "logo": "/logos/vibemovie-logo.png",
       "link": "https://vibemovie.aaronaludo.com"
     },
     {
       "name": "Plant Scanner AI:  Identify & Diagnose",
+      "year": "2025",
       "description": "AI-powered plant care companion that scans photos to diagnose diseases, delivers personalized treatment plans, and tracks your garden on iOS and Android.",
       "logo": "/logos/plant-scanner-ai-logo.png",
       "apk": "https://play.google.com/store/apps/details?id=com.aaronaludotech.plantscannerai",
@@ -92,11 +95,13 @@
     },
     {
       "name": "Jewelry Scanner AI: Authenticity Test",
+      "year": "2025",
       "description": "AI-powered jewelry identification tool that scans photos to identify precious metals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
       "logo": "/logos/jewelry-scanner-ai-logo.png"
     },
     {
       "name": "Rock Scanner AI: Diagnose Crystals",
+      "year": "2025",
       "description": "AI-powered rock identification tool that scans photos to identify minerals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
       "logo": "/logos/rock-scanner-ai-logo.png"
     }
@@ -104,18 +109,21 @@
   "allProjects": [
     {
       "name": "Ma, Ano Ulam?",
+      "year": "2026",
       "description": "Filipino ulam finder for random dish ideas, ingredient matching, budget-friendly recipes, cooking time, and tutorial videos.",
       "logo": "/logos/mama-ano-ulam-logo.png",
       "link": "https://maanoulam.aaronaludo.com"
     },
     {
       "name": "VibeMovie",
+      "year": "2026",
       "description": "Movie recommendation web app that suggests top-rated films based on your current mood, from cozy comfort picks to thrilling watch-night choices.",
       "logo": "/logos/vibemovie-logo.png",
       "link": "https://vibemovie.aaronaludo.com"
     },
     {
       "name": "Plant Scanner AI:  Identify & Diagnose",
+      "year": "2025",
       "description": "AI-powered plant care companion that scans photos to diagnose diseases, delivers personalized treatment plans, and tracks your garden on iOS and Android.",
       "logo": "/logos/plant-scanner-ai-logo.png",
       "apk": "https://play.google.com/store/apps/details?id=com.aaronaludotech.plantscannerai",
@@ -123,6 +131,7 @@
     },
     {
       "name": "Jewelry Scanner AI: Authenticity Test",
+      "year": "2025",
       "description": "AI-powered jewelry identification tool that scans photos to identify precious metals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
       "logo": "/logos/jewelry-scanner-ai-logo.png"
     },
@@ -143,6 +152,7 @@
     },
     {
       "name": "Rock Scanner AI: Diagnose Crystals",
+      "year": "2025",
       "description": "AI-powered rock identification tool that scans photos to identify minerals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
       "logo": "/logos/rock-scanner-ai-logo.png"
     }

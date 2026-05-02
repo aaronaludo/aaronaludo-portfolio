@@ -4,6 +4,7 @@ import profileData from "../../data/profile.json";
 
 type Project = {
   name: string;
+  year?: string;
   description: string;
   link?: string;
   apk?: string;
@@ -93,9 +94,16 @@ export default function ProjectsPage() {
                   className="flex h-full flex-col justify-between rounded-md border border-white/10 bg-white/5 p-5 transition duration-200 hover:-translate-y-0.5 hover:border-white/20"
                 >
                   <div className="space-y-2">
-                    <p className="text-lg font-semibold text-white">
-                      {project.name}
-                    </p>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="text-lg font-semibold text-white">
+                        {project.name}
+                      </p>
+                      {project.year ? (
+                        <span className="rounded-md border border-white/10 bg-white/10 px-2 py-0.5 text-xs font-semibold text-white/80">
+                          {project.year}
+                        </span>
+                      ) : null}
+                    </div>
                     <p className="text-sm text-white/90">
                       {project.description}
                     </p>

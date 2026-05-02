@@ -50,6 +50,23 @@ import profileData from "../data/profile.json";
 
 type ButtonVariant = "solid" | "ghost" | "outline";
 
+type PortfolioProject = {
+  name: string;
+  description: string;
+  logo?: string;
+  link?: string;
+  apk?: string;
+};
+
+type Hackathon = {
+  date: string;
+  title: string;
+  location: string;
+  description: string;
+  badge: string;
+  logo?: string;
+};
+
 type ButtonProps = {
   label: string;
   href: string;
@@ -148,6 +165,8 @@ const Divider = () => (
 
 export default function Home() {
   const data = profileData;
+  const projects = data.projects as PortfolioProject[];
+  const hackathons = data.hackathons as Hackathon[];
 
   return (
     <div className="relative min-h-screen overflow-hidden text-white">
@@ -324,7 +343,7 @@ export default function Home() {
         <Card>
           <SectionHeading title="Recent Projects" actionLabel="View all" href="/projects" />
           <div className="grid gap-4 sm:grid-cols-2">
-            {data.projects.map((project) => (
+            {projects.map((project) => (
               <div
                 key={project.name}
                 className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/8 via-white/5 to-white/5 p-5 transition duration-200 hover:-translate-y-0.5 hover:border-white/25"
@@ -405,8 +424,8 @@ export default function Home() {
           <div className="relative">
             <div className="absolute left-6 top-4 bottom-4 hidden w-px bg-white/10 sm:block" />
             <div className="space-y-4">
-              {data.hackathons.map((hackathon, index) => {
-                const isLast = index === data.hackathons.length - 1;
+              {hackathons.map((hackathon, index) => {
+                const isLast = index === hackathons.length - 1;
 
                 return (
                   <div

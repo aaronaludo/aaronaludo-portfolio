@@ -65,7 +65,7 @@ export default function ContactPage() {
           <div className="mt-5 space-y-5">
             <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/90">
               If you have questions about a specific app, subscription management, account cancellation, or technical
-              support, please use the "Contact Us" feature within the mobile app settings so we can identify your app and
+              support, please use the &quot;Contact Us&quot; feature within the mobile app settings so we can identify your app and
               assist you faster.
             </div>
 
@@ -127,19 +127,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
-const ChevronUpIcon = () => (
-  <svg
-    aria-hidden
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    className="h-5 w-5 fill-none stroke-current text-white/90"
-  >
-    <path
-      d="m6 14 6-6 6 6"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);

@@ -9,7 +9,7 @@ const Card = ({
   className?: string;
 }) => (
   <div
-    className={`rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl ${className ?? ""}`}
+    className={`rounded-md border border-white/10 bg-neutral-950 p-6 ${className ?? ""}`}
   >
     {children}
   </div>
@@ -23,34 +23,32 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(255,255,255,0.1),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.08),transparent_26%),radial-gradient(circle_at_60%_70%,rgba(255,255,255,0.06),transparent_30%)]" />
-
-      <main className="relative z-10 mx-auto flex max-w-4xl flex-col gap-6 px-3 pb-14 pt-10 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-neutral-950 text-white">
+      <main className="mx-auto flex max-w-4xl flex-col gap-6 px-3 pb-14 pt-10 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center justify-between gap-3 text-sm font-semibold text-white/90">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white"
+            className="inline-flex items-center gap-2 rounded-md border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white"
           >
             All Projects
           </Link>
           <div className="flex items-center gap-2">
             <Link
               href="/projects/privacy"
-              className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white"
+              className="rounded-md border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white"
             >
               Privacy
             </Link>
             <Link
               href="/projects/contact"
-              className="rounded-full border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white"
+              className="rounded-md border border-white/10 px-3 py-1 transition hover:border-white/30 hover:text-white"
             >
               Contact
             </Link>
           </div>
         </div>
 
-        <Card className="bg-gradient-to-r from-white/8 via-white/5 to-white/5">
+        <Card className="bg-neutral-950">
           <div className="space-y-3">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/90">
               Terms

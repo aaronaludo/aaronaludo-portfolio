@@ -3,9 +3,9 @@ import ChatAgent from "./components/ChatAgent";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Aaron Aludo | Full Stack Engineer",
+  title: "Aaron Aludo | AI & Full Stack Engineer",
   description:
-    "Full Stack Engineer and AI-focused builder based in Taytay Rizal, Philippines.",
+    "AI & Full Stack Engineer building practical web and AI projects from Taytay Rizal, Philippines.",
   icons: {
     icon: [
       { url: "/favicon.ico" },

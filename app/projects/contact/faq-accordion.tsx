@@ -7,7 +7,7 @@ const FAQAccordion = () => {
 
   return (
     <div
-      className={`overflow-hidden rounded-2xl border ${open ? "border-white/40" : "border-white/15"} bg-white/5 transition`}
+      className={`overflow-hidden rounded-md border ${open ? "border-white/40" : "border-white/15"} bg-white/5 transition`}
     >
       <button
         type="button"

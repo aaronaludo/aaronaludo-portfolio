@@ -2,9 +2,9 @@
   "profile": {
     "name": "Aaron Aludo",
     "location": "Taytay Rizal, Philippines",
-    "role": "Full Stack Engineer",
-    "image": "/picture.png",
-    "availability": "Actively creating AI-powered tools that help individuals work smarter.",
+    "role": "AI & Full Stack Engineer",
+    "image": "/aaron-picture.png",
+    "availability": "Building practical AI-powered tools and continuing to learn through real projects.",
     "ctas": [
       { "label": "Send Email", "href": "mailto:aaronaludo@gmail.com", "variant": "ghost" }
     ]
@@ -12,8 +12,8 @@
   "about": {
     "title": "About",
     "paragraphs": [
-      "I’m a full-stack software engineer with experience building end-to-end applications using JavaScript, Python, and PHP. I focus on creating reliable, scalable solutions and enjoy working across both frontend and backend systems.",
-      "Recently, I have been building AI applications focused on creating simple, practical, and useful solutions using artificial intelligence. I work on these projects to better understand how AI can be applied to real-world problems, while continuously improving my technical skills and adapting to new technologies. Through hands-on development, I am learning how to design, build, and improve AI-driven systems that can provide real value to users."
+      "I’m a full-stack software engineer who enjoys building end-to-end applications with JavaScript, Python, and PHP. I like working across frontend and backend systems, and I try to keep my work practical, reliable, and easy to improve over time.",
+      "Recently, I have been exploring AI by building small, useful applications and learning from each project. I’m interested in how AI can help solve real problems in simple ways, and I’m continuing to improve how I design, build, and maintain systems that are helpful to users."
     ]
   },
   "experience": [
@@ -63,111 +63,88 @@
     }
   ],
   "techStack": {
-    "frontend": ["JavaScript", "TypeScript", "React", "Next.js", "Bootstrap", "Tailwind CSS", "SCSS", "Vite", "Webpack", "ESLint", "Prettier"],
-    "backend": ["Python", "PHP", "Laravel", "FastAPI", "PostgreSQL", "MySQL", "MariaDB", "OAuth", "JWT", "REST"],
+    "frontend": ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Bootstrap", "SCSS", "Vite", "Webpack", "ESLint", "Prettier"],
+    "backend": ["Python", "PHP", "Laravel", "FastAPI", "REST API", "OAuth", "JWT", "PostgreSQL", "MySQL", "MariaDB", "Supabase", "Firebase"],
     "devops": ["AWS", "Docker", "GitHub Actions"],
-    "ai-ml": ["TensorFlow", "PyTorch", "LangChain", "Ollama","OpenAI", "Gemini"],
-    "cms-nocode": ["WordPress", "n8n", "Make", "Zapier", "Webflow"],
-    "developer-tools": ["Git", "Github", "Firebase", "Jira", "Gitlab", "VS Code", "Cursor", "PyCharm", "Discord", "Teams"]
+    "ai-ml": ["OpenAI", "Claude", "Gemini", "Ollama", "TensorFlow"],
+    "cms-nocode": ["WordPress", "n8n"],
+    "developer-tools": ["Git", "GitHub", "GitLab", "Jira", "VS Code", "Cursor", "PyCharm", "Discord", "Microsoft Teams"]
   },
   "projects": [
+    {
+      "name": "Ma, Ano Ulam?",
+      "description": "Filipino ulam finder for random dish ideas, ingredient matching, budget-friendly recipes, cooking time, and tutorial videos.",
+      "logo": "/logos/mama-ano-ulam-logo.png",
+      "link": "https://maanoulam.aaronaludo.com"
+    },
+    {
+      "name": "VibeMovie",
+      "description": "Movie recommendation web app that suggests top-rated films based on your current mood, from cozy comfort picks to thrilling watch-night choices.",
+      "logo": "/logos/vibemovie-logo.png",
+      "link": "https://vibemovie.aaronaludo.com"
+    },
     {
       "name": "Plant Scanner AI:  Identify & Diagnose",
       "description": "AI-powered plant care companion that scans photos to diagnose diseases, delivers personalized treatment plans, and tracks your garden on iOS and Android.",
       "logo": "/logos/plant-scanner-ai-logo.png",
-      "apk": "https://play.google.com",
-      "googlePlay": "https://play.google.com",
-      "appStore": "https://apps.apple.com"
+      "apk": "https://play.google.com/store/apps/details?id=com.aaronaludotech.plantscannerai",
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.aaronaludotech.plantscannerai"
     },
     {
       "name": "Jewelry Scanner AI: Authenticity Test",
       "description": "AI-powered jewelry identification tool that scans photos to identify precious metals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
-      "logo": "/logos/jewelry-scanner-ai-logo.png",
-      "apk": "https://play.google.com",
-      "googlePlay": "https://play.google.com",
-      "appStore": "https://apps.apple.com"
+      "logo": "/logos/jewelry-scanner-ai-logo.png"
     },
     {
-      "name": "Math Scanner AI: Homework Solver",
-      "description": "AI-powered math problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
-      "logo": "/logos/math-scanner-ai-logo.png",
-      "apk": "https://play.google.com",
-      "googlePlay": "https://play.google.com",
-      "appStore": "https://apps.apple.com"
-    },
-    {
-      "name": "Physics Scanner AI:  Homework Solver",
-      "description": "AI-powered physics problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
-      "logo": "/logos/physics-scanner-ai-logo.png",
-      "apk": "https://play.google.com",
-      "googlePlay": "https://play.google.com",
-      "appStore": "https://apps.apple.com"
-    },
-    {
-      "name": "Chemisty Scanner AI: Homework Solver ",
-      "description": "AI-powered chemistry problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
-      "logo": "/logos/chemistry-scanner-ai-logo.png",
-      "apk": "https://play.google.com",
-      "googlePlay": "https://play.google.com",
-      "appStore": "https://apps.apple.com"
-    },
-    {
-      "name": "Rock Scanner AI: Diagnose Crytals",
+      "name": "Rock Scanner AI: Diagnose Crystals",
       "description": "AI-powered rock identification tool that scans photos to identify minerals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
-      "logo": "/logos/rock-scanner-ai-logo.png",
-      "apk": "https://play.google.com",
-      "googlePlay": "https://play.google.com",
-      "appStore": "https://apps.apple.com"
+      "logo": "/logos/rock-scanner-ai-logo.png"
     }
   ],
   "allProjects": [
     {
+      "name": "Ma, Ano Ulam?",
+      "description": "Filipino ulam finder for random dish ideas, ingredient matching, budget-friendly recipes, cooking time, and tutorial videos.",
+      "logo": "/logos/mama-ano-ulam-logo.png",
+      "link": "https://maanoulam.aaronaludo.com"
+    },
+    {
+      "name": "VibeMovie",
+      "description": "Movie recommendation web app that suggests top-rated films based on your current mood, from cozy comfort picks to thrilling watch-night choices.",
+      "logo": "/logos/vibemovie-logo.png",
+      "link": "https://vibemovie.aaronaludo.com"
+    },
+    {
       "name": "Plant Scanner AI:  Identify & Diagnose",
       "description": "AI-powered plant care companion that scans photos to diagnose diseases, delivers personalized treatment plans, and tracks your garden on iOS and Android.",
       "logo": "/logos/plant-scanner-ai-logo.png",
-      "apk": "https://play.google.com",
-      "googlePlay": "https://play.google.com",
-      "appStore": "https://apps.apple.com"
+      "apk": "https://play.google.com/store/apps/details?id=com.aaronaludotech.plantscannerai",
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.aaronaludotech.plantscannerai"
     },
     {
       "name": "Jewelry Scanner AI: Authenticity Test",
       "description": "AI-powered jewelry identification tool that scans photos to identify precious metals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
-      "logo": "/logos/jewelry-scanner-ai-logo.png",
-      "apk": "https://play.google.com",
-      "googlePlay": "https://play.google.com",
-      "appStore": "https://apps.apple.com"
+      "logo": "/logos/jewelry-scanner-ai-logo.png"
     },
     {
       "name": "Math Scanner AI: Homework Solver",
       "description": "AI-powered math problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
-      "logo": "/logos/math-scanner-ai-logo.png",
-      "apk": "https://play.google.com",
-      "googlePlay": "https://play.google.com",
-      "appStore": "https://apps.apple.com"
+      "logo": "/logos/math-scanner-ai-logo.png"
     },
     {
       "name": "Physics Scanner AI:  Homework Solver",
       "description": "AI-powered physics problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
-      "logo": "/logos/physics-scanner-ai-logo.png",
-      "apk": "https://play.google.com",
-      "googlePlay": "https://play.google.com",
-      "appStore": "https://apps.apple.com"
+      "logo": "/logos/physics-scanner-ai-logo.png"
     },
     {
       "name": "Chemisty Scanner AI: Homework Solver ",
       "description": "AI-powered chemistry problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
-      "logo": "/logos/chemistry-scanner-ai-logo.png",
-      "apk": "https://play.google.com",
-      "googlePlay": "https://play.google.com",
-      "appStore": "https://apps.apple.com"
+      "logo": "/logos/chemistry-scanner-ai-logo.png"
     },
     {
-      "name": "Rock Scanner AI: Diagnose Crytals",
+      "name": "Rock Scanner AI: Diagnose Crystals",
       "description": "AI-powered rock identification tool that scans photos to identify minerals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
-      "logo": "/logos/rock-scanner-ai-logo.png",
-      "apk": "https://play.google.com",
-      "googlePlay": "https://play.google.com",
-      "appStore": "https://apps.apple.com"
+      "logo": "/logos/rock-scanner-ai-logo.png"
     }
   ],
   "certifications": [

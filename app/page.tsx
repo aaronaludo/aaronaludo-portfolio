@@ -6,6 +6,7 @@ import {
   SiAmazonwebservices,
   SiAuth0,
   SiBootstrap,
+  SiClaude,
   SiDiscord,
   SiDocker,
   SiEslint,
@@ -19,9 +20,7 @@ import {
   SiJavascript,
   SiJira,
   SiJsonwebtokens,
-  SiLangchain,
   SiLaravel,
-  SiMake,
   SiMariadb,
   SiMysql,
   SiNextdotjs,
@@ -31,18 +30,16 @@ import {
   SiPostgresql,
   SiPrettier,
   SiPycharm,
-  SiPytorch,
   SiPython,
   SiReact,
   SiSass,
+  SiSupabase,
   SiTailwindcss,
   SiTensorflow,
   SiTypescript,
   SiVite,
-  SiWebflow,
   SiWebpack,
-  SiWordpress,
-  SiZapier
+  SiWordpress
 } from "react-icons/si";
 import { PiCursorFill } from "react-icons/pi";
 import { TbApi, TbBrandTeams, TbBrandVscode, TbTopologyStar3 } from "react-icons/tb";
@@ -84,7 +81,7 @@ const Card = ({
   className?: string;
 }) => (
   <div
-    className={`rounded-2xl border border-white/10 bg-white/5 p-5 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:p-6 ${className ?? ""}`}
+    className={`rounded-md border border-white/10 bg-neutral-950 p-5 sm:p-6 ${className ?? ""}`}
   >
     {children}
   </div>
@@ -117,7 +114,7 @@ const Pill = ({ label }: { label: string }) => {
   const Icon = techStyle.icon;
 
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/90">
+    <span className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/90">
       {Icon ? (
         <Icon className="h-4 w-4" style={{ color: techStyle.color }} />
       ) : (
@@ -137,7 +134,7 @@ const Button = ({
   className
 }: ButtonProps) => {
   const base =
-    "inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-sm font-semibold transition duration-150 ease-out shadow-md shadow-black/15";
+    "inline-flex items-center gap-2 rounded-md px-3.5 py-1.5 text-sm font-semibold transition duration-150 ease-out";
   const styles: Record<ButtonVariant, string> = {
     solid: "bg-white text-black hover:bg-white/90",
     ghost: "border border-white/15 bg-white/10 text-white hover:border-white/30 hover:bg-white/15",
@@ -160,7 +157,7 @@ const Button = ({
 };
 
 const Divider = () => (
-  <span className="h-px w-full bg-gradient-to-r from-white/10 via-white/20 to-white/10" />
+  <span className="h-px w-full bg-white/10" />
 );
 
 export default function Home() {
@@ -169,21 +166,13 @@ export default function Home() {
   const hackathons = data.hackathons as Hackathon[];
 
   return (
-    <div className="relative min-h-screen overflow-hidden text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(255,255,255,0.1),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.08),transparent_26%),radial-gradient(circle_at_60%_70%,rgba(255,255,255,0.06),transparent_30%)]" />
+    <div className="min-h-screen bg-neutral-950 text-white">
+      <main className="mx-auto flex max-w-5xl flex-col gap-5 px-4 pb-12 pt-8 sm:px-6 lg:px-8">
+        <Card className="border-white/15 bg-neutral-900 p-5 sm:p-6 lg:p-7">
 
-      <main className="relative z-10 mx-auto flex max-w-5xl flex-col gap-5 px-4 pb-12 pt-8 sm:px-6 lg:px-8">
-        <Card className="relative overflow-hidden border-white/15 bg-gradient-to-r from-neutral-950/80 via-neutral-900/60 to-neutral-800/40 p-5 sm:p-6 lg:p-7">
-          <div className="pointer-events-none absolute inset-0">
-            <div className="absolute -left-12 -top-20 h-40 w-40 rounded-full bg-white/12 blur-3xl" />
-            <div className="absolute right-8 top-6 h-32 w-32 rounded-full bg-white/10 blur-3xl" />
-            <div className="absolute -bottom-8 right-0 h-48 w-48 rounded-full bg-white/8 blur-3xl" />
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5" />
-          </div>
-
-          <div className="relative grid grid-cols-1 gap-6 text-center md:grid-cols-[auto_1fr] md:text-left lg:grid-cols-[auto_1fr_auto] lg:items-center">
+          <div className="grid grid-cols-1 gap-6 text-center md:grid-cols-[auto_1fr] md:text-left lg:grid-cols-[auto_1fr_auto] lg:items-center">
             <div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:gap-5">
-              <div className="relative h-20 w-20 overflow-hidden rounded-3xl border border-white/15 bg-white/10 shadow-2xl ring-2 ring-white/10 sm:h-24 sm:w-24 md:h-24 md:w-24">
+              <div className="relative h-20 w-20 overflow-hidden rounded-md border border-white/15 bg-white/10 sm:h-24 sm:w-24 md:h-24 md:w-24">
                 <Image
                   src={data.profile.image}
                   alt={data.profile.name}
@@ -205,8 +194,8 @@ export default function Home() {
                 </div>
                 <p className="text-base text-white/90 sm:text-lg">{data.profile.role}</p>
                 <div className="flex flex-col gap-3 pt-1 text-sm text-white/90 sm:flex-row sm:flex-wrap sm:items-center sm:gap-2 sm:text-xs">
-                  <span className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-white/25 bg-white/10 px-4 py-2.5 font-semibold text-white shadow-inner shadow-white/10 sm:w-auto sm:rounded-full sm:px-3 sm:py-2">
-                    <span className="h-2 w-2 rounded-full bg-white/70 shadow-[0_0_0_2px_rgba(255,255,255,0.12)]" />
+                  <span className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/25 bg-white/10 px-4 py-2.5 font-semibold text-white sm:w-auto sm:px-3 sm:py-2">
+                    <span className="h-2 w-2 rounded-full bg-white/70" />
                     <span className="leading-snug">{data.profile.availability}</span>
                   </span>
                 </div>
@@ -253,7 +242,7 @@ export default function Home() {
               {data.experience.map((item) => (
                 <div
                   key={`${item.role}-${item.year}`}
-                  className="relative grid gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-3 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:pl-7"
+                  className="relative grid gap-2 rounded-md border border-white/10 bg-white/5 px-4 py-3 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-3 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:pl-7"
                 >
                   <span className="absolute left-1.5 top-4 hidden h-3 w-3 rounded-full border border-white/30 bg-white/20 sm:block" />
                   <div className="space-y-1">
@@ -285,7 +274,7 @@ export default function Home() {
             <Divider />
             <div>
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/90">
-                Backend
+                Backend, APIs &amp; Databases
               </p>
               <div className="flex flex-wrap gap-2">
                 {data.techStack.backend.map((item) => (
@@ -346,10 +335,9 @@ export default function Home() {
             {projects.map((project) => (
               <div
                 key={project.name}
-                className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/8 via-white/5 to-white/5 p-5 transition duration-200 hover:-translate-y-0.5 hover:border-white/25"
+                className="group flex h-full flex-col justify-between overflow-hidden rounded-md border border-white/10 bg-white/5 p-5 transition duration-200 hover:-translate-y-0.5 hover:border-white/25"
               >
-                <div className="pointer-events-none absolute -right-10 -top-12 h-28 w-28 rounded-full bg-white/5 blur-3xl transition group-hover:bg-white/10" />
-                <div className="relative space-y-3">
+                <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     <ProjectLogo name={project.name} logo={project.logo} />
                     <div className="space-y-1">
@@ -364,7 +352,7 @@ export default function Home() {
                       href={project.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
+                      className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
                     >
                       <WebsiteIcon className="h-4 w-4 text-white" />
                       {project.link.replace("https://", "").replace("http://", "")}
@@ -376,10 +364,10 @@ export default function Home() {
                       href={project.apk}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
+                      className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition duration-150 hover:border-white/30 hover:bg-white/15"
                     >
-                      <DownloadIcon className="h-4 w-4 text-white" />
-                      Download APK
+                      <GooglePlayIcon className="h-4 w-4" />
+                      Google Play Store
                       <ArrowIcon />
                     </a>
                   ) : null}
@@ -389,7 +377,7 @@ export default function Home() {
           </div>
         </Card>
 
-        <Card className="overflow-hidden border-white/12 bg-white/5">
+        <Card className="overflow-hidden border-white/12 bg-neutral-950">
           <SectionHeading title="Recent Certifications" actionLabel="View all" href="#" />
           <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-3 sm:gap-4">
             {data.certifications.map((cert) => (
@@ -398,10 +386,10 @@ export default function Home() {
                 href={cert.link ?? "#"}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-white/90 transition duration-150 hover:-translate-y-[1px] hover:border-white/25 hover:bg-white/10"
+                className="group flex items-center justify-between gap-4 rounded-md border border-white/10 bg-white/5 px-5 py-4 text-sm text-white/90 transition duration-150 hover:-translate-y-[1px] hover:border-white/25 hover:bg-white/10"
               >
                 <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/10 text-[11px] font-semibold text-white">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white/10 text-[11px] font-semibold text-white">
                     {getIssuerIcon(cert.issuer) ?? (cert.issuer?.[0] ?? "C")}
                   </span>
                   <div className="space-y-1">
@@ -411,7 +399,7 @@ export default function Home() {
                     <div className="text-xs text-white/90">{cert.issuer}</div>
                   </div>
                 </div>
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-white/90 transition group-hover:border-white/25 group-hover:text-white">
+                <span className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-white/90 transition group-hover:border-white/25 group-hover:text-white">
                   View <ArrowIcon />
                 </span>
               </a>
@@ -430,7 +418,7 @@ export default function Home() {
                 return (
                   <div
                     key={`${hackathon.title}-${hackathon.date}`}
-                    className={`grid grid-cols-[auto_1fr] gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 sm:gap-5 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 ${!isLast ? "sm:pb-4 sm:border-b sm:border-white/10 sm:border-dashed" : ""}`}
+                    className={`grid grid-cols-[auto_1fr] gap-3 rounded-md border border-white/10 bg-white/5 p-4 sm:gap-5 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 ${!isLast ? "sm:pb-4 sm:border-b sm:border-white/10 sm:border-dashed" : ""}`}
                   >
                     <div className="pt-1">
                       <HackathonBadge
@@ -465,7 +453,7 @@ export default function Home() {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white hover:border-white/20"
+                className="flex items-center justify-between rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white hover:border-white/20"
               >
                 <span className="flex items-center gap-3">
                   <SocialIcon label={link.label} />
@@ -484,10 +472,10 @@ export default function Home() {
               <a
                 key={contact.label}
                 href={contact.href}
-                className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white hover:border-white/20"
+                className="flex items-center justify-between rounded-md border border-white/10 bg-white/5 px-4 py-3 text-sm text-white hover:border-white/20"
               >
                 <span className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-md bg-white/10">
                     <ContactIcon label={contact.label} />
                   </span>
                   <span>
@@ -598,17 +586,17 @@ const WebsiteIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const DownloadIcon = ({ className }: { className?: string }) => (
+const GooglePlayIcon = ({ className }: { className?: string }) => (
   <svg
     aria-hidden
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     className={className}
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
   >
-    <path d="M12 4.5v9m0 0 3.75-3.75M12 13.5l-3.75-3.75M5 19.5h14" strokeLinecap="round" strokeLinejoin="round" />
+    <path fill="#4285f4" d="M4.25 3.2 13.4 12l-9.15 8.8a2.2 2.2 0 0 1-.25-1.02V4.22c0-.36.09-.7.25-1.02Z" />
+    <path fill="#34a853" d="m14.26 11.17 2.37-2.28L6.7 3.4c-.84-.47-1.6-.5-2.1-.2l9.66 7.97Z" />
+    <path fill="#fbbc04" d="m14.26 12.83-9.66 7.97c.5.3 1.26.27 2.1-.2l9.93-5.49-2.37-2.28Z" />
+    <path fill="#ea4335" d="m20.02 10.76-3.39-1.87L13.4 12l3.23 3.11 3.39-1.87c1.3-.72 1.3-1.76 0-2.48Z" />
   </svg>
 );
 
@@ -633,23 +621,20 @@ const techIconMap: Record<string, { icon?: IconType }> = {
   postgresql: { icon: SiPostgresql },
   mysql: { icon: SiMysql },
   mariadb: { icon: SiMariadb },
+  supabase: { icon: SiSupabase },
   oauth: { icon: SiAuth0 },
   jwt: { icon: SiJsonwebtokens },
-  rest: { icon: TbApi },
+  "rest api": { icon: TbApi },
   aws: { icon: SiAmazonwebservices },
   docker: { icon: SiDocker },
   "github actions": { icon: SiGithubactions },
-  tensorflow: { icon: SiTensorflow },
-  pytorch: { icon: SiPytorch },
-  langchain: { icon: SiLangchain },
   ollama: { icon: SiOllama },
   openai: { icon: SiOpenai },
+  claude: { icon: SiClaude },
   gemini: { icon: SiGoogle },
+  tensorflow: { icon: SiTensorflow },
   wordpress: { icon: SiWordpress },
   n8n: { icon: TbTopologyStar3 },
-  make: { icon: SiMake },
-  zapier: { icon: SiZapier },
-  webflow: { icon: SiWebflow },
   git: { icon: SiGit },
   github: { icon: SiGithub },
   firebase: { icon: SiFirebase },
@@ -659,7 +644,7 @@ const techIconMap: Record<string, { icon?: IconType }> = {
   cursor: { icon: PiCursorFill },
   pycharm: { icon: SiPycharm },
   discord: { icon: SiDiscord },
-  teams: { icon: TbBrandTeams }
+  "microsoft teams": { icon: TbBrandTeams }
 };
 
 const getTechStyle = (
@@ -689,7 +674,7 @@ const getTechStyle = (
 
 const TechInitial = ({ initials, color }: { initials: string; color: string }) => (
   <span
-    className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/10 text-[10px] font-semibold"
+    className="flex h-5 w-5 shrink-0 items-center justify-center rounded-sm border border-white/10 bg-white/10 text-[10px] font-semibold"
     style={{
       color,
       boxShadow: color ? `0 0 0 1px ${color}33` : undefined
@@ -720,7 +705,7 @@ const HackathonBadge = ({
       .toUpperCase();
 
   return (
-    <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 text-[10px] font-semibold text-white/90 shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
+    <div className="flex h-12 w-12 items-center justify-center rounded-md border border-white/15 bg-white/10 text-[10px] font-semibold text-white/90">
       {logo ? (
         <Image
           src={logo}
@@ -737,6 +722,7 @@ const HackathonBadge = ({
 };
 
 const ProjectLogo = ({ name, logo }: { name: string; logo?: string }) => {
+  const isMaAnoUlam = name === "Ma, Ano Ulam?";
   const initials =
     name
       .replace(/[^a-zA-Z0-9 ]/g, " ")
@@ -748,14 +734,14 @@ const ProjectLogo = ({ name, logo }: { name: string; logo?: string }) => {
       .toUpperCase() || "PR";
 
   return (
-    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/10 shadow-inner shadow-white/5 transition group-hover:border-white/30 group-hover:bg-white/15">
+    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md border border-white/15 bg-white/10 transition group-hover:border-white/30 group-hover:bg-white/15">
       {logo ? (
         <Image
           src={logo}
           alt={`${name} logo`}
           width={40}
           height={40}
-          className="h-10 w-10 object-contain"
+          className={`${isMaAnoUlam ? "h-[52px] w-[52px]" : "h-10 w-10"} object-contain`}
         />
       ) : (
         <span className="text-xs font-semibold text-white/85">{initials}</span>

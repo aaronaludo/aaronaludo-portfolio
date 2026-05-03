@@ -8,7 +8,7 @@
     "ctas": [
       { "label": "Send Email", "href": "mailto:aaronaludo@gmail.com", "variant": "ghost" }
     ]
-  },
+  }, 
   "about": {
     "title": "About",
     "paragraphs": [

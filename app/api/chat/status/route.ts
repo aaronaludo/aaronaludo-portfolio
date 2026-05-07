@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
-import { CHAT_AGENT_URL } from "../config";
+import { CHAT_AGENT_HEALTH_URL } from "../config";
 
 export async function GET() {
+  if (!CHAT_AGENT_HEALTH_URL) {
+    return NextResponse.json({ status: "online" });
+  }
+
   try {
-    const response = await fetch(`${CHAT_AGENT_URL}/health`, {
+    const response = await fetch(CHAT_AGENT_HEALTH_URL, {
       cache: "no-store",
       signal: AbortSignal.timeout(2500),
     });

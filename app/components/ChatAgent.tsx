@@ -19,61 +19,60 @@ const initialMessages: ChatMessage[] = [
   {
     id: "welcome",
     role: "assistant",
-    content:
-      "Hi, I'm here if you'd like to ask anything about Aaron.",
+    content: "Hi, I'm Aaron. You can ask me about my work, projects, or background.",
   },
 ];
 
 const offlineMessages = [
-  "Aaron AI Assistant is not available right now. Please try again shortly.",
+  "Aaron Aludo is not available right now. Please try again shortly.",
   "I'm not available at the moment, but I should be back soon.",
-  "Aaron AI Assistant is taking a quick pause. Please try again later.",
+  "Aaron Aludo is taking a quick pause. Please try again later.",
   "I can't respond right now. Please check back in a bit.",
-  "Aaron AI Assistant is temporarily unavailable.",
+  "Aaron Aludo is temporarily unavailable.",
   "I'm having trouble replying right now. Please try again soon.",
-  "Aaron AI Assistant is away for a moment. Try again shortly.",
+  "Aaron Aludo is away for a moment. Try again shortly.",
   "I'm not ready to chat right now, but I'll be back soon.",
-  "Aaron AI Assistant is currently unavailable. Please try again later.",
+  "Aaron Aludo is currently unavailable. Please try again later.",
   "I can't answer at the moment. Please come back in a little while.",
-  "Aaron AI Assistant needs a moment before responding.",
+  "Aaron Aludo needs a moment before responding.",
   "I'm temporarily unable to reply right now.",
-  "Aaron AI Assistant is offline for now. Please try again soon.",
+  "Aaron Aludo is offline for now. Please try again soon.",
   "I'm unavailable right now, but this should only be temporary.",
-  "Aaron AI Assistant can't take messages at the moment.",
+  "Aaron Aludo can't take messages at the moment.",
   "I'm having a quiet moment. Please try again shortly.",
-  "Aaron AI Assistant is not responding right now.",
+  "Aaron Aludo is not responding right now.",
   "I can't help just yet. Please try again in a moment.",
-  "Aaron AI Assistant is briefly unavailable.",
+  "Aaron Aludo is briefly unavailable.",
   "I'm paused right now. Please check back soon.",
-  "Aaron AI Assistant is resting for a moment. Try again later.",
+  "Aaron Aludo is resting for a moment. Try again later.",
   "I'm not able to reply right now, but I should be back soon.",
-  "Aaron AI Assistant is temporarily out of reach.",
+  "Aaron Aludo is temporarily out of reach.",
   "I can't connect with you right now. Please try again shortly.",
-  "Aaron AI Assistant is unavailable at the moment.",
+  "Aaron Aludo is unavailable at the moment.",
   "I'm taking a short break from chatting. Please try again soon.",
-  "Aaron AI Assistant is not available to answer just now.",
+  "Aaron Aludo is not available to answer just now.",
   "I'm unable to respond at this moment.",
-  "Aaron AI Assistant is quiet right now. Please try again later.",
+  "Aaron Aludo is quiet right now. Please try again later.",
   "I can't reply right now, but please check back soon.",
-  "Aaron AI Assistant is momentarily unavailable.",
+  "Aaron Aludo is momentarily unavailable.",
   "I'm not online right now. Please try again in a bit.",
-  "Aaron AI Assistant is taking a moment to come back online.",
+  "Aaron Aludo is taking a moment to come back online.",
   "I'm currently unable to chat.",
-  "Aaron AI Assistant can't respond right now.",
+  "Aaron Aludo can't respond right now.",
   "I'm unavailable for the moment. Please try again shortly.",
-  "Aaron AI Assistant is briefly offline.",
+  "Aaron Aludo is briefly offline.",
   "I'm not able to answer right now. Please come back soon.",
-  "Aaron AI Assistant is away from the chat for a moment.",
+  "Aaron Aludo is away from the chat for a moment.",
   "I'm having a temporary issue responding.",
-  "Aaron AI Assistant is not reachable right now.",
+  "Aaron Aludo is not reachable right now.",
   "I can't continue the chat at the moment.",
-  "Aaron AI Assistant is taking a short pause.",
+  "Aaron Aludo is taking a short pause.",
   "I'm temporarily unavailable. Please try again soon.",
-  "Aaron AI Assistant is not ready to respond yet.",
+  "Aaron Aludo is not ready to respond yet.",
   "I'm unable to chat right now, but I'll be back soon.",
-  "Aaron AI Assistant is currently taking a quick timeout.",
+  "Aaron Aludo is currently taking a quick timeout.",
   "I can't answer this just yet. Please try again later.",
-  "Aaron AI Assistant is unavailable right now, but only temporarily.",
+  "Aaron Aludo is unavailable right now, but only temporarily.",
   "I'm not available to respond at the moment. Please check back soon.",
 ];
 
@@ -233,7 +232,10 @@ export default function ChatAgent() {
             <div className="flex items-center justify-between gap-3">
               <div>
                 <div className="flex flex-wrap items-center gap-2">
-                  <p className="text-sm font-semibold">Aaron AI Assistant</p>
+                  <p className="text-sm font-semibold">Aaron Aludo</p>
+                  <span className="rounded-md border border-amber-300/25 bg-amber-300/10 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber-100">
+                    Beta
+                  </span>
                   <span className="inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-white/5 px-2 py-0.5 text-[11px] font-semibold text-white/80">
                     <span className={`h-2 w-2 rounded-full ${statusClasses}`} />
                     {statusLabel}
@@ -258,9 +260,6 @@ export default function ChatAgent() {
                 className={`flex min-w-0 ${message.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 <div className={`max-w-[85%] ${message.role === "user" ? "" : "space-y-2"}`}>
-                  {message.role === "assistant" && message.mode ? (
-                    <ChatModeBadge mode={message.mode} />
-                  ) : null}
                   <div
                     className={`overflow-hidden whitespace-pre-wrap break-words rounded-md px-4 py-3 text-sm leading-relaxed [overflow-wrap:anywhere] ${
                       message.role === "user"
@@ -304,7 +303,7 @@ export default function ChatAgent() {
                   }
                 }}
                 rows={1}
-                placeholder="Message Aaron AI Assistant..."
+                placeholder="Message Aaron Aludo..."
                 className="max-h-28 min-h-11 flex-1 resize-none rounded-md border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-white/30"
               />
               <button
@@ -335,34 +334,3 @@ export default function ChatAgent() {
     </div>
   );
 }
-
-const ChatModeBadge = ({ mode }: { mode: ChatMode }) => {
-  const label =
-    mode === "rag"
-      ? "RAG mode"
-      : mode === "direct"
-        ? "Direct mode"
-      : mode === "hybrid"
-        ? "Hybrid mode"
-      : mode === "blocked"
-        ? "Blocked"
-        : "Casual mode";
-
-  const dotClass =
-    mode === "rag"
-      ? "bg-sky-400"
-      : mode === "direct"
-        ? "bg-violet-400"
-      : mode === "hybrid"
-        ? "bg-amber-400"
-      : mode === "blocked"
-        ? "bg-red-400"
-        : "bg-emerald-400";
-
-  return (
-    <span className="inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-white/5 px-2 py-0.5 text-[11px] font-semibold text-white/70">
-      <span className={`h-1.5 w-1.5 rounded-full ${dotClass}`} />
-      {label}
-    </span>
-  );
-};

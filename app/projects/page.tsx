@@ -55,6 +55,18 @@ const GooglePlayIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const AppStoreIcon = ({ className }: { className?: string }) => (
+  <svg
+    aria-hidden
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    className={className}
+    fill="currentColor"
+  >
+    <path d="M16.36 12.78c.02 2.4 2.1 3.2 2.13 3.21-.02.06-.33 1.14-1.1 2.25-.66.96-1.34 1.92-2.42 1.94-1.06.02-1.4-.63-2.61-.63-1.21 0-1.59.61-2.59.65-1.04.04-1.83-1.04-2.5-2-1.36-1.97-2.4-5.56-1-7.98.69-1.2 1.93-1.96 3.27-1.98 1.02-.02 1.99.69 2.61.69.63 0 1.8-.85 3.03-.73.52.02 1.97.21 2.9 1.58-.07.05-1.73 1.01-1.72 3.01ZM14.38 5.4c.55-.67.92-1.6.82-2.53-.79.03-1.76.53-2.33 1.2-.51.59-.96 1.54-.84 2.45.88.07 1.78-.45 2.35-1.12Z" />
+  </svg>
+);
+
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
@@ -129,6 +141,18 @@ export default function ProjectsPage() {
                       >
                         <GooglePlayIcon className="h-4 w-4" />
                         Google Play Store
+                        <ArrowIcon />
+                      </a>
+                    ) : null}
+                    {project.appStore ? (
+                      <a
+                        href={project.appStore}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition duration-150 hover:border-white/30 hover:bg-white/15"
+                      >
+                        <AppStoreIcon className="h-4 w-4" />
+                        App Store
                         <ArrowIcon />
                       </a>
                     ) : null}

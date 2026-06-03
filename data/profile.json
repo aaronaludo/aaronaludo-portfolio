@@ -85,6 +85,14 @@
   },
   "projects": [
     {
+      "name": "Hotspot Havoc",
+      "year": "2026",
+      "description": "Local multiplayer arena game for nearby phones — create a room, find players over the same Wi-Fi or hotspot, and battle in fast, account-free matches with no cloud lobby.",
+      "logo": "/logos/hotspot-havoc-logo.png",
+      "link": "https://hotspothavoc.aaronaludo.com",
+      "appStore": "https://apps.apple.com/ph/app/hotspot-havoc/id6766814349"
+    },
+    {
       "name": "Ma, Ano Ulam?",
       "year": "2026",
       "description": "Filipino ulam finder for random dish ideas, ingredient matching, budget-friendly recipes, cooking time, and tutorial videos.",
@@ -120,6 +128,14 @@
     }
   ],
   "allProjects": [
+    {
+      "name": "Hotspot Havoc",
+      "year": "2026",
+      "description": "Local multiplayer arena game for nearby phones — create a room, find players over the same Wi-Fi or hotspot, and battle in fast, account-free matches with no cloud lobby.",
+      "logo": "/logos/hotspot-havoc-logo.png",
+      "link": "https://hotspothavoc.aaronaludo.com",
+      "appStore": "https://apps.apple.com/ph/app/hotspot-havoc/id6766814349"
+    },
     {
       "name": "Ma, Ano Ulam?",
       "year": "2026",

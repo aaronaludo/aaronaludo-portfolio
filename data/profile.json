@@ -85,6 +85,12 @@
   },
   "projects": [
     {
+      "name": "ConvoyFriends",
+      "year": "2026",
+      "description": "Group-driving app for the Philippines — form a convoy, share one route, see fellow drivers live on the map, and stay in sync over group voice and chat, with CarPlay and Android Auto support.",
+      "logo": "/logos/convoyfriends-logo.png"
+    },
+    {
       "name": "Hotspot Havoc",
       "year": "2026",
       "description": "Local multiplayer arena game for nearby phones — create a room, find players over the same Wi-Fi or hotspot, and battle in fast, account-free matches with no cloud lobby.",
@@ -128,6 +134,12 @@
     }
   ],
   "allProjects": [
+    {
+      "name": "ConvoyFriends",
+      "year": "2026",
+      "description": "Group-driving app for the Philippines — form a convoy, share one route, see fellow drivers live on the map, and stay in sync over group voice and chat, with CarPlay and Android Auto support.",
+      "logo": "/logos/convoyfriends-logo.png"
+    },
     {
       "name": "Hotspot Havoc",
       "year": "2026",

@@ -88,7 +88,16 @@
       "name": "ConvoyFriends",
       "year": "2026",
       "description": "Group-driving app for the Philippines — form a convoy, share one route, see fellow drivers live on the map, and stay in sync over group voice and chat, with CarPlay and Android Auto support.",
-      "logo": "/logos/convoyfriends-logo.png"
+      "logo": "/logos/convoyfriends-logo.png",
+      "link": "https://confri.app"
+    },
+    {
+      "name": "Hotspot Arena",
+      "year": "2026",
+      "description": "Create a room, find nearby players, and battle over local network or hotspot connections. No account, no cloud lobby, just fast jetpack arena chaos with the people around you.",
+      "logo": "/logos/hotspot-arena-logo.png",
+      "link": "https://hotspotarena.aaronaludo.com",
+      "appStore": "https://apps.apple.com/ph/app/hotspot-arena/id6777266378"
     },
     {
       "name": "Hotspot Havoc",
@@ -138,7 +147,16 @@
       "name": "ConvoyFriends",
       "year": "2026",
       "description": "Group-driving app for the Philippines — form a convoy, share one route, see fellow drivers live on the map, and stay in sync over group voice and chat, with CarPlay and Android Auto support.",
-      "logo": "/logos/convoyfriends-logo.png"
+      "logo": "/logos/convoyfriends-logo.png",
+      "link": "https://confri.app"
+    },
+    {
+      "name": "Hotspot Arena",
+      "year": "2026",
+      "description": "Local multiplayer arena game for nearby phones — create a room, find players over the same Wi-Fi or hotspot, and battle in fast, account-free matches with no cloud lobby.",
+      "logo": "/logos/hotspot-havoc-logo.png",
+      "link": "https://hotspothavoc.aaronaludo.com",
+      "appStore": "https://apps.apple.com/ph/app/hotspot-havoc/id6766814349"
     },
     {
       "name": "Hotspot Havoc",

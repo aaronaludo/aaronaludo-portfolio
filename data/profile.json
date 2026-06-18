@@ -75,6 +75,13 @@
       "logo": "/logos/hackathon-generic.svg"
     }
   ],
+  "aiTools": {
+    "primary": {
+      "name": "Claude Code",
+      "note": "My day-to-day driver — I use it to build, debug, and ship real projects."
+    },
+    "others": ["Claude", "OpenAI", "Gemini", "Ollama", "Cursor"]
+  },
   "techStack": {
     "frontend": ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Bootstrap", "SCSS", "Vite", "Webpack", "ESLint", "Prettier"],
     "backend": ["Python", "PHP", "Laravel", "FastAPI", "REST API", "OAuth", "JWT", "PostgreSQL", "MySQL", "MariaDB", "Supabase", "Firebase"],
@@ -85,31 +92,51 @@
   },
   "projects": [
     {
+      "name": "InStack",
+      "year": "2025",
+      "company": "24x7 Direct",
+      "description": "AI voice agents for small business — answers the phone, books appointments, captures leads, and follows up by SMS with real voice calls around the clock.",
+      "logo": "/logos/instack-logo.png",
+      "link": "https://instack.com.au",
+      "highlights": ["I Integrate OpenAI Models"],
+      "highlightColor": "pink"
+    },
+    {
       "name": "ConvoyFriends",
       "year": "2026",
+      "company": "GELabs",
       "description": "Group-driving app for the Philippines — form a convoy, share one route, see fellow drivers live on the map, and stay in sync over group voice and chat, with CarPlay and Android Auto support.",
       "logo": "/logos/convoyfriends-logo.png",
-      "link": "https://confri.app"
+      "link": "https://confri.app",
+      "highlights": ["I Integrate Mobile SDK (HERE SDK Navigate)"],
+      "highlightColor": "blue"
     },
     {
       "name": "Hotspot Arena",
       "year": "2026",
+      "company": "Aaron Aludo",
       "description": "Create a room, find nearby players, and battle over local network or hotspot connections. No account, no cloud lobby, just fast jetpack arena chaos with the people around you.",
       "logo": "/logos/hotspot-arena-logo.png",
       "link": "https://hotspotarena.aaronaludo.com",
-      "appStore": "https://apps.apple.com/ph/app/hotspot-arena/id6777266378"
+      "appStore": "https://apps.apple.com/ph/app/hotspot-arena/id6777266378",
+      "highlights": ["Re-create Mini Militia, My Childhood Game"],
+      "highlightColor": "green"
     },
     {
       "name": "Hotspot Havoc",
       "year": "2026",
+      "company": "Aaron Aludo",
       "description": "Local multiplayer arena game for nearby phones — create a room, find players over the same Wi-Fi or hotspot, and battle in fast, account-free matches with no cloud lobby.",
       "logo": "/logos/hotspot-havoc-logo.png",
       "link": "https://hotspothavoc.aaronaludo.com",
-      "appStore": "https://apps.apple.com/ph/app/hotspot-havoc/id6766814349"
+      "appStore": "https://apps.apple.com/ph/app/hotspot-havoc/id6766814349",
+      "highlights": ["My First Time Developing and Publishing a Game"],
+      "highlightColor": "cyan"
     },
     {
       "name": "Ma, Ano Ulam?",
       "year": "2026",
+      "company": "Aaron Aludo",
       "description": "Filipino ulam finder for random dish ideas, ingredient matching, budget-friendly recipes, cooking time, and tutorial videos.",
       "logo": "/logos/mama-ano-ulam-logo.png",
       "link": "https://maanoulam.aaronaludo.com"
@@ -117,6 +144,7 @@
     {
       "name": "VibeMovie",
       "year": "2026",
+      "company": "Aaron Aludo",
       "description": "Movie recommendation web app that suggests top-rated films based on your current mood, from cozy comfort picks to thrilling watch-night choices.",
       "logo": "/logos/vibemovie-logo.png",
       "link": "https://vibemovie.aaronaludo.com"
@@ -124,31 +152,31 @@
     {
       "name": "Plant Scanner AI:  Identify & Diagnose",
       "year": "2025",
+      "company": "Aaron Aludo",
       "description": "AI-powered plant care companion that scans photos to diagnose diseases, delivers personalized treatment plans, and tracks your garden on iOS and Android.",
       "logo": "/logos/plant-scanner-ai-logo.png",
       "apk": "https://play.google.com/store/apps/details?id=com.aaronaludotech.plantscannerai",
       "googlePlay": "https://play.google.com/store/apps/details?id=com.aaronaludotech.plantscannerai"
-    },
-    {
-      "name": "Jewelry Scanner AI: Authenticity Test",
-      "year": "2025",
-      "description": "AI-powered jewelry identification tool that scans photos to identify precious metals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
-      "logo": "/logos/jewelry-scanner-ai-logo.png"
-    },
-    {
-      "name": "Rock Scanner AI: Diagnose Crystals",
-      "year": "2025",
-      "description": "AI-powered rock identification tool that scans photos to identify minerals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
-      "logo": "/logos/rock-scanner-ai-logo.png"
     }
   ],
   "allProjects": [
     {
+      "name": "InStack",
+      "year": "2025",
+      "company": "24x7 Direct",
+      "description": "AI voice agents for small business — answers the phone, books appointments, captures leads, and follows up by SMS with real voice calls around the clock.",
+      "logo": "/logos/instack-logo.png",
+      "link": "https://instack.com.au"
+    },
+    {
       "name": "ConvoyFriends",
       "year": "2026",
+      "company": "GELabs",
       "description": "Group-driving app for the Philippines — form a convoy, share one route, see fellow drivers live on the map, and stay in sync over group voice and chat, with CarPlay and Android Auto support.",
       "logo": "/logos/convoyfriends-logo.png",
-      "link": "https://confri.app"
+      "link": "https://confri.app",
+      "highlights": ["I Integrate Mobile SDK (HERE SDK Navigate)"],
+      "highlightColor": "blue"
     },
     {
       "name": "Hotspot Arena",
@@ -187,33 +215,6 @@
       "logo": "/logos/plant-scanner-ai-logo.png",
       "apk": "https://play.google.com/store/apps/details?id=com.aaronaludotech.plantscannerai",
       "googlePlay": "https://play.google.com/store/apps/details?id=com.aaronaludotech.plantscannerai"
-    },
-    {
-      "name": "Jewelry Scanner AI: Authenticity Test",
-      "year": "2025",
-      "description": "AI-powered jewelry identification tool that scans photos to identify precious metals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
-      "logo": "/logos/jewelry-scanner-ai-logo.png"
-    },
-    {
-      "name": "Math Scanner AI: Homework Solver",
-      "description": "AI-powered math problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
-      "logo": "/logos/math-scanner-ai-logo.png"
-    },
-    {
-      "name": "Physics Scanner AI:  Homework Solver",
-      "description": "AI-powered physics problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
-      "logo": "/logos/physics-scanner-ai-logo.png"
-    },
-    {
-      "name": "Chemisty Scanner AI: Homework Solver ",
-      "description": "AI-powered chemistry problem solver that scans photos to solve equations, provides step-by-step solutions, and tracks your progress on iOS and Android.",
-      "logo": "/logos/chemistry-scanner-ai-logo.png"
-    },
-    {
-      "name": "Rock Scanner AI: Diagnose Crystals",
-      "year": "2025",
-      "description": "AI-powered rock identification tool that scans photos to identify minerals and gemstones, delivers detailed appraisals, and tracks your collection on iOS and Android.",
-      "logo": "/logos/rock-scanner-ai-logo.png"
     }
   ],
   "certifications": [

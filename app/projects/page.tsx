@@ -5,11 +5,14 @@ import profileData from "../../data/profile.json";
 type Project = {
   name: string;
   year?: string;
+  company?: string;
   description: string;
   link?: string;
   apk?: string;
   googlePlay?: string;
   appStore?: string;
+  highlights?: string[];
+  highlightColor?: string;
 };
 
 const Card = ({
@@ -40,6 +43,62 @@ const formatLink = (link: string) => ({
   href: link.startsWith("http") ? link : `https://${link}`,
   label: link.replace(/^https?:\/\//, ""),
 });
+
+const SparkIcon = ({ className }: { className?: string }) => (
+  <svg
+    aria-hidden
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    className={className ?? "h-3 w-3"}
+    fill="currentColor"
+  >
+    <path d="M12 2.5l1.6 5.4a4 4 0 0 0 2.5 2.5l5.4 1.6-5.4 1.6a4 4 0 0 0-2.5 2.5L12 21.5l-1.6-5.4a4 4 0 0 0-2.5-2.5L2.5 12l5.4-1.6a4 4 0 0 0 2.5-2.5L12 2.5z" />
+  </svg>
+);
+
+const HighlightPill = ({ label }: { label: string }) => (
+  <span className="inline-flex items-center gap-1.5 rounded-md border border-[rgba(var(--hl),0.4)] bg-[rgba(var(--hl),0.12)] px-2.5 py-1 text-[11px] font-semibold text-[var(--hl-text)]">
+    <SparkIcon className="h-3 w-3 shrink-0" />
+    {label}
+  </span>
+);
+
+const HIGHLIGHT_PRESETS: Record<string, string> = {
+  orange: "#D97757",
+  blue: "#3B82F6",
+  green: "#22C55E",
+  purple: "#A855F7",
+  pink: "#EC4899",
+  red: "#EF4444",
+  yellow: "#EAB308",
+  teal: "#14B8A6",
+  cyan: "#06B6D4"
+};
+
+const getHighlightTheme = (color?: string) => {
+  const hex = !color
+    ? "#D97757"
+    : color.startsWith("#")
+      ? color
+      : HIGHLIGHT_PRESETS[color.toLowerCase()] ?? "#D97757";
+
+  const raw = hex.replace("#", "");
+  const full =
+    raw.length === 3
+      ? raw.split("").map((c) => c + c).join("")
+      : raw.padEnd(6, "0").slice(0, 6);
+  const num = parseInt(full, 16);
+  const r = (num >> 16) & 255;
+  const g = (num >> 8) & 255;
+  const b = num & 255;
+
+  const mix = (c: number) => Math.round(c + (255 - c) * 0.45);
+  const text = `#${[mix(r), mix(g), mix(b)]
+    .map((c) => c.toString(16).padStart(2, "0"))
+    .join("")}`;
+
+  return { rgb: `${r}, ${g}, ${b}` , text };
+};
 
 const GooglePlayIcon = ({ className }: { className?: string }) => (
   <svg
@@ -99,13 +158,41 @@ export default function ProjectsPage() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {projects.map((project) => {
               const details = project.link ? formatLink(project.link) : null;
+              const isHighlighted = !!project.highlights && project.highlights.length > 0;
+              const theme = getHighlightTheme(project.highlightColor);
 
               return (
                 <article
                   key={project.name}
-                  className="flex h-full flex-col justify-between rounded-md border border-white/10 bg-white/5 p-5 transition duration-200 hover:-translate-y-0.5 hover:border-white/20"
+                  style={
+                    isHighlighted
+                      ? ({ "--hl": theme.rgb, "--hl-text": theme.text } as React.CSSProperties)
+                      : undefined
+                  }
+                  className={`relative flex h-full flex-col justify-between overflow-hidden rounded-md border p-5 transition duration-200 hover:-translate-y-0.5 ${
+                    isHighlighted
+                      ? "border-[rgba(var(--hl),0.45)] bg-[rgba(var(--hl),0.06)] shadow-[0_0_0_1px_rgba(var(--hl),0.15)] hover:border-[rgba(var(--hl),0.7)]"
+                      : "border-white/10 bg-white/5 hover:border-white/20"
+                  }`}
                 >
+                  {isHighlighted ? (
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute inset-x-0 top-0 h-px"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, transparent, rgba(var(--hl),0.7), transparent)"
+                      }}
+                    />
+                  ) : null}
                   <div className="space-y-2">
+                    {isHighlighted ? (
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.highlights!.map((highlight) => (
+                          <HighlightPill key={highlight} label={highlight} />
+                        ))}
+                      </div>
+                    ) : null}
                     <div className="flex flex-wrap items-center gap-2">
                       <p className="text-lg font-semibold text-white">
                         {project.name}
@@ -113,6 +200,11 @@ export default function ProjectsPage() {
                       {project.year ? (
                         <span className="rounded-md border border-white/10 bg-white/10 px-2 py-0.5 text-xs font-semibold text-white/80">
                           {project.year}
+                        </span>
+                      ) : null}
+                      {project.company ? (
+                        <span className="rounded-md border border-white/10 bg-white/10 px-2 py-0.5 text-xs font-semibold text-white/70">
+                          @ {project.company}
                         </span>
                       ) : null}
                     </div>

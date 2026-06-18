@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       "AI & Full Stack Engineer building practical web and AI projects from Taytay Rizal, Philippines.",
     images: [
       {
-        url: "/aaron-picture.png",
+        url: "/avatar_128x128.png",
         width: 895,
         height: 954,
         alt: "Aaron Aludo"
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "Aaron Aludo | AI & Full Stack Engineer",
     description:
       "AI & Full Stack Engineer building practical web and AI projects from Taytay Rizal, Philippines.",
-    images: ["/aaron-picture.png"]
+    images: ["/avatar_128x128.png"]
   },
   robots: {
     index: true,
@@ -68,10 +68,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/aaron-picture.png", type: "image/png" },
+      { url: "/avatar_128x128.png", type: "image/png" },
       { url: "/icon.png", sizes: "512x512", type: "image/png" }
     ],
-    shortcut: ["/aaron-picture.png"],
+    shortcut: ["/avatar_128x128.png"],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }]
   }
 };

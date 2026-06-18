@@ -8,6 +8,7 @@ type Project = {
   company?: string;
   description: string;
   link?: string;
+  npm?: string;
   apk?: string;
   googlePlay?: string;
   appStore?: string;
@@ -56,12 +57,24 @@ const SparkIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const HighlightPill = ({ label }: { label: string }) => (
-  <span className="inline-flex items-center gap-1.5 rounded-md border border-[rgba(var(--hl),0.4)] bg-[rgba(var(--hl),0.12)] px-2.5 py-1 text-[11px] font-semibold text-[var(--hl-text)]">
-    <SparkIcon className="h-3 w-3 shrink-0" />
-    {label}
-  </span>
-);
+const HighlightPill = ({ label }: { label: string }) => {
+  if (label.toLowerCase().includes("best work")) {
+    return (
+      <span className="best-work-pill inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide">
+        <SparkIcon className="best-work-star relative z-10 h-3 w-3 shrink-0" />
+        <span className="relative z-10">{label}</span>
+        <SparkIcon className="best-work-star-delayed relative z-10 h-3 w-3 shrink-0" />
+      </span>
+    );
+  }
+
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-md border border-[rgba(var(--hl),0.4)] bg-[rgba(var(--hl),0.12)] px-2.5 py-1 text-[11px] font-semibold text-[var(--hl-text)]">
+      <SparkIcon className="h-3 w-3 shrink-0" />
+      {label}
+    </span>
+  );
+};
 
 const HIGHLIGHT_PRESETS: Record<string, string> = {
   orange: "#D97757",
@@ -123,6 +136,18 @@ const AppStoreIcon = ({ className }: { className?: string }) => (
     fill="currentColor"
   >
     <path d="M16.36 12.78c.02 2.4 2.1 3.2 2.13 3.21-.02.06-.33 1.14-1.1 2.25-.66.96-1.34 1.92-2.42 1.94-1.06.02-1.4-.63-2.61-.63-1.21 0-1.59.61-2.59.65-1.04.04-1.83-1.04-2.5-2-1.36-1.97-2.4-5.56-1-7.98.69-1.2 1.93-1.96 3.27-1.98 1.02-.02 1.99.69 2.61.69.63 0 1.8-.85 3.03-.73.52.02 1.97.21 2.9 1.58-.07.05-1.73 1.01-1.72 3.01ZM14.38 5.4c.55-.67.92-1.6.82-2.53-.79.03-1.76.53-2.33 1.2-.51.59-.96 1.54-.84 2.45.88.07 1.78-.45 2.35-1.12Z" />
+  </svg>
+);
+
+const NpmIcon = ({ className }: { className?: string }) => (
+  <svg
+    aria-hidden
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    className={className}
+    fill="#CB3837"
+  >
+    <path d="M1.763 0C.786 0 0 .786 0 1.763v20.474C0 23.214.786 24 1.763 24h20.474c.977 0 1.763-.786 1.763-1.763V1.763C24 .786 23.214 0 22.237 0zM5.13 5.323l13.837.019-.009 13.836h-3.464l.01-10.382h-3.456L12.04 19.17H5.113z" />
   </svg>
 );
 
@@ -224,6 +249,18 @@ export default function ProjectsPage() {
                       <ArrowIcon />
                     </a>
                   ) : null}
+                    {project.npm ? (
+                      <a
+                        href={project.npm}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition duration-150 hover:border-white/30 hover:bg-white/15"
+                      >
+                        <NpmIcon className="h-4 w-4" />
+                        npm
+                        <ArrowIcon />
+                      </a>
+                    ) : null}
                     {project.apk ? (
                       <a
                         href={project.apk}

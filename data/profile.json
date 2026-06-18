@@ -3,7 +3,7 @@
     "name": "Aaron Aludo",
     "location": "Taytay Rizal, Philippines",
     "role": "AI & Full Stack Engineer",
-    "image": "/aaron-picture.png",
+    "image": "/avatar_128x128.png",
     "availability": "Building practical AI-powered tools and continuing to learn through real projects.",
     "ctas": [
       { "label": "Send Email", "href": "mailto:aaronaludo@gmail.com", "variant": "ghost" }
@@ -12,8 +12,8 @@
   "about": {
     "title": "About",
     "paragraphs": [
-      "I’m a full-stack software engineer who enjoys building end-to-end applications with JavaScript, Python, and PHP. I like working across frontend and backend systems, and I try to keep my work practical, reliable, and easy to improve over time.",
-      "Recently, I have been exploring AI by building small, useful applications and learning from each project. I’m interested in how AI can help solve real problems in simple ways, and I’m continuing to improve how I design, build, and maintain systems that are helpful to users."
+      "I am an AI and Full-Stack Engineer, and I can work on many parts of tech. I add AI models and RAG systems to apps, build front-end designs, set up strong back-ends, make mobile apps, and manage servers. I enjoy turning hard problems into working products.",
+      "Outside of coding, my personal project right now is my own fitness routine. My work keeps me at a desk all day doing heavy computer tasks, so I am training myself to stay active, step away from the screen, and make exercise a regular part of my life."
     ]
   },
   "personal": {
@@ -98,8 +98,18 @@
       "description": "AI voice agents for small business — answers the phone, books appointments, captures leads, and follows up by SMS with real voice calls around the clock.",
       "logo": "/logos/instack-logo.png",
       "link": "https://instack.com.au",
-      "highlights": ["I Integrate OpenAI Models"],
+      "highlights": ["Best Work", "I Integrate OpenAI Models"],
       "highlightColor": "pink"
+    },
+        {
+      "name": "Encore Mock",
+      "year": "2026",
+      "company": "Aaron Aludo",
+      "description": "React Native mock layer for the Encore app — ships realistic screens, data, and flows so the product can be demoed to clients without wiring up a live backend.",
+      "link": "http://encore-mock.aaronaludo.com",
+      "npm": "https://www.npmjs.com/package/react-native-encore-mock",
+      "highlights": ["Demonstration for Worca Client"],
+      "highlightColor": "red"
     },
     {
       "name": "ConvoyFriends",
@@ -160,6 +170,16 @@
     }
   ],
   "allProjects": [
+    {
+      "name": "Encore Mock",
+      "year": "2026",
+      "company": "Aaron Aludo",
+      "description": "React Native mock layer for the Encore app — ships realistic screens, data, and flows so the product can be demoed to clients without wiring up a live backend.",
+      "link": "http://encore-mock.aaronaludo.com",
+      "npm": "https://www.npmjs.com/package/react-native-encore-mock",
+      "highlights": [""],
+      "highlightColor": "red"
+    },
     {
       "name": "InStack",
       "year": "2025",

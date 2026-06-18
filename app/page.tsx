@@ -54,6 +54,7 @@ type PortfolioProject = {
   description: string;
   logo?: string;
   link?: string;
+  npm?: string;
   apk?: string;
   appStore?: string;
   highlights?: string[];
@@ -177,12 +178,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 gap-6 text-center md:grid-cols-[auto_1fr] md:text-left lg:grid-cols-[auto_1fr_auto] lg:items-center">
             <div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:gap-5">
-              <div className="relative h-20 w-20 overflow-hidden rounded-md border border-white/15 bg-white/10 sm:h-24 sm:w-24 md:h-24 md:w-24">
+              <div className="relative h-28 w-28 overflow-hidden rounded-md border border-white/15 bg-white/10 sm:h-32 sm:w-32 md:h-36 md:w-36 lg:h-40 lg:w-40">
                 <Image
                   src={data.profile.image}
                   alt={data.profile.name}
                   fill
-                  sizes="96px"
+                  sizes="160px"
                   className="object-cover"
                   priority
                 />
@@ -416,6 +417,18 @@ export default function Home() {
                     >
                       <WebsiteIcon className="h-4 w-4 text-white" />
                       {project.link.replace("https://", "").replace("http://", "")}
+                      <ArrowIcon />
+                    </a>
+                  ) : null}
+                  {project.npm ? (
+                    <a
+                      href={project.npm}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition duration-150 hover:border-white/30 hover:bg-white/15"
+                    >
+                      <NpmIcon className="h-4 w-4" />
+                      npm
                       <ArrowIcon />
                     </a>
                   ) : null}
@@ -685,6 +698,18 @@ const AppStoreIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const NpmIcon = ({ className }: { className?: string }) => (
+  <svg
+    aria-hidden
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    className={className}
+    fill="#CB3837"
+  >
+    <path d="M1.763 0C.786 0 0 .786 0 1.763v20.474C0 23.214.786 24 1.763 24h20.474c.977 0 1.763-.786 1.763-1.763V1.763C24 .786 23.214 0 22.237 0zM5.13 5.323l13.837.019-.009 13.836h-3.464l.01-10.382h-3.456L12.04 19.17H5.113z" />
+  </svg>
+);
+
 const techIconColor = "#d8d8d8";
 
 const techIconMap: Record<string, { icon?: IconType }> = {
@@ -818,12 +843,24 @@ const SparkIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const HighlightPill = ({ label }: { label: string }) => (
-  <span className="inline-flex items-center gap-1.5 rounded-md border border-[rgba(var(--hl),0.4)] bg-[rgba(var(--hl),0.12)] px-2.5 py-1 text-[11px] font-semibold text-[var(--hl-text)]">
-    <SparkIcon className="h-3 w-3 shrink-0" />
-    {label}
-  </span>
-);
+const HighlightPill = ({ label }: { label: string }) => {
+  if (label.toLowerCase().includes("best work")) {
+    return (
+      <span className="best-work-pill inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide">
+        <SparkIcon className="best-work-star relative z-10 h-3 w-3 shrink-0" />
+        <span className="relative z-10">{label}</span>
+        <SparkIcon className="best-work-star-delayed relative z-10 h-3 w-3 shrink-0" />
+      </span>
+    );
+  }
+
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-md border border-[rgba(var(--hl),0.4)] bg-[rgba(var(--hl),0.12)] px-2.5 py-1 text-[11px] font-semibold text-[var(--hl-text)]">
+      <SparkIcon className="h-3 w-3 shrink-0" />
+      {label}
+    </span>
+  );
+};
 
 const HIGHLIGHT_PRESETS: Record<string, string> = {
   orange: "#D97757",

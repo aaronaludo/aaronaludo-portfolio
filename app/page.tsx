@@ -445,7 +445,7 @@ export default function Home() {
         </Card>
 
         <Card className="overflow-hidden border-white/12 bg-neutral-950">
-          <SectionHeading title="Recent Certifications" actionLabel="View all" href="#" />
+          <SectionHeading title="Recent Certifications" />
           <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-3 sm:gap-4">
             {data.certifications.map((cert) => (
               <a

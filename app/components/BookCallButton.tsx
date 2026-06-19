@@ -5,7 +5,7 @@ import { getCalApi } from "@calcom/embed-react";
 import { HiOutlineCalendar } from "react-icons/hi";
 
 const CAL_NAMESPACE = "30min";
-const CAL_LINK = "aaron-aludo-z3ljt1/30min";
+const CAL_LINK = "aaron-aludo-z3ljt1";
 
 export default function BookCallButton() {
   useEffect(() => {

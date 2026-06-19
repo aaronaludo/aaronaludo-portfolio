@@ -44,6 +44,7 @@ import {
 import { PiCursorFill } from "react-icons/pi";
 import { TbApi, TbBrandTeams, TbBrandVscode, TbTopologyStar3 } from "react-icons/tb";
 import profileData from "../data/profile.json";
+import BookCallButton from "./components/BookCallButton";
 
 type ButtonVariant = "solid" | "ghost" | "outline";
 
@@ -200,10 +201,6 @@ export default function Home() {
                 </div>
                 <p className="text-base text-white/90 sm:text-lg">{data.profile.role}</p>
                 <div className="flex w-full flex-col items-center gap-2 pt-1 text-sm text-white/90 sm:w-auto sm:items-start sm:text-xs">
-                  <span className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/25 bg-white/10 px-4 py-2.5 font-semibold text-white sm:w-auto sm:justify-start sm:px-3 sm:py-2">
-                    <span className="h-2 w-2 shrink-0 rounded-full bg-white/70" />
-                    <span className="leading-snug">{data.profile.availability}</span>
-                  </span>
                   <span
                     className="inline-flex w-full items-center justify-center gap-2 rounded-md border px-4 py-2.5 font-semibold sm:w-auto sm:justify-start sm:px-3 sm:py-2"
                     style={{
@@ -222,23 +219,7 @@ export default function Home() {
             </div>
             <div className="flex flex-1 flex-col gap-3 md:items-end">
               <div className="flex w-full flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-3 md:w-auto md:justify-end">
-                {data.profile.ctas?.map((cta) => {
-                  const icon =
-                    cta.label.toLowerCase().includes("email") || cta.href.startsWith("mailto")
-                      ? <HiOutlineMail className="h-4 w-4" />
-                      : undefined;
-
-                  return (
-                    <Button
-                      key={cta.label}
-                      label={cta.label}
-                      href={cta.href}
-                      variant={cta.variant as ButtonVariant}
-                      icon={icon}
-                      fullWidthOnMobile
-                    />
-                  );
-                })}
+                <BookCallButton />
               </div>
             </div>
           </div>
@@ -349,7 +330,7 @@ export default function Home() {
         </Card>
 
         <Card>
-          <SectionHeading title="Recent Projects" actionLabel="View all" href="/projects" />
+          <SectionHeading title="Recent Projects" />
           <div className="grid gap-4 sm:grid-cols-2">
             {projects.map((project) => {
               const isHighlighted = !!project.highlights && project.highlights.length > 0;
@@ -494,12 +475,12 @@ export default function Home() {
         </Card>
 
         <Card>
-          <SectionHeading title="Joined Hackathons" />
+          <SectionHeading title="Joined Hackathons" actionLabel="View all" href="/hackathons" />
           <div className="relative">
             <div className="absolute left-6 top-4 bottom-4 hidden w-px bg-white/10 sm:block" />
             <div className="space-y-4">
-              {hackathons.map((hackathon, index) => {
-                const isLast = index === hackathons.length - 1;
+              {hackathons.slice(0, 1).map((hackathon, index, shown) => {
+                const isLast = index === shown.length - 1;
 
                 return (
                   <div

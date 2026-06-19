@@ -4,10 +4,7 @@
     "location": "Taytay Rizal, Philippines",
     "role": "AI & Full Stack Engineer",
     "image": "/avatar_128x128.png",
-    "availability": "Building practical AI-powered tools and continuing to learn through real projects.",
-    "ctas": [
-      { "label": "Send Email", "href": "mailto:aaronaludo@gmail.com", "variant": "ghost" }
-    ]
+    "availability": "Building practical AI-powered tools and continuing to learn through real projects."
   }, 
   "about": {
     "title": "About",

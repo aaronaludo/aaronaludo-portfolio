@@ -98,6 +98,26 @@
       "highlights": ["Best Work", "I Integrate OpenAI Models"],
       "highlightColor": "pink"
     },
+    {
+      "name": "Agent Bell",
+      "year": "2026",
+      "company": "GELabs",
+      "description": "macOS menu bar app that tells you the moment Claude Code finishes a turn \u2014 or stalls waiting on you \u2014 with one line on what happened, so coming back costs a glance. Every summary is computed on your own Mac; nothing leaves the machine.",
+      "logo": "/logos/agentbell-logo.png",
+      "link": "https://agentbell.aaronaludo.com",
+      "highlights": ["My First Native macOS App in Swift", "Offline Ed25519 Licensing, No Server"],
+      "highlightColor": "yellow"
+    },
+    {
+      "name": "MacDotes",
+      "year": "2026",
+      "company": "GELabs",
+      "description": "macOS menu bar app for Dota 2 players who grew up on Windows \u2014 swaps Command and Option the moment the game comes to the front, and swaps them straight back when you alt-tab away.",
+      "logo": "/logos/macdotes-logo.png",
+      "link": "https://macdotes.aaronaludo.com",
+      "highlights": ["Built to Fix My Own Muscle Memory"],
+      "highlightColor": "orange"
+    },
         {
       "name": "Encore Mock",
       "year": "2026",
@@ -184,6 +204,26 @@
       "description": "AI voice agents for small business — answers the phone, books appointments, captures leads, and follows up by SMS with real voice calls around the clock.",
       "logo": "/logos/instack-logo.png",
       "link": "https://instack.com.au"
+    },
+    {
+      "name": "Agent Bell",
+      "year": "2026",
+      "company": "GELabs",
+      "description": "macOS menu bar app that tells you the moment Claude Code finishes a turn \u2014 or stalls waiting on you \u2014 with one line on what happened, so coming back costs a glance. Every summary is computed on your own Mac; nothing leaves the machine.",
+      "logo": "/logos/agentbell-logo.png",
+      "link": "https://agentbell.aaronaludo.com",
+      "highlights": ["My First Native macOS App in Swift", "Offline Ed25519 Licensing, No Server"],
+      "highlightColor": "yellow"
+    },
+    {
+      "name": "MacDotes",
+      "year": "2026",
+      "company": "GELabs",
+      "description": "macOS menu bar app for Dota 2 players who grew up on Windows \u2014 swaps Command and Option the moment the game comes to the front, and swaps them straight back when you alt-tab away.",
+      "logo": "/logos/macdotes-logo.png",
+      "link": "https://macdotes.aaronaludo.com",
+      "highlights": ["Built to Fix My Own Muscle Memory"],
+      "highlightColor": "orange"
     },
     {
       "name": "ConvoyFriends",

@@ -1,0 +1,59 @@
+{
+  "posts": [
+    {
+      "slug": "building-an-ai-coding-agent-loop",
+      "title": "Building an AI Coding Agent Loop with Claude",
+      "date": "2026-08-20",
+      "readTime": "5 min read",
+      "excerpt": "How I set up a developer/QA agent loop to build DotaKB end-to-end — one agent writes the code, another one tests it, and they keep looping until it actually works.",
+      "coverImage": "/blog/ai-agent-loop-cover.svg",
+      "tags": ["Claude", "AI", "Automation"],
+      "content": [
+        { "type": "paragraph", "text": "When I built DotaKB, a macOS menu bar app that auto-switches your keyboard input source when Dota 2 runs, I wanted to try something different: instead of writing every line myself, I set up two agent roles and let them loop until the app actually worked." },
+        { "type": "heading", "text": "The developer/QA loop" },
+        { "type": "paragraph", "text": "One agent plays the role of the developer. It reads the task, writes or edits the code, and explains what it changed. A second agent plays QA — it builds the app, runs it, and checks whether the behavior actually matches what was asked. If QA finds a bug or a gap, it writes a clear report and hands it back to the developer agent. This repeats until QA has nothing left to flag." },
+        { "type": "paragraph", "text": "The key thing that made this work was keeping the two roles honest. The developer agent is naturally optimistic about its own code, so it needs a separate, skeptical pass before anything is called done. Splitting the roles forced that skepticism instead of hoping I would catch every issue myself during a quick manual check." },
+        { "type": "heading", "text": "What I'd do differently" },
+        { "type": "paragraph", "text": "Menu bar apps are small enough that this loop finishes in a handful of rounds, which made it a good first real test case. For bigger apps I'm now scoping the loop per feature instead of per whole app, so each round stays fast and the QA agent has a narrow, testable target instead of the entire codebase." },
+        { "type": "paragraph", "text": "Overall this cut down a lot of the back-and-forth manual debugging I used to do, and it's now part of how I build most of my side projects." }
+      ]
+    },
+    {
+      "slug": "nextjs-supabase-shipping-workflow",
+      "title": "From Idea to Deployed App: My Next.js + Supabase Workflow",
+      "date": "2026-07-15",
+      "readTime": "6 min read",
+      "excerpt": "The stack and workflow I used to ship CodeQuest — a Next.js 15 coding quiz game with Supabase Auth, Postgres, RLS, 20 levels, and a leaderboard — from first commit to live app.",
+      "coverImage": "/blog/nextjs-supabase-workflow-cover.svg",
+      "tags": ["Next.js", "Supabase", "PostgreSQL"],
+      "content": [
+        { "type": "paragraph", "text": "CodeQuest started as a simple idea — a coding quiz game with levels and a leaderboard — and turned into a good example of how fast Next.js and Supabase let me go from idea to something people can actually use." },
+        { "type": "heading", "text": "Why this stack" },
+        { "type": "paragraph", "text": "Next.js 15 handles the app itself: server components for the pages that just read data, and client components only where I actually need interactivity, like the quiz screen and the level progress UI. Supabase covers everything on the backend side I'd otherwise have to build myself — Postgres, Auth, and row-level security — so I could spend my time on the quiz logic instead of re-building a login system." },
+        { "type": "heading", "text": "Data and access rules first" },
+        { "type": "paragraph", "text": "Before writing any UI, I modeled the tables: users, levels, attempts, and achievements. Then I wrote RLS policies so a signed-in user can only read and write their own attempts and progress, while leaderboard data stays readable by everyone. Getting this right early meant I never had to retrofit security after the fact." },
+        { "type": "heading", "text": "Shipping the 20 levels and leaderboard" },
+        { "type": "paragraph", "text": "Each level is just a row in the database with its prompt, expected output, and difficulty, so adding a new level never requires a code change. The leaderboard is a Postgres view that ranks by score and completion time, queried directly from the client through Supabase's row-level security instead of a custom API route." },
+        { "type": "paragraph", "text": "The result is a stack where adding features — a new level, a new achievement — is mostly a database change plus a small UI update, which keeps the app easy to keep shipping." }
+      ]
+    },
+    {
+      "slug": "lessons-from-five-scanner-ai-apps",
+      "title": "What Building Five Scanner AI Apps Taught Me",
+      "date": "2026-06-02",
+      "readTime": "4 min read",
+      "excerpt": "Plant, jewelry, rock, math, and physics/chemistry scanners — five different problem domains, one shared mobile AI pipeline. Here's what stayed the same and what had to change each time.",
+      "coverImage": "/blog/scanner-ai-apps-cover.svg",
+      "tags": ["AI", "React", "Python"],
+      "content": [
+        { "type": "paragraph", "text": "Over a few months I built a series of scanner apps — plant, jewelry, rock, math, and physics/chemistry — that all follow the same basic idea: point your camera at something, and get an instant AI-powered read on what it is." },
+        { "type": "heading", "text": "The part that stayed the same" },
+        { "type": "paragraph", "text": "The core pipeline barely changed between apps: capture an image on the mobile client, send it to a backend endpoint, run it through a vision model, and return a structured result the UI can render. Once I had this working cleanly for the first app, reusing it for the next domain was mostly a matter of swapping the model and the result schema." },
+        { "type": "heading", "text": "The part that had to change every time" },
+        { "type": "paragraph", "text": "What actually took the work was each domain's specifics. Plant identification needed confidence thresholds and care-tip lookups. Jewelry and rock scanning needed prompts tuned so the model wouldn't just guess a generic material name. Math and physics/chemistry scanners needed OCR-style parsing of handwritten or printed problems before the model could even attempt an answer — a completely different failure mode than the image-classification apps." },
+        { "type": "heading", "text": "The takeaway" },
+        { "type": "paragraph", "text": "Building a reusable scan-and-classify pipeline once, then treating each new domain as a prompt and validation problem rather than a new architecture, let me ship five apps in the time it would've taken to build two from scratch. The lesson that stuck with me: invest in the boring plumbing early, because that's the part you'll reuse the most." }
+      ]
+    }
+  ]
+}

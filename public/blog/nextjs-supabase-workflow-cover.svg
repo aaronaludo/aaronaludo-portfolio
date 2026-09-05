@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="glowBlue" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="gridBlue" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1" />
+    </pattern>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#3B82F6" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0a0a0a" />
+  <rect width="1200" height="630" fill="url(#gridBlue)" />
+  <rect width="1200" height="630" fill="url(#glowBlue)" />
+
+  <!-- connecting pipeline arrows -->
+  <g stroke="#3B82F6" stroke-opacity="0.7" stroke-width="2.5">
+    <line x1="345" y1="315" x2="500" y2="315" marker-end="url(#arrowBlue)" />
+    <line x1="700" y1="315" x2="855" y2="315" marker-end="url(#arrowBlue)" />
+  </g>
+
+  <!-- Browser window (Next.js UI) -->
+  <g transform="translate(220, 245)">
+    <rect x="0" y="0" width="140" height="100" rx="10" fill="#12161c" stroke="#3B82F6" stroke-opacity="0.55" stroke-width="1.5" />
+    <rect x="0" y="0" width="140" height="24" rx="10" fill="#3B82F6" fill-opacity="0.18" />
+    <circle cx="16" cy="12" r="3" fill="#3B82F6" fill-opacity="0.8" />
+    <circle cx="28" cy="12" r="3" fill="#3B82F6" fill-opacity="0.5" />
+    <circle cx="40" cy="12" r="3" fill="#3B82F6" fill-opacity="0.3" />
+    <rect x="16" y="42" width="90" height="8" rx="4" fill="#3B82F6" fill-opacity="0.5" />
+    <rect x="16" y="60" width="60" height="8" rx="4" fill="#3B82F6" fill-opacity="0.3" />
+    <rect x="16" y="78" width="75" height="8" rx="4" fill="#3B82F6" fill-opacity="0.3" />
+  </g>
+
+  <!-- Server / Next.js core -->
+  <g transform="translate(530, 235)">
+    <rect x="0" y="0" width="150" height="120" rx="12" fill="#12161c" stroke="#3B82F6" stroke-opacity="0.6" stroke-width="1.5" />
+    <polygon points="75,28 108,46 108,82 75,100 42,82 42,46" fill="none" stroke="#3B82F6" stroke-width="3" stroke-linejoin="round" />
+    <circle cx="75" cy="64" r="10" fill="#3B82F6" fill-opacity="0.7" />
+  </g>
+
+  <!-- Database (Supabase) -->
+  <g transform="translate(855, 240)">
+    <path d="M0 18 C0 8 30 0 60 0 C90 0 120 8 120 18 L120 92 C120 102 90 110 60 110 C30 110 0 102 0 92 Z" fill="#0f1a16" stroke="#22C55E" stroke-opacity="0.55" stroke-width="1.5" />
+    <path d="M0 18 C0 28 30 36 60 36 C90 36 120 28 120 18" fill="none" stroke="#22C55E" stroke-opacity="0.6" stroke-width="1.5" />
+    <path d="M0 50 C0 60 30 68 60 68 C90 68 120 60 120 50" fill="none" stroke="#22C55E" stroke-opacity="0.4" stroke-width="1.5" />
+  </g>
+
+  <!-- deploy arrow up top -->
+  <g stroke="#3B82F6" stroke-opacity="0.6" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M600 200 L600 150" marker-end="url(#arrowBlue)" />
+  </g>
+  <g transform="translate(600, 110)">
+    <polygon points="0,-26 22,10 -22,10" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2.5" stroke-linejoin="round" />
+  </g>
+
+  <circle cx="150" cy="500" r="2.5" fill="#3B82F6" opacity="0.6" />
+  <circle cx="1080" cy="470" r="2" fill="#22C55E" opacity="0.5" />
+  <circle cx="1000" cy="530" r="1.5" fill="#ffffff" opacity="0.3" />
+</svg>

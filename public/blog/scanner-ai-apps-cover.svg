@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="glowGreen" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#22C55E" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#22C55E" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="gridGreen" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0a0a0a" />
+  <rect width="1200" height="630" fill="url(#gridGreen)" />
+  <rect width="1200" height="630" fill="url(#glowGreen)" />
+
+  <!-- phone body -->
+  <g transform="translate(500, 105)">
+    <rect x="0" y="0" width="200" height="400" rx="28" fill="#0f1a16" stroke="#22C55E" stroke-opacity="0.55" stroke-width="2" />
+    <rect x="14" y="24" width="172" height="352" rx="10" fill="#0a0a0a" />
+
+    <!-- viewfinder corner brackets -->
+    <g stroke="#22C55E" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M34 64 v-16 a6 6 0 0 1 6-6 h16" />
+      <path d="M166 64 v-16 a6 6 0 0 0-6-6 h-16" />
+      <path d="M34 316 v16 a6 6 0 0 0 6 6 h16" />
+      <path d="M166 316 v16 a6 6 0 0 0-6 6 h-16" />
+    </g>
+
+    <!-- scan line -->
+    <line x1="34" y1="190" x2="166" y2="190" stroke="#22C55E" stroke-opacity="0.8" stroke-width="3" />
+    <line x1="34" y1="190" x2="166" y2="190" stroke="#22C55E" stroke-opacity="0.25" stroke-width="14" />
+  </g>
+
+  <!-- floating subject icons around the phone -->
+  <!-- leaf (plant) -->
+  <g transform="translate(330, 190)">
+    <circle r="42" fill="#0f1a16" stroke="#22C55E" stroke-opacity="0.45" stroke-width="1.5" />
+    <path d="M-16 14 C-16 -10 8 -18 18 -18 C18 -2 6 14 -16 14 Z" fill="#22C55E" fill-opacity="0.75" />
+    <path d="M-14 12 L14 -14" stroke="#0f1a16" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <!-- gem (jewelry / rock) -->
+  <g transform="translate(870, 190)">
+    <circle r="42" fill="#0f1a16" stroke="#22C55E" stroke-opacity="0.45" stroke-width="1.5" />
+    <polygon points="0,-18 16,-4 9,18 -9,18 -16,-4" fill="none" stroke="#22C55E" stroke-width="3" stroke-linejoin="round" />
+    <polygon points="0,-18 16,-4 -16,-4" fill="#22C55E" fill-opacity="0.35" />
+  </g>
+
+  <!-- atom (physics / chemistry) -->
+  <g transform="translate(330, 440)">
+    <circle r="42" fill="#0f1a16" stroke="#22C55E" stroke-opacity="0.45" stroke-width="1.5" />
+    <g stroke="#22C55E" stroke-width="2.5" fill="none">
+      <ellipse rx="20" ry="8" />
+      <ellipse rx="20" ry="8" transform="rotate(60)" />
+      <ellipse rx="20" ry="8" transform="rotate(120)" />
+    </g>
+    <circle r="4.5" fill="#22C55E" />
+  </g>
+
+  <!-- plus / equals (math) -->
+  <g transform="translate(870, 440)">
+    <circle r="42" fill="#0f1a16" stroke="#22C55E" stroke-opacity="0.45" stroke-width="1.5" />
+    <g stroke="#22C55E" stroke-width="4" stroke-linecap="round">
+      <line x1="-14" y1="0" x2="14" y2="0" />
+      <line x1="0" y1="-14" x2="0" y2="14" />
+    </g>
+  </g>
+
+  <circle cx="150" cy="530" r="2.5" fill="#22C55E" opacity="0.6" />
+  <circle cx="1080" cy="120" r="2" fill="#22C55E" opacity="0.5" />
+</svg>

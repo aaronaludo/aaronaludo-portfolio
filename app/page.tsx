@@ -44,6 +44,7 @@ import {
 import { PiCursorFill } from "react-icons/pi";
 import { TbApi, TbBrandTeams, TbBrandVscode, TbTopologyStar3 } from "react-icons/tb";
 import profileData from "../data/profile.json";
+import blogData from "../data/blog.json";
 import BookCallButton from "./components/BookCallButton";
 
 type ButtonVariant = "solid" | "ghost" | "outline";
@@ -69,6 +70,16 @@ type Hackathon = {
   description: string;
   badge: string;
   logo?: string;
+};
+
+type BlogPost = {
+  slug: string;
+  title: string;
+  date: string;
+  readTime: string;
+  excerpt: string;
+  coverImage: string;
+  tags: string[];
 };
 
 type ButtonProps = {
@@ -171,6 +182,10 @@ export default function Home() {
   const data = profileData;
   const projects = data.projects as PortfolioProject[];
   const hackathons = data.hackathons as Hackathon[];
+  const blogPosts = ((blogData as { posts?: BlogPost[] }).posts ?? [])
+    .slice()
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
@@ -508,6 +523,47 @@ export default function Home() {
                 );
               })}
             </div>
+          </div>
+        </Card>
+
+        <Card>
+          <SectionHeading title="From the Blog" actionLabel="View all" href="/blog" />
+          <div className="grid gap-4 sm:grid-cols-3">
+            {blogPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group flex flex-col overflow-hidden rounded-md border border-white/10 bg-white/5 transition duration-200 hover:-translate-y-0.5 hover:border-white/25"
+              >
+                <div className="relative aspect-video w-full overflow-hidden border-b border-white/10 bg-neutral-900">
+                  <Image
+                    src={post.coverImage}
+                    alt={post.title}
+                    fill
+                    sizes="(min-width: 640px) 33vw, 100vw"
+                    className="object-cover transition duration-300 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col gap-2 p-4">
+                  <div className="flex flex-wrap gap-1.5">
+                    {post.tags.slice(0, 2).map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-md border border-white/10 bg-white/10 px-2 py-0.5 text-[11px] font-semibold text-white/80"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-sm font-semibold text-white">{post.title}</p>
+                  <p className="line-clamp-2 text-xs text-white/70">{post.excerpt}</p>
+                  <span className="mt-auto flex items-center gap-1 pt-1 text-[11px] font-semibold text-white/60">
+                    {post.readTime}
+                    <ArrowIcon />
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </Card>
 

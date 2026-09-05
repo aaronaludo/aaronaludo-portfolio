@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="glowOrange" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#D97757" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#D97757" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="gridOrange" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1" />
+    </pattern>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#D97757" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0a0a0a" />
+  <rect width="1200" height="630" fill="url(#gridOrange)" />
+  <rect width="1200" height="630" fill="url(#glowOrange)" />
+
+  <!-- looping triangle connecting Plan -> Build -> Test -> Plan -->
+  <g fill="none" stroke="#D97757" stroke-opacity="0.7" stroke-width="2.5" stroke-linecap="round">
+    <path d="M470 235 A 190 190 0 0 1 730 235" marker-end="url(#arrowOrange)" />
+    <path d="M745 260 A 190 190 0 0 1 615 430" marker-end="url(#arrowOrange)" />
+    <path d="M585 430 A 190 190 0 0 1 455 260" marker-end="url(#arrowOrange)" />
+  </g>
+
+  <!-- Plan node (spark) -->
+  <g transform="translate(600, 200)">
+    <circle r="46" fill="#171310" stroke="#D97757" stroke-opacity="0.5" stroke-width="1.5" />
+    <g transform="translate(-12,-12) scale(1)" fill="#D97757">
+      <path d="M12 2.5l1.6 5.4a4 4 0 0 0 2.5 2.5l5.4 1.6-5.4 1.6a4 4 0 0 0-2.5 2.5L12 21.5l-1.6-5.4a4 4 0 0 0-2.5-2.5L2.5 12l5.4-1.6a4 4 0 0 0 2.5-2.5L12 2.5z" />
+    </g>
+  </g>
+
+  <!-- Build node (code brackets) -->
+  <g transform="translate(770, 400)">
+    <circle r="46" fill="#171310" stroke="#D97757" stroke-opacity="0.5" stroke-width="1.5" />
+    <g stroke="#D97757" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M-10 -14 L-22 0 L-10 14" />
+      <path d="M10 -14 L22 0 L10 14" />
+    </g>
+  </g>
+
+  <!-- Test node (check) -->
+  <g transform="translate(430, 400)">
+    <circle r="46" fill="#171310" stroke="#D97757" stroke-opacity="0.5" stroke-width="1.5" />
+    <path d="M-16 1 L-4 14 L18 -12" fill="none" stroke="#D97757" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Claude-style radiating mark, top right -->
+  <g transform="translate(1030, 130)" fill="#D97757" opacity="0.9">
+    <g>
+      <rect x="-2.6" y="-27" width="5.2" height="19" rx="2.6" />
+      <rect x="-2.6" y="-27" width="5.2" height="19" rx="2.6" transform="rotate(30)" />
+      <rect x="-2.6" y="-27" width="5.2" height="19" rx="2.6" transform="rotate(60)" />
+      <rect x="-2.6" y="-27" width="5.2" height="19" rx="2.6" transform="rotate(90)" />
+      <rect x="-2.6" y="-27" width="5.2" height="19" rx="2.6" transform="rotate(120)" />
+      <rect x="-2.6" y="-27" width="5.2" height="19" rx="2.6" transform="rotate(150)" />
+      <rect x="-2.6" y="-27" width="5.2" height="19" rx="2.6" transform="rotate(180)" />
+      <rect x="-2.6" y="-27" width="5.2" height="19" rx="2.6" transform="rotate(210)" />
+      <rect x="-2.6" y="-27" width="5.2" height="19" rx="2.6" transform="rotate(240)" />
+      <rect x="-2.6" y="-27" width="5.2" height="19" rx="2.6" transform="rotate(270)" />
+      <rect x="-2.6" y="-27" width="5.2" height="19" rx="2.6" transform="rotate(300)" />
+      <rect x="-2.6" y="-27" width="5.2" height="19" rx="2.6" transform="rotate(330)" />
+    </g>
+  </g>
+
+  <circle cx="150" cy="500" r="2.5" fill="#D97757" opacity="0.6" />
+  <circle cx="190" cy="480" r="1.5" fill="#ffffff" opacity="0.3" />
+  <circle cx="1080" cy="470" r="2" fill="#D97757" opacity="0.5" />
+</svg>

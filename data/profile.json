@@ -118,16 +118,6 @@
       "highlights": ["Built to Fix My Own Muscle Memory"],
       "highlightColor": "orange"
     },
-        {
-      "name": "Encore Mock",
-      "year": "2026",
-      "company": "Aaron Aludo",
-      "description": "React Native mock layer for the Encore app — ships realistic screens, data, and flows so the product can be demoed to clients without wiring up a live backend.",
-      "link": "http://encore-mock.aaronaludo.com",
-      "npm": "https://www.npmjs.com/package/react-native-encore-mock",
-      "highlights": ["Demonstration for Worca Client"],
-      "highlightColor": "red"
-    },
     {
       "name": "ConvoyFriends",
       "year": "2026",
@@ -187,16 +177,6 @@
     }
   ],
   "allProjects": [
-    {
-      "name": "Encore Mock",
-      "year": "2026",
-      "company": "Aaron Aludo",
-      "description": "React Native mock layer for the Encore app — ships realistic screens, data, and flows so the product can be demoed to clients without wiring up a live backend.",
-      "link": "http://encore-mock.aaronaludo.com",
-      "npm": "https://www.npmjs.com/package/react-native-encore-mock",
-      "highlights": [""],
-      "highlightColor": "red"
-    },
     {
       "name": "InStack",
       "year": "2025",

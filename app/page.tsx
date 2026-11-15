@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import profileData from "../data/profile.json";
-import blogData from "../data/blog.json";
+import contentsData from "../data/contents.json";
 import Minimap from "./components/Minimap";
 
 type Project = {
@@ -16,14 +16,8 @@ type Project = {
   highlights?: string[];
 };
 
-type BlogPost = { slug: string; title: string; date: string; excerpt: string };
-
 const data = profileData;
 const projects = data.projects as Project[];
-const posts = ((blogData as { posts?: BlogPost[] }).posts ?? [])
-  .slice()
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-  .slice(0, 3);
 const stack = Object.values(data.techStack).flat();
 const firstYear = Math.min(...data.experience.map((e) => Number(e.year)));
 const email = data.contacts.find((c) => c.href.startsWith("mailto"));
@@ -34,7 +28,7 @@ const SECTIONS = [
   { id: "stack", label: "Stack" },
   { id: "certifications", label: "Certifications" },
   { id: "hackathons", label: "Hackathons" },
-  { id: "blog", label: "Blog" }
+  { id: "contents", label: "Contents" }
 ];
 
 const Chip = ({ children }: { children: React.ReactNode }) => (
@@ -49,7 +43,11 @@ const Label = ({ n, title, href, action }: { n: number; title: string; href?: st
       {String(n).padStart(2, "0")} — {title}
     </span>
     {href ? (
-      <Link href={href} className="uppercase tracking-wider text-muted hover:text-fg">
+      <Link
+        href={href}
+        {...(href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
+        className="uppercase tracking-wider text-muted hover:text-fg"
+      >
         {action} →
       </Link>
     ) : null}
@@ -97,7 +95,7 @@ export default function Home() {
         <div className="space-y-6">
           <p className="font-mono text-sm">{data.profile.name}</p>
           <nav className="flex flex-col gap-1.5 text-[13px] text-muted">
-            <Link href="/blog" className="hover:text-fg">Blog</Link>
+            <a href="#contents" className="hover:text-fg">Contents</a>
             <Link href="/hackathons" className="hover:text-fg">Hackathons</Link>
           </nav>
           <nav className="flex flex-col gap-1.5 border-t border-line pt-4 text-[13px] text-muted">
@@ -120,7 +118,7 @@ export default function Home() {
         <span className="font-mono text-sm">{data.profile.name}</span>
         <nav className="flex gap-4 text-xs text-muted">
           <a href="#projects">Projects</a>
-          <Link href="/blog">Blog</Link>
+          <a href="#contents">Contents</a>
         </nav>
       </header>
 
@@ -291,24 +289,34 @@ export default function Home() {
           </ul>
         </section>
 
-        {/* blog */}
-        <section id="blog" className="scroll-mt-20">
-          <Label n={6} title="blog" href="/blog" action="all posts" />
-          <ul className="divide-y divide-line">
-            {posts.map((p) => (
-              <li key={p.slug}>
-                <Link href={`/blog/${p.slug}`} className="block py-3 hover:opacity-70">
-                  <div className="flex justify-between gap-4">
-                    <p className="text-sm font-medium">{p.title}</p>
-                    <span className="shrink-0 font-mono text-xs text-muted">
-                      {new Date(p.date).toLocaleDateString("en-US", { month: "short", year: "numeric" })}
-                    </span>
-                  </div>
-                  <p className="truncate text-sm text-muted">{p.excerpt}</p>
-                </Link>
-              </li>
+        {/* contents: devlog reels */}
+        <section id="contents" className="scroll-mt-20">
+          <Label n={6} title="contents" href={contentsData.channel.url} action="all reels" />
+          <div className="flex snap-x gap-3 overflow-x-auto pb-3">
+            {contentsData.reels.map((r) => (
+              <a
+                key={r.url}
+                href={r.url}
+                target="_blank"
+                rel="noreferrer"
+                className="group w-32 shrink-0 snap-start"
+              >
+                <div className="relative aspect-[9/16] overflow-hidden rounded-md border border-line bg-chip">
+                  <Image
+                    src={r.thumbnail}
+                    alt={r.title}
+                    fill
+                    sizes="128px"
+                    className="object-cover transition duration-300 group-hover:scale-105"
+                  />
+                  <span className="absolute bottom-1.5 left-1.5 rounded bg-black/70 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wider text-fg">
+                    ▶ reel
+                  </span>
+                </div>
+                <p className="mt-2 line-clamp-2 text-xs text-muted group-hover:text-fg">{r.title}</p>
+              </a>
             ))}
-          </ul>
+          </div>
         </section>
 
         {email ? (

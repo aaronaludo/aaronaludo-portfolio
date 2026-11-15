@@ -45,7 +45,6 @@ import { PiCursorFill } from "react-icons/pi";
 import { TbApi, TbBrandTeams, TbBrandVscode, TbTopologyStar3 } from "react-icons/tb";
 import profileData from "../data/profile.json";
 import blogData from "../data/blog.json";
-import BookCallButton from "./components/BookCallButton";
 
 type ButtonVariant = "solid" | "ghost" | "outline";
 
@@ -230,11 +229,6 @@ export default function Home() {
                     </span>
                   </span>
                 </div>
-              </div>
-            </div>
-            <div className="flex flex-1 flex-col gap-3 md:items-end">
-              <div className="flex w-full flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-3 md:w-auto md:justify-end">
-                <BookCallButton />
               </div>
             </div>
           </div>

@@ -19,6 +19,10 @@
   --font-mono: var(--font-geist-mono), ui-monospace, Menlo, monospace;
 }
 
+html {
+  color-scheme: dark; /* dark native scrollbars + form controls */
+}
+
 body {
   background: var(--bg);
   color: var(--fg);

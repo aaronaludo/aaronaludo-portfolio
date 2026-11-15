@@ -10,7 +10,7 @@
     "title": "About",
     "paragraphs": [
       "I am an AI and Full-Stack Engineer, and I can work on many parts of tech. I add AI models and RAG systems to apps, build front-end designs, set up strong back-ends, make mobile apps, and manage servers. I enjoy turning hard problems into working products.",
-      "Outside of coding, my personal project right now is my own fitness routine. My work keeps me at a desk all day doing heavy computer tasks, so I am training myself to stay active, step away from the screen, and make exercise a regular part of my life."
+      "Outside of client work, my biggest project right now is Empire Legends, a 5v5 MOBA game I am building for iOS and Android. It is still in development, and it is the most ambitious thing I have worked on: the game client, the servers, and the admin tools behind it."
     ]
   },
   "personal": {
@@ -88,6 +88,15 @@
     "developer-tools": ["Git", "GitHub", "GitLab", "Jira", "VS Code", "Cursor", "PyCharm", "Discord", "Microsoft Teams"]
   },
   "projects": [
+    {
+      "name": "Empire Legends",
+      "year": "2026",
+      "company": "GELabs",
+      "description": "Indie 5v5 MOBA for iOS and Android: six heroes, three lanes, jungle camps and towers. My biggest project so far, built in the open one devlog at a time.",
+      "logo": "/logos/empire-legends-logo.png",
+      "highlights": ["My Biggest Project", "In Development"],
+      "highlightColor": "purple"
+    },
     {
       "name": "InStack",
       "year": "2025",
@@ -177,6 +186,15 @@
     }
   ],
   "allProjects": [
+    {
+      "name": "Empire Legends",
+      "year": "2026",
+      "company": "GELabs",
+      "description": "Indie 5v5 MOBA for iOS and Android: six heroes, three lanes, jungle camps and towers. My biggest project so far, built in the open one devlog at a time.",
+      "logo": "/logos/empire-legends-logo.png",
+      "highlights": ["My Biggest Project", "In Development"],
+      "highlightColor": "purple"
+    },
     {
       "name": "InStack",
       "year": "2025",

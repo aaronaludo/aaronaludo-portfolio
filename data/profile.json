@@ -99,6 +99,13 @@
       "highlightColor": "purple"
     },
     {
+      "name": "Domore",
+      "year": "2026",
+      "description": "Online store for Domore, a Philippine streetwear label: product catalog with per-size stock, timed pre-order drops with countdowns and slot limits, cart, and order tracking.",
+      "logo": "/logos/domore-logo.png",
+      "link": "https://domoreclo.com"
+    },
+    {
       "name": "InStack",
       "year": "2025",
       "company": "24x7 Direct",
@@ -195,6 +202,13 @@
       "logo": "/logos/empire-legends-logo.png",
       "highlights": ["My Biggest Project", "In Development"],
       "highlightColor": "purple"
+    },
+    {
+      "name": "Domore",
+      "year": "2026",
+      "description": "Online store for Domore, a Philippine streetwear label: product catalog with per-size stock, timed pre-order drops with countdowns and slot limits, cart, and order tracking.",
+      "logo": "/logos/domore-logo.png",
+      "link": "https://domoreclo.com"
     },
     {
       "name": "InStack",
